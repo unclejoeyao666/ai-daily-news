@@ -1,0 +1,20 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+._*
+
+# 音频文件
+*.mp3
+*.wav
+*.aac
+*.flac
+*.ogg
+*.m4a
+
+# 临时文件
+*.log
+*.tmp
+*.draft
+*.bak
+*.swp
+*~
