@@ -1,0 +1,162 @@
+[
+  {
+    "name": "TechCrunch AI",
+    "url": "https://techcrunch.com/category/artificial-intelligence/feed/",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "AI 初创与大公司 AI 动态"
+  },
+  {
+    "name": "The Verge AI",
+    "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "AI 产品与文化"
+  },
+  {
+    "name": "VentureBeat AI",
+    "url": "https://venturebeat.com/category/ai/feed/",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "深度 AI 技术分析与产业"
+  },
+  {
+    "name": "Ars Technica AI",
+    "url": "https://feeds.arstechnica.com/arstechnica/technology-lab",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "AI 技术深度报道与批评"
+  },
+  {
+    "name": "MIT Technology Review AI",
+    "url": "https://www.technologyreview.com/feed/",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "MIT 视角的 AI 研究与社会影响"
+  },
+  {
+    "name": "Wired AI",
+    "url": "https://www.wired.com/feed/tag/artificial-intelligence/rss",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "AI 文化与商业影响"
+  },
+  {
+    "name": "Bloomberg Technology AI",
+    "url": "https://feeds.bloomberg.com/technology/news.rss",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "AI 行业投融资与市场动态"
+  },
+  {
+    "name": "Reuters Tech",
+    "url": "https://feeds.reuters.com/reuters/technologyNews",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "科技新闻 Reuters 视角"
+  },
+  {
+    "name": "TechCrunch",
+    "url": "https://techcrunch.com/feed/",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "综合科技与创业"
+  },
+  {
+    "name": "The Verge",
+    "url": "https://www.theverge.com/rss/index.xml",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "综合科技产品与文化"
+  },
+  {
+    "name": "Hacker News",
+    "url": "https://news.ycombinator.com/rss",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "开发者社区热点，AI 相关投票最高"
+  },
+  {
+    "name": "VentureBeat",
+    "url": "https://venturebeat.com/feed/",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "综合创业与技术"
+  },
+  {
+    "name": "OpenAI Blog",
+    "url": "https://openai.com/blog/rss/",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "OpenAI 官方发布"
+  },
+  {
+    "name": "Anthropic News",
+    "url": "https://www.anthropic.com/news/rss.xml",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "Anthropic 官方发布"
+  },
+  {
+    "name": "Google DeepMind Blog",
+    "url": "https://deepmind.google/blog/rss.xml",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "Google DeepMind 官方研究"
+  },
+  {
+    "name": "Meta AI Blog",
+    "url": "https://ai.meta.com/blog/rss/",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "Meta AI 研究发布"
+  },
+  {
+    "name": "Mistral AI News",
+    "url": "https://mistral.ai/news/feed/",
+    "type": "rss",
+    "category": "ai",
+    "language": "en",
+    "description": "Mistral 最新动态"
+  },
+  {
+    "name": "TechCrunch Startups",
+    "url": "https://techcrunch.com/category/startups/feed/",
+    "type": "rss",
+    "category": "startup",
+    "language": "en",
+    "description": "AI 初创公司融资与产品"
+  },
+  {
+    "name": "Axios Tech",
+    "url": "https://api.axios.com/feed/rss",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "简洁高效的科技新闻"
+  },
+  {
+    "name": "Semafor Tech",
+    "url": "https://www.semafor.com/rss",
+    "type": "rss",
+    "category": "tech",
+    "language": "en",
+    "description": "AI 政策与商业交叉地带"
+  }
+]
