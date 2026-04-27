@@ -1,0 +1,115 @@
+---
+/* Compact month calendar with clickable dates that have briefings. */
+interface Props {
+  year: number;
+  month: number;
+  briefingDates: Set<string>;
+  highlight?: string;
+  size?: "sm" | "md";
+}
+const { year, month, briefingDates, highlight, size = "sm" } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const firstDay = new Date(Date.UTC(year, month - 1, 1));
+const lastDay = new Date(Date.UTC(year, month, 0));
+const monthLabel = `${year}.${String(month).padStart(2, "0")}`;
+
+const startWeekday = (firstDay.getUTCDay() + 6) % 7;
+const daysInMonth = lastDay.getUTCDate();
+
+const cells: ({ day: number; iso: string } | null)[] = [];
+for (let i = 0; i < startWeekday; i++) cells.push(null);
+for (let d = 1; d <= daysInMonth; d++) {
+  const iso = `${year}-${String(month).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  cells.push({ day: d, iso });
+}
+while (cells.length % 7 !== 0) cells.push(null);
+
+const weekdayLabels = ["一", "二", "三", "四", "五", "六", "日"];
+---
+
+<div class={`cal cal-${size}`}>
+  <div class="cal-head">
+    <span class="cal-label">{monthLabel}</span>
+  </div>
+  <div class="cal-weekdays">
+    {weekdayLabels.map((w) => <span>{w}</span>)}
+  </div>
+  <div class="cal-grid">
+    {cells.map((c) => {
+      if (!c) return <span class="cell empty"></span>;
+      const has = briefingDates.has(c.iso);
+      const isHighlight = highlight === c.iso;
+      const cls = ["cell"];
+      if (has) cls.push("has");
+      if (isHighlight) cls.push("now");
+      if (has) {
+        return (
+          <a class={cls.join(" ")} href={`${base}/briefings/${c.iso}`} title={c.iso}>
+            {c.day}
+          </a>
+        );
+      }
+      return <span class={cls.join(" ")}>{c.day}</span>;
+    })}
+  </div>
+</div>
+
+<style>
+  .cal { font-family: var(--font-sans); color: var(--text); }
+  .cal-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  .cal-label {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+  }
+  .cal-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--text-dim);
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+  .cal-weekdays span {
+    text-align: center;
+    padding: 4px 0;
+    letter-spacing: 0.05em;
+  }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px; }
+  .cell {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    border-radius: 6px;
+    border: 1px solid transparent;
+  }
+  .cal-md .cell { font-size: 0.92rem; }
+  .cell.empty { visibility: hidden; }
+  .cell.has {
+    color: var(--accent);
+    font-weight: 600;
+    background: var(--accent-soft);
+    text-decoration: none;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .cell.has:hover {
+    background: var(--accent);
+    color: white;
+    border: 1px solid var(--accent);
+    transform: scale(1.06);
+  }
+  .cell.now {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+</style>

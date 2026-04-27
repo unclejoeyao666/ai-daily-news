@@ -1,0 +1,139 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CalendarMonth from "../../components/CalendarMonth.astro";
+
+const briefings = (await getCollection("briefings"))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const briefingDateSet = new Set(
+  briefings.map((b) => b.data.date.toISOString().slice(0, 10)),
+);
+
+type MonthEntry = { year: number; month: number };
+const monthsSet = new Set<string>();
+for (const b of briefings) {
+  const k = b.data.date.toISOString().slice(0, 7);
+  monthsSet.add(k);
+}
+if (monthsSet.size === 0) {
+  const now = new Date();
+  monthsSet.add(`${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(2, "0")}`);
+}
+const months: MonthEntry[] = Array.from(monthsSet)
+  .sort((a, b) => b.localeCompare(a))
+  .map((k) => ({
+    year: parseInt(k.slice(0, 4)),
+    month: parseInt(k.slice(5, 7)),
+  }));
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const totalArticles = briefings.reduce((s, b) => s + b.data.articles.length, 0);
+const todayIso = new Date().toISOString().slice(0, 10);
+---
+
+<BaseLayout
+  title="简报库"
+  description={`所有 ${briefings.length} 期每日简报 — 按日期翻看`}
+  highlightDate={todayIso}
+>
+  <header class="brf-archive-head">
+    <p class="eyebrow">简报库</p>
+    <h1>按日期翻看简报</h1>
+    <p class="meta">
+      共 <strong>{briefings.length}</strong> 期 ·
+      <strong>{totalArticles}</strong> 条文章 ·
+      涵盖 <strong>{months.length}</strong> 个月份
+    </p>
+  </header>
+
+  <section class="cals">
+    {months.map((m) => (
+      <article class="month-card">
+        <CalendarMonth
+          year={m.year}
+          month={m.month}
+          briefingDates={briefingDateSet}
+          highlight={todayIso}
+          size="md"
+        />
+        <ul class="month-list">
+          {briefings
+            .filter((b) => {
+              const d = b.data.date;
+              return d.getUTCFullYear() === m.year && d.getUTCMonth() + 1 === m.month;
+            })
+            .map((b) => {
+              const iso = b.data.date.toISOString().slice(0, 10);
+              return (
+                <li>
+                  <a href={`${base}/briefings/${b.id}`}>
+                    <time>{iso}</time>
+                    <span class="ttl">
+                      {b.data.articles.length} 条
+                      {b.data.audioUrl ? " · 🎙️ 音频" : ""}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
+        </ul>
+      </article>
+    ))}
+  </section>
+</BaseLayout>
+
+<style>
+  .brf-archive-head {
+    margin: 8px 0 28px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--text);
+  }
+  .brf-archive-head h1 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin: 4px 0 6px;
+  }
+  .meta { color: var(--text-muted); margin: 0; }
+  .meta strong {
+    color: var(--text);
+    font-family: var(--font-mono);
+    font-weight: 500;
+  }
+  .cals {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+  }
+  .month-card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 18px 12px;
+    box-shadow: var(--shadow-sm);
+  }
+  .month-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+    border-top: 1px dashed var(--border);
+  }
+  .month-list li { margin: 0; }
+  .month-list a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 6px 0;
+    color: var(--text);
+    border-bottom: 1px dashed var(--border);
+    font-size: 0.86rem;
+  }
+  .month-list li:last-child a { border-bottom: 0; }
+  .month-list a:hover { color: var(--accent); }
+  .month-list time {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent);
+  }
+  .ttl { color: var(--text-muted); font-size: 0.78rem; }
+</style>

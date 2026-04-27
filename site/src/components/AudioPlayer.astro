@@ -1,0 +1,53 @@
+---
+interface Props {
+  src: string;
+  date?: string;
+  duration?: string;
+}
+const { src, date, duration } = Astro.props;
+---
+
+<div class="audio-shell">
+  <div class="meta">
+    <span class="lbl">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"></path>
+        <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+      </svg>
+      <span>音频版简报{date ? ` · ${date}` : ""}</span>
+    </span>
+    {duration && <span class="dur">{duration}</span>}
+  </div>
+  <audio controls preload="none" src={src}>
+    您的浏览器不支持 audio 元素。<a href={src}>下载音频</a>
+  </audio>
+</div>
+
+<style>
+  .audio-shell {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 14px 18px;
+    margin: 24px 0 32px;
+    box-shadow: var(--shadow-sm);
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .lbl {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dur {
+    font-family: var(--font-mono);
+    color: var(--text-dim);
+  }
+</style>

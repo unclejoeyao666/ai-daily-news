@@ -1,0 +1,116 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { TAG_LABELS, TAG_COLORS } from "../consts";
+---
+
+<BaseLayout title="关于" description="项目说明、数据来源与工作机制">
+  <article class="about prose">
+    <header class="about-head">
+      <p class="eyebrow">关于</p>
+      <h1>项目说明</h1>
+      <p class="lede">
+        为关注全球 AI 进展的中文读者，建立一套自动化的中文 AI 新闻情报系统：
+        每日抓取、智能筛选、AI 翻译、影响分析、音频播报、Discord 推送。
+      </p>
+    </header>
+
+    <h2>覆盖范围</h2>
+    <p>
+      模型发布、智能体与开发工具、AI 学术研究、融资与上市、政策与监管、
+      芯片与算力、企业与消费应用、开源生态、安全与对齐、中国 AI 动态、
+      行业整体趋势。
+    </p>
+
+    <h2>数据来源（20 个全球 RSS 源）</h2>
+    <ul>
+      <li><strong>AI 实验室一手：</strong>OpenAI / Anthropic / Google DeepMind / Meta AI / Mistral AI</li>
+      <li><strong>AI 媒体：</strong>TechCrunch AI / The Verge AI / VentureBeat AI / Wired AI / Ars Technica</li>
+      <li><strong>权威评论：</strong>MIT Technology Review</li>
+      <li><strong>商业与政策：</strong>Bloomberg Tech / Reuters Tech / Axios Tech / Semafor Tech</li>
+      <li><strong>综合科技：</strong>TechCrunch / The Verge / Hacker News / VentureBeat</li>
+    </ul>
+
+    <h2>主题分类</h2>
+    <p>所有文章会被打上 1-3 个主题标签，便于按方向浏览：</p>
+    <div class="tag-grid">
+      {Object.entries(TAG_LABELS).map(([slug, label]) => (
+        <span class="t-row" style={`--tag-color: ${TAG_COLORS[slug]}`}>
+          <span class="t-dot"></span>
+          <code>{slug}</code>
+          <span>{label}</span>
+        </span>
+      ))}
+    </div>
+
+    <h2>每日工作流</h2>
+    <ol>
+      <li>从 20 个 RSS 源抓取最新新闻（自动去重）</li>
+      <li>按"来源权威性 + 内容相关性 + 时效性"打分，选出当日 Top 10</li>
+      <li>AI 完成中文翻译 + 影响分析 + 主题打标</li>
+      <li>生成静态网页 + 8-12 分钟中文音频简报</li>
+      <li>推送到 Discord 频道</li>
+    </ol>
+
+    <h2>技术栈</h2>
+    <ul>
+      <li><strong>抓取：</strong>Python + feedparser（自动 URL 归一化去重）</li>
+      <li><strong>数据库：</strong>SQLite + FTS5 + Bloom Filter</li>
+      <li><strong>站点：</strong>Astro 6 + 静态生成</li>
+      <li><strong>搜索：</strong>Pagefind（构建期索引，零服务端）</li>
+      <li><strong>音频：</strong>Microsoft Edge TTS / MiniMax speech-2.8-hd</li>
+      <li><strong>部署：</strong>GitHub Actions → GitHub Pages</li>
+    </ul>
+
+    <h2>反馈与源码</h2>
+    <p>
+      项目代码与设计文档均开源在
+      <a href="https://github.com/unclejoeyao666/ai-daily-news">GitHub</a>。
+      欢迎通过 Issue 反馈。
+    </p>
+  </article>
+</BaseLayout>
+
+<style>
+  .about { max-width: var(--content-width); margin: 0 auto; }
+  .about-head {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--text);
+  }
+  .about-head h1 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin: 4px 0 12px;
+  }
+  .lede {
+    font-family: var(--font-serif);
+    font-size: 1.18rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .tag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px 24px;
+    margin: 12px 0 24px;
+  }
+  .t-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.92rem;
+  }
+  .t-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--tag-color);
+  }
+  .t-row code {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    background: var(--surface-tint);
+    padding: 0 6px;
+  }
+</style>

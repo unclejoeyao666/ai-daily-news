@@ -1,0 +1,25 @@
+{
+  "name": "ai-daily-news-site",
+  "type": "module",
+  "version": "2.0.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && pagefind --site dist",
+    "build:astro": "astro build",
+    "build:pagefind": "pagefind --site dist",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.2",
+    "@astrojs/rss": "^4.0.17",
+    "@astrojs/sitemap": "^3.7.1",
+    "astro": "^6.0.6"
+  },
+  "devDependencies": {
+    "pagefind": "^1.5.2"
+  }
+}

@@ -1,73 +1,68 @@
-# 🤖 AI Daily News — 每日AI科技早报
+# 🤖 AI Daily News — 每日 AI 科技早报
 
-## 项目说明
+每日全球 AI 科技自动播报系统 — 抓取 → 翻译 → 站点发布 → 音频 → Discord。
 
-Fanli 每天早上 7:00 (Europe/Berlin) 自动搜集过去 24 小时内 AI 科技领域最热新闻，精选 10 条发送到 Discord `#fanli-news-daily` 频道，同时生成详细音频播报版本。
+**站点**：[https://unclejoeyao666.github.io/ai-daily-news/](https://unclejoeyao666.github.io/ai-daily-news/)
+**架构设计**：[docs/superpowers/specs/2026-04-28-ai-daily-news-v2-design.md](docs/superpowers/specs/2026-04-28-ai-daily-news-v2-design.md)
+**每日工作流**：[workflows/DAILY_WORKFLOW.md](workflows/DAILY_WORKFLOW.md)
 
-## 覆盖主题
-
-Anthropic · OpenAI · MiniMax · Google Gemini · Meta Llama · Mistral · DeepSeek · OpenClaw · AI 科技重大更新
-
-## 目录结构
+## 项目结构
 
 ```
-ai-daily-news/
-├── README.md
-├── workflows/
-│   └── WORKFLOW_AI_NEWS.md          # 🔸 完整工作流文档（必读）
-├── knowledge/                         # 🔸 专项经验文档
-│   ├── README.md
-│   └── TTS.md                      # TTS 语音生成经验
-├── scripts/                         # 工具脚本
-│   └── (TTS 脚本位于 /Users/unclejoe/Doc_Workspace/scripts/minimax_tts.py)
-└── daily/                            # 按年份/月份分层
-    2026/
-    └── 2026-04/                     # 当前月份
-        ├── 2026-04-01.md
-        ├── 2026-04-02.md
-        ├── 2026-04-03.md
-        ├── 2026-04-04.md
-        ├── 2026-04-04_audio.mp3    # ⚠️ 已损坏（需补录）
-        ├── 2026-04-05.md
-        ├── 2026-04-05_audio_script.md
-        └── 2026-04-05_audio.mp3
-    2027/2027-01/                    # 未来占位
-    2028/2028-01/                    # 未来占位
+data/         SQLite 新闻数据库 + RSS 源 + Tag 配置
+scripts/      Python 流水线脚本（lib + 7 步主脚本 + migrate）
+site/         Astro 静态站点（含 Pagefind 全文搜索）
+daily/        每日成品文件包（briefing.md / audio_script.md / audio.mp3 / meta.json）
+.github/      GitHub Actions CI（部署到 GH Pages）
+docs/         设计文档与执行计划
+workflows/    OpenClaw 每日 runbook
+archive/v1/   v1 历史代码与数据（已停用）
 ```
 
-**每日存档路径格式：** `daily/<YYYY>/<YYYY-MM>/<YYYY-MM-DD>.md`
-示例：`daily/2026/2026-04/2026-04-05.md`
+## 覆盖范围
 
-## 每日三个文件（最终交付物）
+模型发布 · 智能体与工具 · 研究论文 · 融资上市 · 政策监管 · 芯片算力 · 企业应用 · 消费应用 · 开源生态 · 安全与对齐 · 中国 AI · 行业趋势
 
-每个工作日生成以下三个文件，缺一不可：
+数据来源：20 个全球权威 RSS 源（OpenAI / Anthropic / DeepMind / Meta AI / Mistral 一手 + TechCrunch / Verge / VentureBeat / Wired / MIT Tech Review / Bloomberg / Reuters / Hacker News 等）。
 
-| 文件 | 说明 |
-|---|---|
-| `YYYY/YYYY-MM/YYYY-MM-DD.md` | 完整新闻搜集文档（10条） |
-| `YYYY/YYYY-MM/YYYY-MM-DD_audio_script.md` | 文字简报播报脚本（朗读版） |
-| `YYYY/YYYY-MM/YYYY-MM-DD_audio.mp3` | 音频文件 |
+## 运行方式
 
-## Cron 任务
+由本地 OpenClaw 每天 06:00 (Europe/Berlin) 触发，按 `workflows/DAILY_WORKFLOW.md` 7 步流水线执行。
 
-| 任务 | Job ID | Schedule |
-|---|---|---|
-| 文字早报 | `3c687e42-5c02-4393-b4fd-93c69a58e4a6` | 每天 05:00 UTC |
-| 音频早报 | `3d981359-a949-4d42-b267-9c63b0f585a4` | 每天 05:30 UTC |
+```bash
+python3 scripts/harvest.py            # 1. RSS → DB
+python3 scripts/select_top.py         # 2. Top 10 → daily-selected.json
+# 3. (Claude 翻译/打标，写回 DB + audio_script.md)
+python3 scripts/publish_article.py --all-pending   # 4. → site/articles/
+python3 scripts/publish_briefing.py --date today   # 5. → briefings/ + daily/<date>/
+python3 scripts/render_audio.py --date today       # 6. TTS → audio.mp3
+python3 scripts/git_publish.py --date today        # 7. commit + push
+```
 
-## TTS 方案
+GitHub Actions 自动接管：Astro 构建 + Pagefind 索引 + 部署到 GitHub Pages。
 
-| | 主力（当前） | 备用 |
-|---|---|---|
-| 提供商 | Microsoft Edge TTS（免费） | MiniMax TTS（TokenPlan 额度） |
-| 音色 | `zh-CN-XiaoxiaoNeural` | `male-qn-qingse` |
+## 添加新的 RSS 源 / 标签
 
-详见 [knowledge/TTS.md](knowledge/TTS.md)
+- **RSS 源**：编辑 `data/sources.json`，下次 `harvest.py` 运行时自动 import
+- **标签**：编辑 `data/tags.json`，下次 `npm run build` 自动反映到站点
 
-## 故障排查
+## 数据库
 
-详见 [WORKFLOW_AI_NEWS.md](workflows/WORKFLOW_AI_NEWS.md#故障排查)
+```bash
+# 查看统计
+python3 -m scripts.lib.news_db data/news.db --stats
+
+# 全文搜索
+sqlite3 data/news.db "SELECT title, source_name FROM news_articles WHERE id IN \
+  (SELECT rowid FROM news_fts WHERE news_fts MATCH 'gpt OR claude') LIMIT 10;"
+```
+
+## TTS
+
+主力：Microsoft Edge TTS（`zh-CN-XiaoxiaoNeural`，免费）。
+备份：MiniMax TTS（`male-qn-qingse`）。
+合成脚本：`/Users/unclejoe/Doc_Workspace/scripts/minimax_tts.py`。
 
 ## 维护者
 
-Fanli（@fanli）| 接管自 Shell | 2026-04-05
+Fanli (@fanli) · 接管自 Shell · 2026-04-05 → v2 升级 2026-04-28

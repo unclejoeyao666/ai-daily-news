@@ -1,0 +1,79 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-28",
+  "description": "AI Daily News 行业标签分类 — 单一来源，可扩展。新增标签只需在此文件追加并 npm rebuild。",
+  "tags": [
+    {
+      "slug": "model-release",
+      "label_cn": "模型发布",
+      "color": "#1d4ed8",
+      "description": "新版/新模型：GPT、Claude、Gemini、Llama、DeepSeek、Mistral 等"
+    },
+    {
+      "slug": "agent-tools",
+      "label_cn": "智能体·工具",
+      "color": "#7c3aed",
+      "description": "Claude Code、Cursor、Devin、AutoGPT 类 agent 与开发工具"
+    },
+    {
+      "slug": "research-paper",
+      "label_cn": "论文·研究",
+      "color": "#0e7490",
+      "description": "arXiv、DeepMind、AI 学术突破、新算法"
+    },
+    {
+      "slug": "funding-ipo",
+      "label_cn": "融资·上市",
+      "color": "#15803d",
+      "description": "OpenAI / xAI / Anthropic 等 AI 公司融资、估值、IPO"
+    },
+    {
+      "slug": "policy-regulation",
+      "label_cn": "政策·监管",
+      "color": "#1e293b",
+      "description": "EU AI Act、白宫行政令、版权诉讼、AI 法规"
+    },
+    {
+      "slug": "chips-infra",
+      "label_cn": "芯片·算力",
+      "color": "#b45309",
+      "description": "Nvidia、TSMC、数据中心、AI 训练硬件"
+    },
+    {
+      "slug": "enterprise-app",
+      "label_cn": "企业应用",
+      "color": "#52525b",
+      "description": "企业级 AI 落地、SaaS 集成、生产力工具"
+    },
+    {
+      "slug": "consumer-app",
+      "label_cn": "消费应用",
+      "color": "#be185d",
+      "description": "ChatGPT、Gemini App、Copilot 等终端用户产品"
+    },
+    {
+      "slug": "open-source",
+      "label_cn": "开源生态",
+      "color": "#0f766e",
+      "description": "HuggingFace、Llama、Mistral、开源模型与工具链"
+    },
+    {
+      "slug": "safety-alignment",
+      "label_cn": "安全·对齐",
+      "color": "#b91c1c",
+      "description": "越狱、幻觉、对齐、红队、AI 风险与安全"
+    },
+    {
+      "slug": "china-ai",
+      "label_cn": "中国 AI",
+      "color": "#c2410c",
+      "description": "MiniMax、智谱、月之暗面、DeepSeek、阿里通义等中国 AI"
+    },
+    {
+      "slug": "industry-trend",
+      "label_cn": "行业趋势",
+      "color": "#7e22ce",
+      "description": "综合分析、市场动态、AI 公司并购、人事变动"
+    }
+  ]
+}

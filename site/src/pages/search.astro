@@ -1,0 +1,132 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout
+  title="搜索"
+  description="跨所有简报与文章的全文搜索 — 关键词、来源、标签"
+>
+  <header class="search-head">
+    <p class="eyebrow">搜索</p>
+    <h1>全站全文搜索</h1>
+    <p class="meta">
+      索引包含所有翻译过的文章（标题、原标题、正文、影响分析、来源、标签）。
+    </p>
+  </header>
+
+  <div id="search" class="pagefind-search-mount"></div>
+
+  <noscript>
+    <p class="no-js">搜索功能需要 JavaScript。</p>
+  </noscript>
+
+  <link rel="stylesheet" href={`${base}/pagefind/pagefind-ui.css`} />
+  <script is:inline define:vars={{ baseHref: base }}>
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = src;
+        s.onload = resolve;
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+    loadScript(baseHref + "/pagefind/pagefind-ui.js").then(() => {
+      // eslint-disable-next-line no-undef
+      new PagefindUI({
+        element: "#search",
+        showImages: false,
+        showSubResults: true,
+        translations: {
+          placeholder: "搜索关键词、标签、来源…",
+          clear_search: "清除",
+          load_more: "加载更多",
+          search_label: "搜索",
+          filters_label: "筛选",
+          zero_results: "未找到与「[SEARCH_TERM]」相关的内容。",
+          many_results: "[COUNT] 条结果，关键词「[SEARCH_TERM]」",
+          one_result: "1 条结果，关键词「[SEARCH_TERM]」",
+          alt_search:
+            "未找到与「[SEARCH_TERM]」相关的内容，下方为「[DIFFERENT_TERM]」的结果",
+          search_suggestion:
+            "未找到与「[SEARCH_TERM]」相关的内容，请尝试以下关键词：",
+          searching: "搜索中…",
+        },
+      });
+    }).catch(() => {
+      const el = document.getElementById("search");
+      if (el) {
+        el.innerHTML =
+          '<p class="search-fail">搜索索引尚未生成。请在站点完整构建后重新访问此页面。</p>';
+      }
+    });
+  </script>
+</BaseLayout>
+
+<style is:global>
+  .pagefind-ui {
+    --pagefind-ui-scale: 0.95;
+    --pagefind-ui-primary: var(--accent);
+    --pagefind-ui-text: var(--text);
+    --pagefind-ui-background: var(--bg-elevated);
+    --pagefind-ui-border: var(--border);
+    --pagefind-ui-tag: var(--surface-tint);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 6px;
+    --pagefind-ui-image-border-radius: 6px;
+    --pagefind-ui-image-box-ratio: 3 / 2;
+    --pagefind-ui-font: var(--font-sans);
+  }
+  .pagefind-ui__form { margin-bottom: 16px; }
+  .pagefind-ui__search-input {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    background: var(--bg-elevated);
+    color: var(--text);
+  }
+  .pagefind-ui__search-input::placeholder { color: var(--text-dim); }
+  .pagefind-ui__results-area { color: var(--text); }
+  .pagefind-ui__result-title a {
+    font-family: var(--font-serif);
+    color: var(--text);
+  }
+  .pagefind-ui__result-title a:hover { color: var(--accent); }
+  .pagefind-ui__result-tags { color: var(--text-muted); }
+  mark {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 0 2px;
+    border-radius: 2px;
+  }
+  .search-fail {
+    color: var(--text-muted);
+    padding: 24px;
+    background: var(--surface-tint);
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+</style>
+
+<style>
+  .search-head {
+    margin: 8px 0 28px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--text);
+  }
+  .search-head h1 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin: 4px 0 6px;
+  }
+  .meta { color: var(--text-muted); margin: 0; }
+  .pagefind-search-mount { min-height: 80px; }
+  .no-js {
+    color: var(--text-muted);
+    background: var(--surface-tint);
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+  }
+</style>

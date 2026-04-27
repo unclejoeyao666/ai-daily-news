@@ -1,0 +1,55 @@
+---
+import { TAG_LABELS, TAG_COLORS } from "../consts";
+
+interface Props {
+  slug: string;
+  size?: "sm" | "md";
+}
+const { slug, size = "sm" } = Astro.props;
+const label = TAG_LABELS[slug] ?? slug;
+const color = TAG_COLORS[slug] ?? "#7f8c8d";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<a
+  href={`${base}/tags/${slug}`}
+  class={`tag tag-${size}`}
+  style={`--tag-color: ${color}`}
+>
+  <span class="dot"></span>
+  {label}
+</a>
+
+<style>
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-family: var(--font-sans);
+    line-height: 1.4;
+    color: var(--tag-color);
+    background: color-mix(in srgb, var(--tag-color) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tag-color) 25%, transparent);
+    text-decoration: none;
+    margin: 0 4px 4px 0;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+    border-bottom: 1px solid color-mix(in srgb, var(--tag-color) 25%, transparent);
+  }
+  .tag-md { padding: 5px 14px; font-size: 0.82rem; }
+  .tag:hover {
+    background: color-mix(in srgb, var(--tag-color) 18%, transparent);
+    border-color: var(--tag-color);
+    color: var(--tag-color);
+  }
+  .tag .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--tag-color);
+    flex-shrink: 0;
+  }
+</style>

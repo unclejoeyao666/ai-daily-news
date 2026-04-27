@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const articles = (await getCollection("articles"))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const byMonth = new Map<string, typeof articles>();
+for (const a of articles) {
+  const key = a.data.pubDate.toISOString().slice(0, 7);
+  if (!byMonth.has(key)) byMonth.set(key, []);
+  byMonth.get(key)!.push(a);
+}
+const months = Array.from(byMonth.entries()).sort((a, b) => b[0].localeCompare(a[0]));
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout title="归档" description="按月份浏览所有文章">
+  <header class="arch-head">
+    <p class="eyebrow">归档</p>
+    <h1>所有文章</h1>
+    <p class="meta">共 {articles.length} 篇 · 跨 {months.length} 个月份</p>
+  </header>
+  {months.length === 0 ? (
+    <p class="empty">暂无文章。首期内容生成后将出现在这里。</p>
+  ) : (
+    months.map(([month, posts]) => (
+      <section class="month">
+        <h2>{month}</h2>
+        <ul>
+          {posts.map((a) => (
+            <li>
+              <span class="d">{a.data.pubDate.toISOString().slice(8, 10)}</span>
+              <a href={`${base}/articles/${a.id}`}>{a.data.title}</a>
+              <span class="src">{a.data.sourceName}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  )}
+</BaseLayout>
+
+<style>
+  .arch-head {
+    margin: 8px 0 36px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--text);
+  }
+  .arch-head h1 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin: 4px 0 6px;
+  }
+  .meta { color: var(--text-muted); margin: 0; }
+  .empty { color: var(--text-muted); padding: 40px 0; text-align: center; }
+
+  .month { margin-bottom: 36px; }
+  .month h2 {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 6px;
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+  ul { list-style: none; padding: 0; margin: 0; }
+  li {
+    display: flex;
+    gap: 12px;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border);
+  }
+  li:last-child { border-bottom: none; }
+  .d {
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.85rem;
+    min-width: 26px;
+    font-weight: 500;
+  }
+  li > a {
+    flex: 1;
+    color: var(--text);
+    border-bottom: 0;
+    background-image: linear-gradient(var(--accent), var(--accent));
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 0.2s ease;
+  }
+  li > a:hover {
+    color: var(--accent);
+    background-size: 100% 1px;
+  }
+  .src { color: var(--text-dim); font-size: 0.82rem; flex-shrink: 0; }
+</style>

@@ -1,0 +1,72 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+import { TAG_LABELS, TAG_COLORS, TAG_SLUGS } from "../../consts";
+
+export async function getStaticPaths() {
+  const all = await getCollection("articles");
+  return TAG_SLUGS.map((tag) => {
+    const posts = all
+      .filter((a) => (a.data.tags as string[]).includes(tag))
+      .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+    return {
+      params: { tag },
+      props: { tag, posts, label: TAG_LABELS[tag] ?? tag, color: TAG_COLORS[tag] ?? "#7f8c8d" },
+    };
+  });
+}
+
+const { tag, posts, label, color } = Astro.props;
+---
+
+<BaseLayout title={`标签：${label}`} description={`所有标记为「${label}」的文章`}>
+  <header class="tag-head" style={`--tag-color: ${color}`}>
+    <p class="eyebrow">主题分类</p>
+    <h1>
+      <span class="dot"></span>
+      {label}
+    </h1>
+    <p class="tag-meta">{posts.length} 篇文章</p>
+  </header>
+  {posts.length === 0 ? (
+    <p class="empty">暂无文章。</p>
+  ) : (
+    <div class="cards">
+      {posts.map((a: any) => <ArticleCard article={a} variant="default" />)}
+    </div>
+  )}
+</BaseLayout>
+
+<style>
+  .tag-head {
+    margin: 8px 0 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--tag-color);
+  }
+  .tag-head h1 {
+    font-family: var(--font-serif);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 2rem;
+    margin: 4px 0 6px;
+  }
+  .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--tag-color);
+    display: inline-block;
+  }
+  .tag-meta {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  .empty {
+    color: var(--text-muted);
+    padding: 40px 0;
+    text-align: center;
+  }
+</style>

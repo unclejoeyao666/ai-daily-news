@@ -1,0 +1,81 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import Sidebar from "../components/Sidebar.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogType?: "website" | "article";
+  highlightDate?: string;
+  fullWidth?: boolean;
+}
+const {
+  title,
+  description,
+  ogType = "website",
+  highlightDate,
+  fullWidth = false,
+} = Astro.props;
+
+const pageTitle = title ? `${title} · ${SITE_TITLE}` : SITE_TITLE;
+const pageDescription = description ?? SITE_DESCRIPTION;
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const baseHref = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={SITE_TITLE}
+      href={`${baseHref}/rss.xml`}
+    />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta name="theme-color" content="#1d4ed8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      (function () {
+        const t = localStorage.getItem("theme");
+        if (t === "dark" || t === "light") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <SiteHeader />
+    <div class="app-shell">
+      {fullWidth ? (
+        <main>
+          <slot />
+        </main>
+      ) : (
+        <div class="app-grid">
+          <Sidebar highlightDate={highlightDate} />
+          <main>
+            <slot />
+          </main>
+        </div>
+      )}
+    </div>
+    <SiteFooter />
+  </body>
+</html>

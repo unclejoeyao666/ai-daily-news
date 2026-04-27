@@ -1,0 +1,264 @@
+/* ─────────────────────────────────────────────────────────
+   AI Daily News — design tokens
+   Editorial aesthetic: cool slate + signature electric blue.
+   Inspired by NYT / Verge / arXiv hybrids.
+   ───────────────────────────────────────────────────────── */
+
+:root {
+  /* Cool off-white background */
+  --bg: #f7f8fa;
+  --bg-soft: #eef0f5;
+  --bg-elevated: #ffffff;
+  --surface-tint: #e9ecf2;
+
+  /* Editorial dark text, never pure black */
+  --text: #131720;
+  --text-muted: #4f5562;
+  --text-dim: #7a8090;
+
+  /* Hairline editorial borders */
+  --border: #dfe2ea;
+  --border-strong: #b8bcc8;
+
+  /* Signature electric blue accent */
+  --accent: #1d4ed8;
+  --accent-hover: #1839a8;
+  --accent-soft: #dbe6ff;
+
+  /* Subtle gold for highlights */
+  --gold: #b88a1a;
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.08);
+
+  --radius: 4px;
+  --radius-lg: 12px;
+
+  /* Typography */
+  --font-serif: "Noto Serif SC", "Source Serif Pro", "Charter", "Georgia",
+    "Times New Roman", serif;
+  --font-sans: "Inter", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Layout */
+  --max-width: 1280px;
+  --content-width: 720px;
+  --sidebar-width: 280px;
+  --gutter: 56px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c0e14;
+    --bg-soft: #131724;
+    --bg-elevated: #1a1f30;
+    --surface-tint: #1f2535;
+
+    --text: #e6e9f1;
+    --text-muted: #98a0b3;
+    --text-dim: #66708a;
+
+    --border: #232a3c;
+    --border-strong: #344058;
+
+    --accent: #6ea1ff;
+    --accent-hover: #8fb6ff;
+    --accent-soft: #1c2a4a;
+
+    --gold: #d6a64a;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0c0e14;
+  --bg-soft: #131724;
+  --bg-elevated: #1a1f30;
+  --surface-tint: #1f2535;
+  --text: #e6e9f1;
+  --text-muted: #98a0b3;
+  --text-dim: #66708a;
+  --border: #232a3c;
+  --border-strong: #344058;
+  --accent: #6ea1ff;
+  --accent-hover: #8fb6ff;
+  --accent-soft: #1c2a4a;
+  --gold: #d6a64a;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ───── Base ───── */
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern", "liga", "calt";
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  margin: 1.6em 0 0.5em;
+  color: var(--text);
+}
+h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+h2 {
+  font-size: 1.45rem;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid var(--border);
+}
+h3 { font-size: 1.2rem; }
+h4 { font-size: 1.05rem; }
+
+p { margin: 0 0 1.1em; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+a:hover { color: var(--accent-hover); border-bottom-color: currentColor; }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2.4em 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.4em 1.2em;
+  margin: 1.5em 0;
+  color: var(--text-muted);
+  background: var(--surface-tint);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: normal;
+}
+blockquote p:last-child { margin-bottom: 0; }
+
+code {
+  font-family: var(--font-mono);
+  background: var(--surface-tint);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+
+ul, ol { padding-left: 1.4em; margin: 0.6em 0 1.2em; }
+li { margin: 0.3em 0; }
+
+img, audio, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+audio { width: 100%; height: 38px; }
+
+/* ───── Layout ───── */
+
+.app-shell {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: var(--gutter);
+  padding: 32px 0 80px;
+  align-items: start;
+}
+
+.app-grid > .sidebar { position: sticky; top: 24px; }
+.app-grid > main { min-width: 0; }
+
+@media (max-width: 960px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 16px 0 60px;
+  }
+  .app-grid > .sidebar {
+    position: static;
+    order: 2;
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-shell { padding: 0 18px; }
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.3rem; }
+}
+
+/* ───── Editorial reading typography ───── */
+
+.prose {
+  font-family: var(--font-serif);
+  font-size: 1.06rem;
+  line-height: 1.85;
+  color: var(--text);
+}
+.prose h2 {
+  font-size: 1.4rem;
+  margin-top: 2.2em;
+}
+.prose h3 { margin-top: 2em; }
+.prose p { margin: 0 0 1.1em; }
+.prose blockquote { font-size: 0.98em; }
+.prose ul, .prose ol { margin: 0.8em 0 1.4em; }
+.prose strong { font-weight: 700; }
+
+/* ───── Utility ───── */
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 28px 0;
+  border: 0;
+}
+
+.muted { color: var(--text-muted); }
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}

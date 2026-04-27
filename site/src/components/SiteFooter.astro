@@ -1,0 +1,64 @@
+---
+const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<footer class="site-footer">
+  <div class="app-shell">
+    <div class="ftr-grid">
+      <div>
+        <p class="brand-line">AI 科技每日早报 · AI Daily News</p>
+        <p class="muted">每日 06:00 (Europe/Berlin) 自动更新 · 20 个全球 AI 与科技源</p>
+      </div>
+      <div class="links">
+        <a href={`${base}/about`}>关于</a>
+        <a href={`${base}/briefings`}>简报库</a>
+        <a href={`${base}/archive`}>归档</a>
+        <a href={`${base}/rss.xml`}>RSS</a>
+        <a href="https://github.com/unclejoeyao666/ai-daily-news">GitHub</a>
+      </div>
+    </div>
+    <p class="copy">© {year} · Built with Astro · 中文 AI 自动翻译</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 80px;
+    padding: 48px 0 36px;
+    background: var(--bg-soft);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+  .ftr-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .brand-line {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--text);
+    margin: 0 0 4px;
+  }
+  .links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    align-self: start;
+  }
+  .links a { color: var(--text-muted); border-bottom: 0; }
+  .links a:hover { color: var(--accent); }
+  .copy {
+    margin: 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.8rem;
+  }
+  p { margin: 0.2em 0; }
+</style>

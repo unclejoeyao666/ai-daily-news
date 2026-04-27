@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  briefings: CollectionEntry<"briefings">[];
+  limit?: number;
+  highlight?: string;
+}
+const { briefings, limit = 7, highlight } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const items = briefings.slice(0, limit);
+const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+---
+
+<ul class="briefings">
+  {items.map((b) => {
+    const iso = b.data.date.toISOString().slice(0, 10);
+    const w = weekdays[b.data.date.getUTCDay()];
+    const isNow = highlight === iso;
+    return (
+      <li class={isNow ? "row now" : "row"}>
+        <a href={`${base}/briefings/${b.id}`}>
+          <span class="date">{iso}</span>
+          <span class="weekday">星期{w}</span>
+          {b.data.audioUrl && <span class="aud" title="音频已生成">●</span>}
+        </a>
+      </li>
+    );
+  })}
+</ul>
+
+<style>
+  .briefings { list-style: none; padding: 0; margin: 0; }
+  .row { border-bottom: 1px dashed var(--border); margin: 0; }
+  .row:last-child { border-bottom: none; }
+  .row a {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 8px 0;
+    color: var(--text);
+    border-bottom: 0;
+    font-size: 0.9rem;
+  }
+  .row a:hover { color: var(--accent); border-bottom: 0; }
+  .row.now a { color: var(--accent); font-weight: 600; }
+  .date { font-family: var(--font-mono); font-size: 0.86rem; }
+  .weekday {
+    color: var(--text-dim);
+    font-size: 0.78rem;
+    margin-left: auto;
+  }
+  .aud { color: var(--gold); font-size: 0.7rem; margin-left: 4px; }
+</style>

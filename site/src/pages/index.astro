@@ -1,0 +1,151 @@
+---
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import AudioPlayer from "../components/AudioPlayer.astro";
+
+const articles = (await getCollection("articles"))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+
+const briefings = (await getCollection("briefings"))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const latest = briefings[0];
+let latestArticles: CollectionEntry<"articles">[] = [];
+if (latest) {
+  const fetched = await Promise.all(
+    latest.data.articles.map((slug: string) =>
+      getEntry("articles", slug).catch(() => null),
+    ),
+  );
+  latestArticles = fetched.filter(
+    (a) => a !== null && a !== undefined,
+  ) as CollectionEntry<"articles">[];
+}
+
+const latestDate = latest?.data.date.toISOString().slice(0, 10);
+const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+const weekday = latest ? weekdays[latest.data.date.getUTCDay()] : "";
+
+const recent = articles.slice(0, 8);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout highlightDate={latestDate}>
+  {latest && (
+    <section class="hero">
+      <p class="eyebrow">本期简报 · {latestDate} · 星期{weekday}</p>
+      <h1 class="hero-title">{latest.data.title.replace(/^AI 科技每日早报\s*—\s*/, "")}</h1>
+      <p class="hero-sub">
+        共 {latestArticles.length} 条精选 · 涵盖 {Array.from(
+          new Set(latestArticles.flatMap((a) => a.data.tags as string[]))
+        ).length} 个主题
+      </p>
+      {latest.data.audioUrl && (
+        <AudioPlayer src={latest.data.audioUrl} date={latestDate} />
+      )}
+      <p>
+        <a class="cta" href={`${base}/briefings/${latest.id}`}>查看完整简报 →</a>
+      </p>
+    </section>
+  )}
+
+  {!latest && (
+    <section class="hero">
+      <p class="eyebrow">系统就绪</p>
+      <h1 class="hero-title">AI 科技每日早报</h1>
+      <p class="hero-sub">
+        每日全球 AI 与科技动态，自动中文翻译 + 影响分析。
+        首期简报将于明日早晨上线。
+      </p>
+    </section>
+  )}
+
+  {latestArticles.length > 0 && (
+    <section class="section">
+      <div class="section-head">
+        <h2>本期精选</h2>
+        <a class="see-all" href={`${base}/briefings/${latest!.id}`}>全部 {latestArticles.length} 条</a>
+      </div>
+      <div class="lead-grid">
+        {latestArticles[0] && (
+          <ArticleCard article={latestArticles[0]} index={1} variant="lead" />
+        )}
+        <div class="rest">
+          {latestArticles.slice(1, 5).map((a, i) => (
+            <ArticleCard article={a} index={i + 2} variant="default" />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {recent.length > 0 && (
+    <section class="section">
+      <div class="section-head">
+        <h2>最新文章</h2>
+        <a class="see-all" href={`${base}/archive`}>归档 →</a>
+      </div>
+      <div class="cards">
+        {recent.map((a) => <ArticleCard article={a} variant="default" />)}
+      </div>
+    </section>
+  )}
+</BaseLayout>
+
+<style>
+  .hero {
+    margin: 8px 0 32px;
+    padding: 0 0 28px;
+    border-bottom: 2px solid var(--text);
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 8px 0 10px;
+    font-weight: 700;
+  }
+  .hero-sub {
+    color: var(--text-muted);
+    margin: 0 0 16px;
+    font-size: 0.95rem;
+  }
+  .cta {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent-soft);
+    padding-bottom: 1px;
+  }
+  .cta:hover { border-bottom-color: var(--accent); }
+
+  .section { margin: 36px 0; }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-head h2 {
+    margin: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    font-size: 1.3rem;
+  }
+  .see-all {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-bottom: 0;
+  }
+  .see-all:hover { color: var(--accent); }
+
+  .lead-grid { display: grid; gap: 12px; }
+  @media (max-width: 600px) {
+    .hero-title { font-size: 1.8rem; }
+  }
+</style>

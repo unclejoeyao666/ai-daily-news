@@ -1,0 +1,44 @@
+---
+import { type CollectionEntry, getCollection, getEntry, render } from "astro:content";
+import BriefingLayout from "../../layouts/BriefingLayout.astro";
+import ArticleCard from "../../components/ArticleCard.astro";
+
+export async function getStaticPaths() {
+  const all = await getCollection("briefings");
+  return all.map((b) => ({ params: { slug: b.id }, props: b }));
+}
+
+type Props = CollectionEntry<"briefings">;
+const briefing = Astro.props;
+const { Content } = await render(briefing);
+
+const articles = (
+  await Promise.all(
+    briefing.data.articles.map((slug: string) =>
+      getEntry("articles", slug).catch(() => null),
+    ),
+  )
+).filter((a) => a !== null && a !== undefined) as CollectionEntry<"articles">[];
+---
+
+<BriefingLayout
+  title={briefing.data.title}
+  date={briefing.data.date}
+  audioUrl={briefing.data.audioUrl}
+>
+  <div class="brf-intro prose">
+    <Content />
+  </div>
+  <div class="brf-cards">
+    {articles.map((a, i) => <ArticleCard article={a} index={i + 1} variant="default" />)}
+  </div>
+</BriefingLayout>
+
+<style>
+  .brf-intro:not(:empty) {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .brf-cards { margin-top: 16px; }
+</style>

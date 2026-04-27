@@ -1,0 +1,190 @@
+---
+import { getCollection } from "astro:content";
+import { TAG_LABELS, TAG_COLORS, TAG_SLUGS } from "../consts";
+import CalendarMonth from "./CalendarMonth.astro";
+import BriefingsList from "./BriefingsList.astro";
+
+interface Props {
+  highlightDate?: string;
+}
+const { highlightDate } = Astro.props;
+
+const articles = await getCollection("articles");
+const briefings = (await getCollection("briefings"))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const tagCounts = new Map<string, number>();
+for (const tag of TAG_SLUGS) tagCounts.set(tag, 0);
+for (const a of articles) {
+  for (const t of a.data.tags as string[]) {
+    tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+  }
+}
+const tags = TAG_SLUGS.map((slug) => ({
+  slug,
+  label: TAG_LABELS[slug] ?? slug,
+  color: TAG_COLORS[slug] ?? "#7f8c8d",
+  count: tagCounts.get(slug) ?? 0,
+})).sort((a, b) => b.count - a.count);
+
+const briefingDates = new Set(
+  briefings.map((b) => b.data.date.toISOString().slice(0, 10)),
+);
+const focusDate = highlightDate
+  ? new Date(highlightDate + "T00:00:00Z")
+  : briefings[0]?.data.date ?? new Date();
+const calYear = focusDate.getUTCFullYear();
+const calMonth = focusDate.getUTCMonth() + 1;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<aside class="sidebar">
+  <a class="search-trigger" href={`${base}/search`}>
+    <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+      <path
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Zm10 2-4.35-4.35"
+      ></path>
+    </svg>
+    <span>搜索全部新闻…</span>
+    <kbd>/</kbd>
+  </a>
+
+  <section class="block">
+    <div class="block-title">
+      <span class="eyebrow">日历</span>
+      <a class="block-link" href={`${base}/briefings`}>查看全部 →</a>
+    </div>
+    <CalendarMonth
+      year={calYear}
+      month={calMonth}
+      briefingDates={briefingDates}
+      highlight={highlightDate}
+    />
+  </section>
+
+  {briefings.length > 0 && (
+    <section class="block">
+      <div class="block-title">
+        <span class="eyebrow">近期简报</span>
+      </div>
+      <BriefingsList briefings={briefings} limit={7} highlight={highlightDate} />
+    </section>
+  )}
+
+  <section class="block">
+    <div class="block-title">
+      <span class="eyebrow">主题分类</span>
+    </div>
+    <ul class="tag-list">
+      {tags.map((t) => (
+        <li>
+          <a href={`${base}/tags/${t.slug}`} style={`--tag-color: ${t.color}`}>
+            <span class="dot"></span>
+            <span class="lbl">{t.label}</span>
+            <span class="num">{t.count}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="block footer-mini">
+    <p>
+      <a href={`${base}/rss.xml`}>RSS</a> ·
+      <a href={`${base}/about`}>关于</a> ·
+      <a href="https://github.com/unclejoeyao666/ai-daily-news">源码</a>
+    </p>
+  </section>
+</aside>
+
+<style>
+  .sidebar { font-family: var(--font-sans); font-size: 0.9rem; }
+  .block { margin-bottom: 28px; }
+  .block-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .block-link {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border-bottom: 0;
+  }
+  .block-link:hover { color: var(--accent); }
+
+  .search-trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-bottom: 24px;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .search-trigger:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    border-bottom: 1px solid var(--accent);
+  }
+  .search-trigger svg { flex-shrink: 0; }
+  .search-trigger span { flex: 1; }
+  .search-trigger kbd {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    background: var(--surface-tint);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--text-dim);
+  }
+
+  .tag-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .tag-list li { margin: 0; }
+  .tag-list a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    color: var(--text);
+    font-size: 0.88rem;
+    border-bottom: 0;
+  }
+  .tag-list a:hover { color: var(--accent); border-bottom: 0; }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--tag-color, var(--text-dim));
+    flex-shrink: 0;
+  }
+  .lbl { flex: 1; }
+  .num {
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+  }
+
+  .footer-mini { color: var(--text-dim); font-size: 0.78rem; }
+  .footer-mini p { margin: 0; }
+  .footer-mini a { color: var(--text-muted); border-bottom: 0; }
+  .footer-mini a:hover { color: var(--accent); }
+</style>

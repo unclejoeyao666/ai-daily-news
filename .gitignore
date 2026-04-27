@@ -1,20 +1,39 @@
-# 系统文件
+# System files
 .DS_Store
 Thumbs.db
 ._*
 
-# 音频文件
-*.mp3
-*.wav
-*.aac
-*.flac
-*.ogg
-*.m4a
-
-# 临时文件
+# Logs / temp / drafts
 *.log
 *.tmp
 *.draft
 *.bak
 *.swp
 *~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.pytest_cache/
+.mypy_cache/
+
+# SQLite WAL files (transient — main news.db IS tracked)
+data/news.db-shm
+data/news.db-wal
+
+# Astro / Node
+site/node_modules/
+site/dist/
+site/.astro/
+site/.pagefind/
+
+# Pipeline intermediate state (regenerated daily)
+daily-selected.json
+
+# v1 archive: keep .md tracked, ignore the heavy .mp3 / .wav files
+archive/v1/**/*.mp3
+archive/v1/**/*.wav
+archive/v1/**/*.aac
+archive/v1/**/*.m4a

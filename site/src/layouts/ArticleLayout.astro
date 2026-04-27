@@ -1,0 +1,120 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import TagBadge from "../components/TagBadge.astro";
+
+interface Props {
+  title: string;
+  titleOriginal: string;
+  description: string;
+  pubDate: Date;
+  sourceName: string;
+  sourceUrl: string;
+  sourceLang: "de" | "en" | "zh";
+  tags: string[];
+  heroImage?: string;
+}
+const props = Astro.props;
+const dateStr = props.pubDate.toISOString().slice(0, 10);
+const langLabel = { de: "德语原文", en: "英语原文", zh: "中文原创" }[props.sourceLang];
+---
+
+<BaseLayout
+  title={props.title}
+  description={props.description}
+  ogType="article"
+  highlightDate={dateStr}
+>
+  <article class="article" data-pagefind-body>
+    <header class="art-head">
+      <div class="art-tags">
+        {props.tags.map((t) => <TagBadge slug={t} />)}
+      </div>
+      <h1 data-pagefind-meta="title">{props.title}</h1>
+      <p class="art-orig" data-pagefind-meta="title_original">{props.titleOriginal}</p>
+      <div class="art-meta">
+        <span><span class="m-lbl">来源</span> {props.sourceName}</span>
+        <span><span class="m-lbl">日期</span> <time>{dateStr}</time></span>
+        <span><span class="m-lbl">{langLabel}</span></span>
+      </div>
+      <p class="art-lede">{props.description}</p>
+    </header>
+    <div class="prose">
+      <slot />
+    </div>
+    <footer class="art-foot">
+      <a class="back" href={`${import.meta.env.BASE_URL.replace(/\/$/, "")}/`}>
+        ← 返回首页
+      </a>
+      <a class="ext" href={props.sourceUrl} target="_blank" rel="noopener noreferrer">
+        访问原文 ↗
+      </a>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .article {
+    max-width: var(--content-width);
+    margin: 0 auto;
+  }
+  .art-head { margin: 12px 0 32px; }
+  .art-tags { margin-bottom: 14px; }
+  .article h1 {
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+  }
+  .art-orig {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 0 0 18px;
+  }
+  .art-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding: 12px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .m-lbl {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    margin-right: 4px;
+  }
+  time { font-family: var(--font-mono); }
+  .art-lede {
+    font-family: var(--font-serif);
+    font-size: 1.18rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin: 24px 0 0;
+    font-weight: 500;
+  }
+  .art-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .back, .ext { color: var(--text-muted); border-bottom: 0; }
+  .back:hover, .ext:hover { color: var(--accent); }
+  @media (max-width: 600px) {
+    .article h1 { font-size: 1.8rem; }
+    .art-lede { font-size: 1.05rem; }
+  }
+</style>
