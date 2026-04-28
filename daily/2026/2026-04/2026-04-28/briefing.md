@@ -2,35 +2,35 @@
 
 🎧 [今日音频](https://unclejoeyao666.github.io/ai-daily-news/audio/2026-04-28.mp3) · 🌐 [完整网页](https://unclejoeyao666.github.io/ai-daily-news)
 
-## 1. [Google DeepMind 宣布与韩国战略合作，加速 AI 驱动的科学突破](https://unclejoeyao666.github.io/ai-daily-news/articles/announcing-our-partnership-with-the-republic-of-k-2026-04-27)
-DeepMind 与韩国政府正式签署合作协议，将前沿 AI 模型用于材料科学、生物医学和气候研究等领域，韩国成为其首批战略国家级合作伙伴之一。
+## 1. [谷歌Gemini在国际大学生编程竞赛世界总决赛中达到金牌水平](https://unclejoeyao666.github.io/ai-daily-news/articles/gemini-icpc-gold-medal)
+Gemini 2.5深度思考模型在全球最具权威的大学生编程竞赛中取得突破性成绩，展示了抽象问题解决能力的重大飞跃。该模型在半小时内解决了全场没有任何一支大学队伍解决的最难题。
 
-## 2. [OpenAI 据传开发 AI 手机：智能体将取代传统应用](https://unclejoeyao666.github.io/ai-daily-news/articles/openai-could-be-making-a-phone-with-ai-agents-rep-2026-04-27)
-供应链分析师郭明錤透露，OpenAI 正与联发科、高通、立讯精密合作开发一款主打 AI 智能体的手机，目标是用 agent 完全取代传统 App 的交互模式。
+## 2. [谷歌DeepMind深化与英国AI安全研究院的合作](https://unclejoeyao666.github.io/ai-daily-news/articles/deepmind-uk-aisi-partnership)
+谷歌DeepMind与英国AI安全研究院签署新的合作备忘录，聚焦基础安全研究、AI评估技术、AI推理过程监测，以及社会影响研究等领域，旨在推动AI安全发展。
 
-## 3. [DeepMind 元老 David Silver 11 亿美元创办新公司，押注「无需人类数据」AI](https://unclejoeyao666.github.io/ai-daily-news/articles/deepminds-david-silver-just-raised-11b-to-build-a-2026-04-27)
-AlphaGo 与 AlphaZero 的核心架构师 David Silver 离开 DeepMind 创办 Ineffable Intelligence，仅几个月就以 51 亿美元估值完成 11 亿美元融资，目标是构建从零自学习的 AI。
+## 3. [谷歌推出Nano Banana Pro：全新Gemini 3专业图像生成模型](https://unclejoeyao666.github.io/ai-daily-news/articles/gemini-3-pro-image-model)
+谷歌发布Gemini 3专业图像模型，可生成高保真图像，具备精准的文字渲染能力，并可通过谷歌搜索进行知识检索与实时内容对齐，在多项图像生成基准测试中领先同类竞品。
 
-## 4. [OpenAI 与微软达成 500 亿亚马逊交易，结束法律纠纷](https://unclejoeyao666.github.io/ai-daily-news/articles/openai-ends-microsoft-legal-peril-over-its-50b-am-2026-04-27)
-OpenAI 从最大股东微软手中获得重大让步：可在 AWS 上销售产品，对应交换微软获得更高比例的收入分成。这意味着 OpenAI 的云分发不再受限于 Azure。
+## 4. [谷歌DeepMind在新加坡设立新研究实验室，押注亚太AI发展](https://unclejoeyao666.github.io/ai-daily-news/articles/deepmind-singapore-lab)
+谷歌DeepMind宣布在新加坡设立新的研究实验室，汇聚顶尖研究科学家和工程师，专注推进亚太地区的语言文化包容性研究及Gemini核心能力开发，深化与政府、企业和学术界的合作。
 
-## 5. [DeepMind 发布 SIMA 2：能在 3D 虚拟世界中思考和学习的 Gemini 智能体](https://unclejoeyao666.github.io/ai-daily-news/articles/sima-2-an-agent-that-plays-reasons-and-learns-wit-2025-11-13)
-SIMA 2 是 DeepMind 第二代具身智能体，由 Gemini 驱动，可以在《Minecraft》《GTA V》等多种 3D 交互环境中理解指令、规划、推理并采取行动。
+## 5. [Gemini 2.5 Pro预览版提前发布：编码性能显著提升](https://unclejoeyao666.github.io/ai-daily-news/articles/gemini-25-pro-coding)
+由于开发者反馈强烈，谷歌提前两周发布Gemini 2.5 Pro更新版本，重点提升了编程能力，降低了函数调用错误率，并改善了触发准确率，现已可通过谷歌AI Studio和Vertex AI使用。
 
-## 6. [Gemini Robotics 1.5：将 AI 智能体带入物理世界](https://unclejoeyao666.github.io/ai-daily-news/articles/gemini-robotics-15-brings-ai-agents-into-the-phys-2025-10-23)
-DeepMind 发布 Gemini Robotics 1.5，实现机器人感知、规划、思考、使用工具与行动的全链路一体化模型，迈向通用具身智能体的关键一步。
+## 6. [AI主屏应用Skye未发先火：iPhone迎来智能桌面时代](https://unclejoeyao666.github.io/ai-daily-news/articles/skye-ai-iphone-home-screen)
+Signull Labs开发的Skye应用将AI能力深度融入iPhone主屏，在尚未正式发布前即获得投资者青睐，显示出市场对更智能的手机交互体验的强烈需求。应用即将向等待名单用户开放。
 
-## 7. [DeepMind 发布 AlphaEvolve：用 Gemini 自动设计高级算法](https://unclejoeyao666.github.io/ai-daily-news/articles/alphaevolve-a-gemini-powered-coding-agent-for-des-2025-05-14)
-AlphaEvolve 是 Gemini 驱动的代码智能体，结合大模型创造力与自动评估器，可演化出全新的数学和工程算法，已在矩阵乘法等核心问题上发现超越人类最优解的方案。
+## 7. [微软与OpenAI分手：独家合作协议正式终止](https://unclejoeyao666.github.io/ai-daily-news/articles/openai-microsoft-exclusive-ends)
+微软与OpenAI达成协议，解除微软销售OpenAI模型的独家权利，微软将不再获得收入分成。这意味着OpenAI可自主与亚马逊云服务、谷歌云等竞争对手开展合作，标志着双方关系的重大调整。
 
-## 8. [DeepSeek V4 突破，世界模型竞赛白热化](https://unclejoeyao666.github.io/ai-daily-news/articles/the-download-deepseeks-latest-ai-breakthrough-and-2026-04-27)
-MIT《The Download》解读 DeepSeek 周五发布的 V4 预览版三大亮点：超长上下文、推理成本骤降、对标 GPT-5。同时全球世界模型（World Models）赛道竞争升温。
+## 8. [谷歌DeepMind与美国能源部联手启动Genesis：AI驱动科学发现的国家级使命](https://unclejoeyao666.github.io/ai-daily-news/articles/deepmind-doe-genesis)
+谷歌DeepMind与美国能源部启动Genesis合作计划，利用AI加速科学发现，涵盖基因组预测、天气预报等前沿领域。AlphaFold数据库已服务全球超过一百九十个国家的三百万科学家，此次合作将AI能力与美国国家科学基础设施深度整合。
 
-## 9. [中国否决 Meta 20 亿美元收购 Manus 案](https://unclejoeyao666.github.io/ai-daily-news/articles/china-blocks-metas-2b-manus-deal-after-months-lon-2026-04-27)
-经过数月反垄断和国家安全审查，中国监管机构正式否决 Meta 收购 AI 智能体公司 Manus 的 20 亿美元交易，扎克伯格的 AI 全球扩张战略再受重挫。
+## 9. [前DeepMind研究员David Silver创立AI公司，估值51亿美元融资11亿美元](https://unclejoeyao666.github.io/ai-daily-news/articles/ineffable-intelligence-510m)
+前谷歌DeepMind研究员David Silver创立的新公司Ineffable Intelligence完成11亿美元种子轮融资，估值达51亿美元，由红杉资本和Lightspeed领投，Nvidia、谷歌、Index Ventures及英国政府均参与投资。
 
-## 10. [Gemini 2.5 Flash-Lite 正式生产可用：百万上下文+多模态低成本量产](https://unclejoeyao666.github.io/ai-daily-news/articles/gemini-25-flash-lite-is-now-ready-for-scaled-prod-2025-10-25)
-Google 宣布 Gemini 2.5 Flash-Lite 结束预览阶段，正式 GA。具备 100 万 token 上下文窗口和多模态输入能力，单价仅为 Flash 标准版的 1/3，主打高吞吐场景。
+## 10. [Gemini音频模型全面升级：实时语音代理进入生产级可用时代](https://unclejoeyao666.github.io/ai-daily-news/articles/gemini-audio-model-upgrade)
+谷歌升级Gemini 2.5 Flash原生音频模型，显著提升函数调用、指令理解和对话流畅度。实时语音翻译功能正在美国、墨西哥和印度的安卓版谷歌翻译应用中推送测试，企业应用场景包括Shopify Sidekick和美威抵押贷款的AI助理。
 
 ---
-*共 10 条 · 来源：Google DeepMind 博客, TechCrunch AI 频道, 麻省理工科技评论*
+*共 10 条 · 来源：Google DeepMind 博客, TechCrunch AI 频道, 彭博科技*
