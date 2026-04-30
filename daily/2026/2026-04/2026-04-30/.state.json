@@ -1,0 +1,35 @@
+{
+  "date": "2026-04-30",
+  "started_at": "2026-04-29T23:26:31.187724+00:00",
+  "steps": {
+    "harvest": {
+      "status": "ok",
+      "finished_at": "2026-04-29T23:26:48.307265+00:00",
+      "stats": {
+        "unplayed": 359,
+        "total": 1664
+      }
+    },
+    "select": {
+      "status": "ok",
+      "finished_at": "2026-04-29T23:26:52.367994+00:00",
+      "selected_count": 10
+    },
+    "translate": {
+      "status": "running",
+      "started_at": "2026-04-29T23:27:00.392113+00:00"
+    },
+    "publish_article": {
+      "status": "pending"
+    },
+    "publish_brief": {
+      "status": "pending"
+    },
+    "audio": {
+      "status": "pending"
+    },
+    "push": {
+      "status": "pending"
+    }
+  }
+}
