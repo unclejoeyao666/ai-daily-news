@@ -1,0 +1,11 @@
+{
+  "translated_title": "OpenAI 为 ChatGPT 账号推出高级安全功能，联手 Yubico 提供物理安全密钥",
+  "translated_summary": "OpenAI 宣布为 ChatGPT 账号推出额外可选的安全保护措施，新举措包括与安全密钥提供商 Yubico 建立合作伙伴关系，为用户账户提供硬件级身份验证。",
+  "translated_body": "OpenAI 宣布为其 ChatGPT 用户推出一系列可选的账号安全增强功能。其中最值得关注的，是与老牌安全密钥公司 Yubico 达成的合作——用户将可以把 Yubico 的物理安全密钥绑定到 ChatGPT 账号，在密码之外增加一层硬件级身份验证，从而有效防止账号被钓鱼或窃取密码后被盗用。",
+  "impact_analysis": "这是 OpenAI 首次将物理安全密钥纳入 ChatGPT 账号的官方保护体系。以往这类高级防护主要出现在企业安全场景或个人高风险用户中，OpenAI 向消费级产品推广此举意味着 AI 平台正在将账号安全从\"可选项\"升级为\"标配\"。对安全行业而言，Yubico 的合作落地进一步印证了 FIDO2/WebAuthn 无密码认证标准的主流化趋势。对普通用户来说，这降低了高强度账号保护的门槛，但也意味着平台在引导用户启用这些选项上仍需更多努力。",
+  "industry_tags": [
+    "consumer-app",
+    "safety-alignment"
+  ],
+  "_translated_at": "2026-05-01 02:46:07.428677"
+}

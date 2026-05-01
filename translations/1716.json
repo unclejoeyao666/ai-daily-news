@@ -1,0 +1,11 @@
+{
+  "translated_title": "Stripe 推出 Link 数字钱包，支持自主 AI 智能体在用户授权下安全完成支付消费",
+  "translated_summary": "Stripe 推出全新数字钱包产品 Link，用户可将银行卡、银行账户和订阅服务接入，并授权 AI 智能体在审批流程下安全支配资金，标志着 AI Agent 经济的基础设施布局迈出关键一步。",
+  "translated_body": "Stripe 发布了名为 Link 的全新数字钱包产品，允许用户将银行卡、银行账户和订阅服务统一接入。Link 的核心创新在于：用户可以授权 AI 智能体在特定场景下代为完成支付操作，但每笔交易都需经过用户审批确认，从而在赋予 AI 消费能力的同时保持人工控制。这一设计解决了 AI Agent 在实际商业场景落地的关键障碍——支付授权与资金安全。",
+  "impact_analysis": "Link 的推出标志着 AI Agent 经济基础设施的实质性进展。此前，AI 智能体在真实商业场景中的最大障碍之一是无法持有和管理资金——Link 通过将 AI 的消费行为限制在用户授权范围内的方式，优雅地解决了这一问题。这与此前 OpenAI 的 Agent 工具 Manus 的部分逻辑相似，但 Stripe 作为支付基础设施提供商，其进入此领域的影响更为深远。对电商、差旅、C端服务自动化等场景，AI Agent 的商业模式将被显著加速。",
+  "industry_tags": [
+    "agent-tools",
+    "enterprise-app"
+  ],
+  "_translated_at": "2026-05-01 02:46:07.428657"
+}

@@ -1,0 +1,12 @@
+{
+  "translated_title": "OpenAI 刚批评完 Anthropic 限制 Mythos，现在也限制了网络安全工具 Cyber 的访问权限",
+  "translated_summary": "OpenAI 将逐步推出其网络安全测试工具 GPT-5.5 Cyber，初期仅面向【关键网络防御人员】。就在不久前，OpenAI 还批评 Anthropic 限制了其 Agent 产品 Mythos 的访问权限。",
+  "translated_body": "OpenAI 宣布将逐步向特定群体开放其网络安全测试工具 GPT-5.5 Cyber，初期仅向【关键网络防御人员】提供。这一决定紧随 OpenAI 公开批评 Anthropic 限制其 Agent 产品 Mythos 之后，但 OpenAI 自己也选择了类似的限流策略。GPT-5.5 Cyber 是 OpenAI 面向安全专业人员的旗舰工具，定位与 Anthropic 的 Mythos 类似——均为高风险、影响广泛的前沿能力，但两家公司在开放程度上都选择了保守路线。",
+  "impact_analysis": "这则新闻的核心在于：前沿 AI 能力的开放节奏正在成为行业博弈焦点。OpenAI 一边批评 Anthropic 保守，一边自己也采取了相同策略，说明整个行业对高能力 Agent 的风险评估趋于谨慎。对竞争对手而言，这种【限制性开放】模式可能成为安全相关产品的行业标准——先在受控群体中验证，再逐步扩展。对安全社区而言，GPT-5.5 Cyber 的推出意味着 AI 在网络安全领域的实用化又近了一步，但获取门槛短期内不会降低。",
+  "industry_tags": [
+    "safety-alignment",
+    "agent-tools",
+    "policy-regulation"
+  ],
+  "_translated_at": "2026-05-01 02:47:00.430769"
+}
