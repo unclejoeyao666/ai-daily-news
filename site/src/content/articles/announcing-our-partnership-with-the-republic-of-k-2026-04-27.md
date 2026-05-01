@@ -6,7 +6,7 @@ pubDate: 2026-04-27
 sourceName: "Google DeepMind Blog"
 sourceUrl: "https://deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/"
 sourceLang: en
-tags: ["industry-trend", "policy-regulation", "research-paper"]
+tags: ["research-paper", "industry-trend", "policy-regulation"]
 ---
 Google DeepMind 周一宣布与韩国正式建立战略合作关系，将其前沿 AI 模型部署到韩国研究机构，加速从材料科学、生物医学到气候研究等领域的发现速度。
 
