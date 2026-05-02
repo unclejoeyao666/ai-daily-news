@@ -15,180 +15,125 @@ DB_PATH = "/Users/unclejoe/Media_Workspace/ai-daily-news/data/news.db"
 
 ARTICLES = [
     {
-        "id": 1322,
-        "title": "Gemini achieves gold-medal level at the International Collegiate Programming Contest World Finals",
-        "summary": "Gemini 2.5 Deep Think achieves breakthrough performance at the world's most prestigious computer programming competition, demonstrating a profound leap in abstract problem solving.",
-        "content": """Gemini 2.5 Deep Think achieves breakthrough performance at ICPC World Finals.
-Solving complex tasks at competitions requires deep abstract reasoning, creativity, and ingenuity.
-Gemini solved Problem C within the first half hour — which no university team solved.
-Internal studies show Gemini 2.5 Deep Think can achieve gold-medal level performance in 2023 and 2024 ICPC World Finals, performing as well as the world's top 20 competitive coders.
-If the best AI and human solutions were combined, all 12 problems would have been solved completely.
-This milestone builds on Gemini's gold-medal win at the International Mathematical Olympiad two months ago.
-Innovations will be integrated into future versions of Gemini Deep Think.
-Dr. Bill Poucher, ICPC Global Executive Director: Gemini successfully joining this arena, and achieving gold-level results, marks a key moment in defining the AI tools and academic standards needed for the next generation.
-This demonstrates AI can act as a true problem-solving partner for programmers.""",
-        "source_name": "Google DeepMind",
-        "published_at": "2025-10-24",
-        "translated_title": "谷歌Gemini在国际大学生编程竞赛世界总决赛中达到金牌水平",
-        "translated_summary": "Gemini 2.5深度思考模型在全球最具权威的大学生编程竞赛中取得突破性成绩，展示了抽象问题解决能力的重大飞跃。该模型在半小时内解决了全场没有任何一支大学队伍解决的最难题。",
-        "impact_analysis": "这是AI编程能力的重要里程碑。Gemini不仅在数学奥林匹克获得金牌后，又在编程竞赛中达到金牌水准，意味着AI已具备顶级抽象推理能力。如果将最优AI方案与最优人类方案结合，竞赛全部十二道题均可完整正确解出。这对软件开发行业具有深远影响：AI作为编程协作者的时代正在到来。",
-        "industry_tags": ["model-release", "research-paper", "industry-trend"],
+        "id": 1812,
+        "title": "Pentagon inks deals with Nvidia, Microsoft, and AWS to deploy AI on classified networks",
+        "summary": "The deals come as the DOD has doubled down on diversifying its exposure to AI vendors in the wake of its controversial dispute with Anthropic over usage terms of its AI models.",
+        "content": "The Pentagon has diversified its AI vendor relationships following a dispute with Anthropic. Nvidia, Microsoft, and AWS will provide AI tools for classified networks.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-05-01",
+        "translated_title": "五角大楼与Nvidia、微软、AWS签署协议，在机密网络上部署AI",
+        "translated_summary": "在美国国防部与Anthropic因AI模型使用条款发生争议后，五角大楼正在多元化其AI供应商合作。Nvidia、微软和AWS将获得在机密网络上部署AI工具的合同。",
+        "impact_analysis": "此次合作标志着美国军方在AI部署上的重大转向。Nvidia、微软、AWS三家联手，表明AI基础设施竞争已从商业市场延伸至国家安全领域。Anthropic被排除在外，反映出AI安全与商业利益之间的深层矛盾正在加剧。",
+        "industry_tags": ["policy-regulation", "chips-infra", "ai-research"],
     },
     {
-        "id": 1290,
-        "title": "Deepening our partnership with the UK AI Security Institute",
-        "summary": "Google DeepMind and UK AI Security Institute (AISI) strengthen collaboration on critical AI safety and security research",
-        "content": """Google DeepMind and UK AI Security Institute (AISI) strengthen collaboration on AI safety through new MoU.
-Focus areas: foundational security research, AI evaluation techniques, monitoring AI reasoning processes (chain-of-thought monitoring), understanding social and emotional impacts.
-This builds on previous Google DeepMind research and recent collaboration with AISI, OpenAI, Anthropic and other partners.
-Gemini 3 is Google DeepMind's most intelligent and secure model to date.
-External expert partners include Apollo Research, Vaultis, Dreadnode and more.
-Google DeepMind's Responsibility and Safety Council monitors emerging risks, reviews ethics assessments, and implements mitigations.
-Partnership is part of broader UK government collaboration on AI safety.""",
-        "source_name": "Google DeepMind",
-        "published_at": "2025-12-11",
-        "translated_title": "谷歌DeepMind深化与英国AI安全研究院的合作",
-        "translated_summary": "谷歌DeepMind与英国AI安全研究院签署新的合作备忘录，聚焦基础安全研究、AI评估技术、AI推理过程监测，以及社会影响研究等领域，旨在推动AI安全发展。",
-        "impact_analysis": "AI安全正从行业自律走向制度化合规。英国AISI与美国AI安全研究院形成东西呼应的监管格局。谷歌邀请外部机构对Gemini 3进行严格测试，标志着头部企业在安全问题上更加开放。这一趋势将推动可解释性研究和红队测试成为行业标准。",
-        "industry_tags": ["safety-alignment", "policy-regulation", "research-paper"],
+        "id": 1815,
+        "title": "Pentagon strikes classified AI deals with OpenAI, Google, and Nvidia — but not Anthropic",
+        "summary": "The Pentagon has struck deals with OpenAI, Google, Microsoft, Amazon, Nvidia, xAI, and Reflection, allowing the agency to use their AI tools in classified settings.",
+        "content": "The Pentagon has signed agreements with multiple AI vendors including OpenAI, Google, Nvidia, Microsoft, Amazon, xAI and Reflection for classified AI deployment.",
+        "source_name": "The Verge AI",
+        "published_at": "2026-05-01",
+        "translated_title": "五角大楼与OpenAI、谷歌、Nvidia签署机密AI协议——Anthropic被排除在外",
+        "translated_summary": "五角大楼已与OpenAI、谷歌、微软、亚马逊、Nvidia、xAI及Reflection达成协议，允许该机构在机密环境中使用这些公司的AI工具。",
+        "impact_analysis": "Anthropic因拒绝允许将Claude用于国内大规模监控和自主武器而被排除在外，成为本轮AI军事采购的最大输家。头部AI厂商正在通过军事合同争夺战略高地，AI军事化趋势不可逆转。",
+        "industry_tags": ["policy-regulation", "ai-research", "chips-infra"],
     },
     {
-        "id": 1298,
-        "title": "Build with Nano Banana Pro, our Gemini 3 Pro Image model",
-        "summary": "Gemini 3 Pro Image model delivers high-fidelity image generation and editing with text rendering accuracy and world knowledge grounding via Google Search.",
-        "content": """Gemini 3 Pro Image (Nano Banana Pro) is a state-of-the-art image generation and editing model.
-Rolls out in paid preview via Gemini API in Google AI Studio and Vertex AI for enterprises.
-Key capabilities: high-fidelity images, higher accuracy in text rendering, robust world knowledge.
-Grounding with Google Search connects the model to real-time web content for data-driven outputs.
-Valuable for applications requiring precise representations such as biological diagrams or historical maps.
-Excels on Text to Image AI benchmarks compared to leading competitors.""",
-        "source_name": "Google DeepMind",
-        "published_at": "2025-11-20",
-        "translated_title": "谷歌推出Nano Banana Pro：全新Gemini 3专业图像生成模型",
-        "translated_summary": "谷歌发布Gemini 3专业图像模型，可生成高保真图像，具备精准的文字渲染能力，并可通过谷歌搜索进行知识检索与实时内容对齐，在多项图像生成基准测试中领先同类竞品。",
-        'impact_analysis': "Gemini 3图像模型的核心差异化在于将生成能力与实时知识检索结合，意味着AI生成的图像不再凭空杜撰，而是可引用真实世界数据。这对企业级应用意义重大——生物医学图表、历史地图等高精度内容生产将被大幅提速。图像生成战场正在从'以假乱真'升级为'以真驭真'。",
-
-        "industry_tags": ["model-release", "enterprise-app", "research-paper"],
+        "id": 1811,
+        "title": "Did you know you can't steal a charity? Don't worry. Elon Musk will remind you.",
+        "summary": "Elon Musk spent three days on the witness stand this week in his lawsuit against OpenAI, and it's already getting messy.",
+        "content": "Elon Musk testified for three days in his lawsuit against OpenAI, with emails, texts and tweets being used as evidence.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-05-01",
+        "translated_title": "你听说过偷慈善机构的故事吗？没关系，马斯克会提醒你的",
+        "translated_summary": "埃隆·马斯克本周在针对OpenAI的诉讼中出庭作证三天，邮件、短信和他自己的推文不断被翻出，局面正在变得复杂。",
+        "impact_analysis": "这起诉讼的实质是关于AI发展方向的路线之争：开源公益化与商业化封闭之间的冲突。无论判决结果如何，它都将对AI行业的治理模式产生深远影响。",
+        "industry_tags": ["ai-research", "policy-regulation", "funding-ipo"],
     },
     {
-        "id": 1301,
-        "title": "We're expanding our presence in Singapore to advance AI in the Asia-Pacific region",
-        "summary": "Google DeepMind opens a new Singapore research lab, accelerating AI progress in the Asia-Pacific region.",
-        "content": """Google DeepMind opens new Singapore research lab to advance AI in Asia-Pacific.
-Team will consist of research scientists, software engineers, and AI impact experts.
-Focus areas: linguistic and cultural inclusivity for Asia Pacific, advancing Gemini core capabilities, applying latest models across Google products and Cloud customers.
-Collaboration with government, businesses, civil society, and academic institutions.
-Asia-Pacific is home to more than half the world's population and poised for immense growth.
-Singapore's National AI Strategy 2.0 and Smart Nation 2.0 cited as enabling environment.
-Google DeepMind's APAC team has more-than-doubled over the past year.""",
-        "source_name": "Google DeepMind",
-        "published_at": "2025-11-18",
-        "translated_title": "谷歌DeepMind在新加坡设立新研究实验室，押注亚太AI发展",
-        "translated_summary": "谷歌DeepMind宣布在新加坡设立新的研究实验室，汇聚顶尖研究科学家和工程师，专注推进亚太地区的语言文化包容性研究及Gemini核心能力开发，深化与政府、企业和学术界的合作。",
-        "impact_analysis": "东南亚正在成为AI战略布局新高地。新加坡凭借清晰的AI政策和开放的人才环境，吸引了谷歌在此设立亚太核心据点。谷歌团队规模在一年内翻倍，说明该区域在谷歌全球AI版图中的战略优先级显著提升。对亚太AI生态而言，这意味着更多本地化资源和技术转化机会。",
-        "industry_tags": ["chips-infra", "research-paper", "industry-trend"],
+        "id": 1813,
+        "title": "Musk v. Altman is just getting started",
+        "summary": "Elon Musk's lawsuit against OpenAI and Sam Altman is in its early stages with significant implications for AI governance.",
+        "content": "The Musk v. Altman legal battle represents a fundamental dispute over AI governance and the direction of artificial intelligence development.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-05-01",
+        "translated_title": "马斯克诉阿尔特曼案才刚刚开始",
+        "translated_summary": "埃隆·马斯克对OpenAI及萨姆·阿尔特曼的诉讼处于早期阶段，此案对AI治理结构具有深远影响。",
+        "impact_analysis": "马斯克与阿尔特曼的法律战争不仅是个人恩怨，更关乎AI行业的未来走向。若OpenAI被认定违反公益使命条款，可能引发整个AI行业对组织结构的重新审视。",
+        "industry_tags": ["ai-research", "policy-regulation", "funding-ipo"],
     },
     {
-        "id": 1349,
-        "title": "Gemini 2.5 Pro Preview: even better coding performance",
-        "summary": "We've seen developers doing amazing things with Gemini 2.5 Pro, so we decided to release an updated version a couple of weeks early to get into developers hands sooner.",
-        "content": """Google releases updated Gemini 2.5 Pro a couple of weeks ahead of schedule based on strong developer feedback.
-Key improvements: better coding performance, reduced errors in function calling, improved function calling trigger rates.
-Available via Gemini API in Google AI Studio, and for enterprise customers via Vertex AI.
-Previous iteration (03-25) now redirects to the new version (05-06) automatically at the same price.
-Model card updated with new version details.""",
-        "source_name": "Google DeepMind",
-        "published_at": "2025-05-06",
-        "translated_title": "Gemini 2.5 Pro预览版提前发布：编码性能显著提升",
-        "translated_summary": "由于开发者反馈强烈，谷歌提前两周发布Gemini 2.5 Pro更新版本，重点提升了编程能力，降低了函数调用错误率，并改善了触发准确率，现已可通过谷歌AI Studio和Vertex AI使用。",
-        "impact_analysis": "谷歌主动加速产品节奏以回应开发者需求，显示AI模型的差异化窗口期正在缩短。函数调用能力的改进对于构建AI Agent至关重要，这直接决定了AI能否可靠地驱动外部工具和API。谷歌以相同价格无缝切换版本，降低了开发者迁移成本，有望进一步巩固其在开发者生态中的地位。",
-        "industry_tags": ["model-release", "agent-tools", "enterprise-app"],
+        "id": 1617,
+        "title": "Is AI video just a prequel? Runway's CEO thinks world models are next",
+        "summary": "AI-generated video has gone from novelty to creative tool almost overnight, and Runway sees world models as the next frontier.",
+        "content": "Runway's CEO discusses the evolution of AI video generation and positions world models as the next major breakthrough in AI.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-04-30",
+        "translated_title": "AI视频只是前传？Runway CEO认为世界模型才是下一步",
+        "translated_summary": "AI生成视频已从新鲜事物迅速转变为创意工具，Runway CEO认为世界模型（World Models）是下一个主战场。",
+        "impact_analysis": "世界模型代表了AI从感知到认知的关键跨越。若AI能理解物理世界的运行规律并在其中进行模拟推理，将打开自动驾驶、机器人、科学发现等领域的巨大空间。Runway提前布局，有望在下一代视频AI竞争中占据先机。",
+        "industry_tags": ["model-release", "consumer-app", "ai-research"],
     },
     {
-        "id": 1402,
-        "title": "Investors back Skye's AI home screen app for iPhone ahead of launch",
-        "summary": "Skye's new AI app attracted investors before it even launched — a sign of interest in a more AI-aware iPhone.",
-        "content": """Signull Labs' Skye app: AI home screen for iPhone.
-Attracted investor interest before official launch.
-App plans to launch to waitlist users soon.
-Represents trend toward deeper AI integration into smartphone experience.
-A sign of growing interest in AI-aware mobile experiences.""",
-        "source_name": "TechCrunch",
-        "published_at": "2026-04-27",
-        "translated_title": "AI主屏应用Skye未发先火：iPhone迎来智能桌面时代",
-        "translated_summary": "Signull Labs开发的Skye应用将AI能力深度融入iPhone主屏，在尚未正式发布前即获得投资者青睐，显示出市场对更智能的手机交互体验的强烈需求。应用即将向等待名单用户开放。",
-        "impact_analysis": "Skye的融资热度说明，AI手机不是一个概念，而是真实的资本赛道。苹果的封闭生态反而成为第三方AI应用的创新试验场——在iPhone上做AI主屏，比在安卓更具挑战，也更有差异化价值。如果Skye能解决隐私和权限问题，它可能成为AI个人助理的新入口，开辟一个新的消费者应用品类。",
-        "industry_tags": ["consumer-app", "agent-tools", "funding-ipo"],
+        "id": 1623,
+        "title": "Colby Adcock's Scout AI raises $100M to train its models for war",
+        "summary": "Scout AI has raised $100M to train AI agents for military applications, working on systems that help soldiers control autonomous vehicles.",
+        "content": "Scout AI's $100M funding round targets military AI agent development for autonomous vehicle fleet control by individual soldiers.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-04-30",
+        "translated_title": "Scout AI融资1亿美元训练战争AI模型：我们实地探访了其训练营",
+        "translated_summary": "Scout AI已融资1亿美元，用于训练军事应用AI智能体，专注于帮助士兵控制自动驾驶车辆编队的技术。",
+        "impact_analysis": "军事AI智能体正在从概念走向实战。Scout AI的1亿美元融资表明，AI战争应用已不是遥远的未来，而是正在发生的现在。无人车辆编队协同作战一旦成熟，将彻底改变地面作战模式。",
+        "industry_tags": ["ai-research", "policy-regulation", "funding-ipo"],
     },
     {
-        "id": 1390,
-        "title": "OpenAI Breaks Free From Exclusive AI Pact With Microsoft",
-        "summary": "Microsoft Corp. and OpenAI have agreed to drop the software giant's exclusive right to sell the startup's AI models, opening the door for the ChatGPT maker to pursue deals with cloud-computing rivals like Amazon.com Inc.",
-        "content": """Microsoft and OpenAI have agreed to terminate Microsoft's exclusive right to sell OpenAI's AI models.
-Microsoft will no longer pay revenue share to OpenAI.
-Partnership will no longer be exclusive going forward.
-This opens the door for OpenAI to pursue partnerships with cloud rivals such as Amazon Web Services and Google Cloud.
-Microsoft statement: The rapid pace of innovation requires both companies to evolve their partnership for customer benefit.
-The restructuring reflects the changing dynamics of the AI infrastructure race.""",
-        "source_name": "Bloomberg",
-        "published_at": "2026-04-27",
-        "translated_title": "微软与OpenAI分手：独家合作协议正式终止",
-        "translated_summary": "微软与OpenAI达成协议，解除微软销售OpenAI模型的独家权利，微软将不再获得收入分成。这意味着OpenAI可自主与亚马逊云服务、谷歌云等竞争对手开展合作，标志着双方关系的重大调整。",
-        "impact_analysis": "这一变化的影响远超技术层面。OpenAI不再受制于微软的转售限制，意味着它可以直接与AWS和谷歌云建立分销合作，在全球AI云市场正面竞争。对微软而言，失去独家绑定也意味着它必须更认真地经营自己的AI产品线，包括Copilot和Azure AI。整个AI基础设施市场的竞争格局将因此加速重组。",
-        "industry_tags": ["enterprise-app", "industry-trend", "chips-infra"],
+        "id": 1513,
+        "title": "At his OpenAI trial, Musk relitigates an old friendship",
+        "summary": "Musk testified at the OpenAI trial about his past friendship with Altman, a story he's told before in interviews.",
+        "content": "Elon Musk recounts his history with Sam Altman during OpenAI testimony, revisiting a narrative previously shared in interviews and biography.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-04-29",
+        "translated_title": "马斯克在OpenAI诉讼中重新审视与阿尔特曼的旧日友情",
+        "translated_summary": "马斯克在OpenAI诉讼中作证，重提他与阿尔特曼的旧日友谊——这一故事他曾在采访和沃尔特·艾萨克森为其撰写的传记中讲述过。",
+        "impact_analysis": "从昔日战友到今日对簿公堂，马斯克与阿尔特曼的决裂折射出AI行业理想与资本之间的深层张力。OpenAI从非营利向商业化的转型，是这起诉讼的核心争议。",
+        "industry_tags": ["ai-research", "policy-regulation", "funding-ipo"],
     },
     {
-        "id": 1296,
-        "title": "Google DeepMind supports U.S. Department of Energy on Genesis: a national mission to accelerate innovation and scientific discovery",
-        "summary": "Google DeepMind and the DOE partner on Genesis, a new effort to accelerate science with AI.",
-        "content": """Google DeepMind and U.S. Department of Energy (DOE) partner on Genesis: national mission to accelerate scientific discovery with AI.
-Genesis includes projects like AlphaGenome (understanding non-coding DNA, accelerating genome research, potential for crop resistance and biofuels) and WeatherNext (weather forecasting models supporting National Hurricane Center).
-DOE's Brookhaven National Laboratory foundational work on Protein Data Bank was crucial for AlphaFold development.
-AlphaFold Protein Database used by more than 3 million scientists in over 190 countries.
-Partnership connects frontier AI with US national scientific infrastructure.
-Goal: breakthroughs in clean energy, materials science, and advanced biomaterials.""",
-        "source_name": "Google DeepMind",
-        "published_at": "2025-11-24",
-        "translated_title": "谷歌DeepMind与美国能源部联手启动Genesis：AI驱动科学发现的国家级使命",
-        "translated_summary": "谷歌DeepMind与美国能源部启动Genesis合作计划，利用AI加速科学发现，涵盖基因组预测、天气预报等前沿领域。AlphaFold数据库已服务全球超过一百九十个国家的三百万科学家，此次合作将AI能力与美国国家科学基础设施深度整合。",
-        "impact_analysis": "Genesis将AI提升至国家科学基础设施的战略高度。谷歌与能源部的合作路径，从AlphaFold诺贝尔奖级别的成果中尝到了甜头，这次是系统性深化。天气预报、基因组学、可控核聚变——这些领域一旦突破，将产生远超商业AI的溢出价值。对谷歌而言，这是最有效的高端人才绑定和技术合法性来源。",
-        "industry_tags": ["research-paper", "policy-regulation", "industry-trend"],
+        "id": 1514,
+        "title": "Amazon is already offering new OpenAI products on AWS",
+        "summary": "A day after OpenAI ended Microsoft's exclusive rights, AWS announced a slate of OpenAI model offerings including a new agent service.",
+        "content": "AWS quickly moved to offer OpenAI models after Microsoft's exclusive arrangement ended, launching a new agent service.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-04-29",
+        "translated_title": "微软与OpenAI分手次日，AWS即上线OpenAI新产品",
+        "translated_summary": "在OpenAI解除微软独家权利的次日，AWS即宣布推出一系列OpenAI模型产品，其中包括新的Agent服务。",
+        "impact_analysis": "微软失去OpenAI独家权后，AWS迅速填补空白。OpenAI的云分发渠道正在从独占走向多元，这意味着其AI能力将更广泛地渗透企业市场，同时加剧云服务商的AI产品竞争。",
+        "industry_tags": ["model-release", "enterprise-app", "ai-research"],
     },
     {
-        "id": 1387,
-        "title": "Sequoia and Nvidia Back Ex-DeepMind Researcher's New AI Startup at $5.1 Billion Value",
-        "summary": "Former Google DeepMind researcher David Silver has raised $1.1 billion for his new company, Ineffable Intelligence, in the latest example of an artificial intelligence startup securing enormous funds out of the gate.",
-        "content": """David Silver, former Google DeepMind researcher, founded Ineffable Intelligence.
-Raised $1.1 billion in seed funding round.
-Valuation: $5.1 billion.
-Led by Sequoia Capital and Lightspeed Venture Partners.
-Other investors: Nvidia, Google (Alphabet), Index Ventures, and the British government.
-London-based company.
-One of the largest seed rounds ever for an AI startup.""",
-        "source_name": "Bloomberg",
-        "published_at": "2026-04-27",
-        "translated_title": "前DeepMind研究员David Silver创立AI公司，估值51亿美元融资11亿美元",
-        "translated_summary": "前谷歌DeepMind研究员David Silver创立的新公司Ineffable Intelligence完成11亿美元种子轮融资，估值达51亿美元，由红杉资本和Lightspeed领投，Nvidia、谷歌、Index Ventures及英国政府均参与投资。",
-        "impact_analysis": "11亿美元种子轮刷新了AI创业融资的历史记录。市场正在重奖顶级人才及其背书网络。David Silver的核心价值在于他掌握DeepMind的前沿研究方法和网络，资本押注的是他能否在新的组织形式下实现技术转化。Nvidia和谷歌同时出现在投资人名单中，说明硬件层和应用层的头部企业都在争夺下一个平台级AI公司的股权。",
-        "industry_tags": ["funding-ipo", "research-paper", "industry-trend"],
+        "id": 1516,
+        "title": "Google expands Pentagon's access to its AI after Anthropic's refusal",
+        "summary": "After Anthropic refused to allow the DoD to use Claude for domestic surveillance and autonomous weapons, Google signed a new contract with the department.",
+        "content": "Google has expanded its AI contract with the Pentagon after Anthropic declined to provide Claude for domestic surveillance and autonomous weapons applications.",
+        "source_name": "TechCrunch AI",
+        "published_at": "2026-04-29",
+        "translated_title": "Anthropic拒绝后，谷歌扩大与五角大楼的AI合作",
+        "translated_summary": "在Anthropic拒绝允许美国国防部将Claude用于国内监控和自主武器后，谷歌与该部门签署了一份新合同。",
+        "impact_analysis": "Anthropic因坚守安全原则失去军事合同，谷歌则借此机会扩大政府AI市场份额。这一案例将成为AI安全与商业利益冲突的经典判例，影响后续AI厂商与政府合作的政策制定。",
+        "industry_tags": ["policy-regulation", "ai-research", "safety-alignment"],
     },
     {
-        "id": 1289,
-        "title": "Improved Gemini audio models for powerful voice experiences",
-        "summary": "Google enhanced Gemini 2.5 Flash Native Audio for better live voice agents. Expect sharper function calling, robust instruction following and smoother conversations.",
-        "content": """Google enhanced Gemini 2.5 Flash Native Audio for live voice agents.
-Key improvements: sharper function calling, robust instruction following, smoother conversations.
-Live speech translation now rolling out in Google Translate app beta on Android in US, Mexico, and India.
-Use cases: Shopify Sidekick (merchants), United Wholesale Mortgage Mia (loan generation - over 14,000 loans generated).
-Available via Gemini API in Google AI Studio.
-Voice AI is becoming production-ready for customer-facing applications.""",
-        "source_name": "Google DeepMind",
-        "published_at": "2025-12-12",
-        "translated_title": "Gemini音频模型全面升级：实时语音代理进入生产级可用时代",
-        "translated_summary": "谷歌升级Gemini 2.5 Flash原生音频模型，显著提升函数调用、指令理解和对话流畅度。实时语音翻译功能正在美国、墨西哥和印度的安卓版谷歌翻译应用中推送测试，企业应用场景包括Shopify Sidekick和美威抵押贷款的AI助理。",
-        "impact_analysis": "语音AI长期以来受困于'玩具级'体验，难以支撑真实商业场景。Gemini音频模型在函数调用精度上的突破，意味着AI可以在通话过程中实时查询信息、执行操作，而不只是简单对话。Shopify和房贷领域已出现规模化商用案例，标志语音AI正在跨越从演示到生产的关键门槛。",
-        "industry_tags": ["model-release", "enterprise-app", "consumer-app"],
-    },
+        "id": 1487,
+        "title": "Goldman Staff in Hong Kong Lose Access to Anthropic's Claude",
+        "summary": "Goldman Sachs staff in Hong Kong no longer have access to Anthropic's Claude, an AI agent used for writing computer software.",
+        "content": "Goldman Sachs employees in Hong Kong have been denied access to Anthropic's Claude AI coding assistant.",
+        "source_name": "Bloomberg Technology",
+        "published_at": "2026-04-29",
+        "translated_title": "高盛香港员工失去Anthropic Claude访问权限",
+        "translated_summary": "据知情人士透露，高盛集团香港员工已无法使用Anthropic的Claude AI助手——此前该工具被用于加速编写计算机软件。",
+        "impact_analysis": "高盛撤停Claude可能与Anthropic近期与五角大楼的纠纷有关。AI在金融行业的应用正在受到地缘政治和企业合规的双重约束，AI代理的企业采纳路径面临新的不确定性。",
+        "industry_tags": ["enterprise-app", "policy-regulation", "ai-research"],
+    }
 ]
 
 def to_slug(title: str, article_id: int) -> str:
