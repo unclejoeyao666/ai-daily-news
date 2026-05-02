@@ -17,16 +17,20 @@
       "translated_count": 10
     },
     "publish_article": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-01T05:00:00+00:00"
     },
     "publish_brief": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-01T05:30:00+00:00"
     },
     "audio": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-01T07:36:00+00:00"
     },
     "push": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-01T09:03:00+00:00"
     }
   }
 }
