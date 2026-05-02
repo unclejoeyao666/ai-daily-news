@@ -1,0 +1,31 @@
+{
+  "date": "2026-04-30",
+  "article_ids": [
+    1812,
+    1815,
+    1811,
+    1813,
+    1617,
+    1623,
+    1513,
+    1514,
+    1516,
+    1487
+  ],
+  "article_slugs": [
+    "article-1812",
+    "article-1815",
+    "article-1811",
+    "article-1813",
+    "article-1617",
+    "article-1623",
+    "article-1513",
+    "article-1514",
+    "article-1516",
+    "article-1487"
+  ],
+  "briefing_url": "https://unclejoeyao666.github.io/ai-daily-news/briefings/2026-04-30",
+  "audio_url": "https://unclejoeyao666.github.io/ai-daily-news/audio/2026-04-30.mp3",
+  "site_base": "https://unclejoeyao666.github.io/ai-daily-news",
+  "generated_at": "2026-05-02T20:10:44.968254+00:00"
+}
