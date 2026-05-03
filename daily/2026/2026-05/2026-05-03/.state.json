@@ -25,11 +25,12 @@
       "finished_at": "2026-05-03T05:20:42.882266+00:00"
     },
     "publish_brief": {
-      "status": "running",
-      "started_at": "2026-05-03T06:03:34.570219+00:00"
+      "status": "ok"
     },
     "audio": {
-      "status": "pending"
+      "status": "failed",
+      "finished_at": "2026-05-03T10:10:45.752401+00:00",
+      "error": "render_audio rc=2"
     },
     "push": {
       "status": "pending"
