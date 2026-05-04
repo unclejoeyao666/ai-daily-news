@@ -32,8 +32,18 @@
       "finished_at": "2026-05-04T08:45:00.000000+00:00"
     },
     "push": {
-      "status": "running",
-      "started_at": "2026-05-03T23:20:11.164378+00:00"
+      "status": "ok",
+      "finished_at": "2026-05-03T23:20:16.884018+00:00"
+    }
+  },
+  "deliveries": {
+    "discord_text": {
+      "status": "ok",
+      "chars": 1339
+    },
+    "discord_audio": {
+      "status": "ok",
+      "mp3_size": 2807040
     }
   }
 }

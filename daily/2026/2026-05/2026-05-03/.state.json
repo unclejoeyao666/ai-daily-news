@@ -28,12 +28,13 @@
       "status": "ok"
     },
     "audio": {
-      "status": "failed",
-      "finished_at": "2026-05-03T23:05:52.962156+00:00",
-      "error": "render_audio rc=2"
+      "status": "ok",
+      "finished_at": "2026-05-04T00:03:50.015615+00:00",
+      "mp3_size": 2532332
     },
     "push": {
-      "status": "pending"
+      "status": "running",
+      "started_at": "2026-05-04T00:03:50.016035+00:00"
     }
   }
 }
