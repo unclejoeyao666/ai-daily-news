@@ -1,0 +1,11 @@
+{
+  "translated_title": "Otter 推出企业工具跨平台 AI 搜索功能",
+  "translated_summary": "Otter 发布新功能，用户可连接 Gmail、Google Drive、Notion、Jira、Salesforce 等企业工具，用自然语言查询跨平台数据，帮助团队快速检索分散在多个 SaaS 中的工作信息。",
+  "translated_body": "## 功能概述\n\nOtter 的新功能支持将团队的企业账户（ Gmail / Google Drive / Notion / Jira / Salesforce ）与其 AI 助手连接，用户可以用自然语言提问，例如「本周与 XX 客户的所有会议记录」，系统跨平台检索并汇总答案。\n\n## 应用场景\n\n主要受益者是销售和客服团队——他们需要在多个工具间切换才能找到客户历史信息，Otter 将这个过程从平均 5-10 分钟缩短到即时回答。\n\n## 数据安全\n\nOtter 表示查询在用户授权范围内执行，所有数据通过 OAuth 令牌访问，Otter 本身不存储企业数据内容。",
+  "impact_analysis": "Otter 的跨平台企业搜索若能稳定替代手动工具切换，将对 Notion AI、Salesforce Einstein 等各平台内置 AI 功能形成竞争，同时也为 AI 助手的下一阶段——跨 App 工作流自动化——提供产品范本。",
+  "industry_tags": [
+    "enterprise-app",
+    "agent-tools"
+  ],
+  "_translated_at": "2026-05-04 01:13:15.551762"
+}

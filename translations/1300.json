@@ -1,0 +1,11 @@
+{
+  "translated_title": "Google 开放 Gemini 3 全套开发工具，号召开发者构建 AI 应用",
+  "translated_summary": "Google 发布 Gemini 3 的完整开发工具链，包括 AI Studio、Gemini API 和新的 Antigravity 代理开发平台，旨在吸引开发者基于 Gemini 3 构建企业级 AI 应用。",
+  "translated_body": "## 工具链发布\n\nGoogle 同步推出三款面向开发者的工具：AI Studio（模型测试和快速原型）、Gemini API（生产级集成）、Antigravity（企业级 AI 代理平台），三者构成从原型到规模化的完整路径。\n\n## Gemini 3 的能力升级\n\nGemini 3 在推理速度和多模态能力上均较上代有显著提升，尤其在长上下文理解和实时音视频处理方面，Google 声称其能力已超越 GPT-4。\n\n## 开发者激励\n\nGoogle 为企业用户提供优先调用配额，并提供迁移补贴吸引开发者从 OpenAI 和 Anthropic 平台迁移。\n\n## 市场竞争格局\n\nGemini 3 工具链的推出与 OpenAI 和 Anthropic 的开发者生态形成正面竞争，三家平台的 API 定价和服务稳定性将直接影响开发者的选择。",
+  "impact_analysis": "Google 同时推出 API、Studio 和 Antigravity 三层工具，意在打造比 OpenAI 更完整的企业开发生态。若 Gemini 3 的稳定性和价格具备竞争力，将对 Anthropic 的 Claude API 和 OpenAI 的 GPT 系列形成实质性挑战。",
+  "industry_tags": [
+    "model-release",
+    "agent-tools"
+  ],
+  "_translated_at": "2026-05-04 01:14:12.120545"
+}

@@ -1,0 +1,11 @@
+{
+  "translated_title": "Google 为 Gemini 应用推出 AI 图片来源验证功能",
+  "translated_summary": "Google 宣布在 Gemini 应用内集成 AI 图片来源验证功能，帮助用户识别 AI 生成图像的来源和真伪，对抗深度伪造图片的传播风险。",
+  "translated_body": "## 功能背景\n\nAI 生成的图片正在快速充斥互联网，深度伪造技术让真假图片越来越难分辨。Google 在 Gemini 应用中推出图片验证功能，旨在帮助用户识别图片的生成来源和创作背景。\n\n## 技术实现\n\n该功能通过分析图片的元数据和 AI 指纹来追溯图片的生成模型和首次出现位置。用户上传任意图片，Gemini 返回可信度评估和来源信息。\n\n## 行业意义\n\n在深度伪造技术泛滥的背景下，能够追溯图片来源的能力变得至关重要。Google 的这一功能若被证明有效，将对社交平台和新闻机构识别假新闻图片提供重要工具。\n\n## 上线状态\n\nGoogle 表示该功能正在逐步向 Gemini 移动端用户开放，支持主流图片格式。",
+  "impact_analysis": "Google 将图片验证能力直接集成进 Gemini，标志着 AI 平台开始承担内容溯源的社会责任。若该功能获得用户和新闻机构认可，将推动其他 AI 平台（OpenAI、Anthropic）跟进类似功能，形成行业标准。",
+  "industry_tags": [
+    "safety-alignment",
+    "consumer-app"
+  ],
+  "_translated_at": "2026-05-04 01:14:12.074082"
+}
