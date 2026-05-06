@@ -6,7 +6,7 @@ pubDate: 2026-05-04
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/04/anthropic-and-openai-are-both-launching-joint-ventures-for-enterprise-ai-services/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 Both Anthropic and OpenAI have partnered with asset managers to more aggressively market their enterprise AI products.
 

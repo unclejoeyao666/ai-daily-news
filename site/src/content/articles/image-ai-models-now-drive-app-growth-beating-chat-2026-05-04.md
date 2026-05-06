@@ -6,7 +6,7 @@ pubDate: 2026-05-04
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/04/image-ai-models-now-drive-app-growth-beating-chatbot-upgrades/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 Appfigures finds visual model launches generate 6.5x more downloads — but most don’t convert that spike into revenue.
 

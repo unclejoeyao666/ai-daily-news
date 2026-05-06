@@ -6,7 +6,7 @@ pubDate: 2026-05-05
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/04/as-workers-worry-about-ai-nvidias-jensen-huang-says-ai-is-creating-an-enormous-number-of-jobs/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 The Nvidia CEO seems to feel that claims of AI's job-killing potential have been greatly exaggerated.
 

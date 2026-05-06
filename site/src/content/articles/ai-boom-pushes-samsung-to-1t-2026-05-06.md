@@ -6,7 +6,7 @@ pubDate: 2026-05-06
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/06/ai-boom-pushes-samsung-to-1t/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 Samsung crossed the $1 trillion valuation mark after shares surged on AI-driven chip demand, making it only the second Asian company after TSMC to hit the milestone.
 

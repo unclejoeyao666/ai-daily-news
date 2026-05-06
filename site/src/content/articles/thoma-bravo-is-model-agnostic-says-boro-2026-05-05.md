@@ -1,7 +1,7 @@
 ---
 title: "Thoma Bravo Is `Model Agnostic,' Says Boro"
 titleOriginal: "Thoma Bravo Is `Model Agnostic,' Says Boro"
-description: "Thoma Bravo is model agnostic when it comes to AI models and has relationships with OpenAI and Anthropic as well as Google, says the company’s managing partner Seth Boro. Boro discusses AI cybersecurity and deployment costs with Bloomberg’s Dani Burger at the Milken Institute Global Conference in Los Angeles. (Source: Bloomberg)"
+description: "Thoma Bravo is model agnostic when it comes to AI models and has relationships with OpenAI and Anthropic as well as Google, says the company’s managing partner Seth Boro. Boro discusses AI cybersecurity and deployment costs with Bloomberg’s Dani Burger at the Milken Institute Global Conference in Lo"
 pubDate: 2026-05-05
 sourceName: "Bloomberg Technology"
 sourceUrl: "https://www.bloomberg.com/news/videos/2026-05-05/thoma-bravo-is-model-agnostic-says-boro-video"

@@ -6,7 +6,7 @@ pubDate: 2026-05-05
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/05/etsy-launches-its-app-within-chatgpt-as-it-continues-its-ai-push/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 Etsy's new native app within ChatGPT aims to be a conversational shopping experience for users.
 

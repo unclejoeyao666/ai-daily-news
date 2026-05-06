@@ -6,7 +6,7 @@ pubDate: 2026-05-06
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/06/how-elon-musk-left-openai-according-to-greg-brockman/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 Cutthroat negotiations between startup founders are rarely shared so publicly, especially when a company becomes as world-changing as OpenAI.
 

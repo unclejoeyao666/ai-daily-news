@@ -6,7 +6,7 @@ pubDate: 2026-05-06
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/06/spacex-may-spend-up-to-119-billion-on-terafab-chip-factory-in-texas/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 The project would be a "multi-phase, next-generation, vertically integrated semiconductor manufacturing and advanced computing fabrication facility," according to the proposal.
 

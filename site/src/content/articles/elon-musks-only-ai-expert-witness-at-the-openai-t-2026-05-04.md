@@ -6,7 +6,7 @@ pubDate: 2026-05-04
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/04/elon-musks-only-expert-witness-at-the-openai-trial-fears-an-agi-arms-race/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 Stuart Russell is a long-time AI researcher who thinks governments need to restrain frontier labs.
 

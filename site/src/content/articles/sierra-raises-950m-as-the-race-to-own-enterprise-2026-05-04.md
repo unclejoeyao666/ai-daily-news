@@ -6,7 +6,7 @@ pubDate: 2026-05-04
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/04/sierra-raises-950m-as-the-race-to-own-enterprise-ai-gets-serious/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 The raise gives Sierra more than $1 billion to work with — capital the company says it will use to become the "global standard" for AI-powered customer experiences.
 

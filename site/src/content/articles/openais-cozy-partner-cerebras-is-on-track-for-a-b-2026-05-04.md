@@ -6,7 +6,7 @@ pubDate: 2026-05-04
 sourceName: "TechCrunch AI"
 sourceUrl: "https://techcrunch.com/2026/05/04/openais-cozy-partner-cerebras-is-on-track-for-a-blockbuster-ipo/"
 sourceLang: en
-tags: ["research-paper", "funding-ipo", "agent-tools", "consumer-app"]
+tags: ["research-paper", "funding-ipo", "agent-tools"]
 ---
 AI chip maker Cerebras is heading for a blockbuster IPO that could value it at $26.6 billion or more. It's relationship with OpenAI is deep and rich.
 
