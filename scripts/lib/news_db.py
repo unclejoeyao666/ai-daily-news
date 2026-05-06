@@ -209,14 +209,25 @@ class NewsDB:
         self,
         limit: int = 10,
         min_importance: int = 0,
+        published_after: Optional[str] = None,
         discovered_after: Optional[str] = None,
     ) -> List[sqlite3.Row]:
         """Top-N unplayed articles ordered by importance, then recency.
 
-        ``discovered_after`` is an ISO timestamp ('YYYY-MM-DD' or full datetime).
-        When set, articles discovered before that cutoff are excluded — this
-        prevents stale-but-high-importance items from being re-selected
-        months later. None preserves the legacy behaviour.
+        Freshness filters (both optional, applied if non-None):
+
+        * ``published_after``: keeps only articles whose **publication
+          date** is on/after the cutoff (or NULL — RSS feeds with no
+          pubDate fall back to discovered_at). This catches the
+          historical bug where a feed re-emitted a 2025-10 entry into
+          our 2026-04 harvest run; discovered_at made them look fresh
+          but they were 6-month-old news.
+
+        * ``discovered_after``: keeps only articles first seen by our
+          harvester on/after the cutoff. Less strict — useful as a
+          fallback or to detect when published_at is unreliable.
+
+        Pass either or both. ISO format ('YYYY-MM-DD' or full datetime).
         """
         conn = self.connect()
         sql = [
@@ -224,10 +235,13 @@ class NewsDB:
             "WHERE broadcast_status = 'unplayed' AND importance >= ?",
         ]
         params: List[Any] = [min_importance]
+        if published_after:
+            sql.append("AND COALESCE(published_at, discovered_at) >= ?")
+            params.append(published_after)
         if discovered_after:
             sql.append("AND discovered_at >= ?")
             params.append(discovered_after)
-        sql.append("ORDER BY importance DESC, discovered_at DESC")
+        sql.append("ORDER BY importance DESC, COALESCE(published_at, discovered_at) DESC")
         sql.append("LIMIT ?")
         params.append(limit)
         return conn.execute("\n".join(sql), params).fetchall()

@@ -51,10 +51,12 @@ def main():
               - timedelta(days=args.max_age_days)).strftime("%Y-%m-%d")
 
     with NewsDB(str(DB_PATH)) as db:
+        # Filter by published_at (fall back to discovered_at when NULL)
+        # — see news_db.get_unplayed docstring for the bug history.
         rows = db.get_unplayed(
             limit=args.count,
             min_importance=args.min_importance,
-            discovered_after=cutoff,
+            published_after=cutoff,
         )
         if not rows:
             print(f"⚠️  no unplayed articles since {cutoff} — run scripts/harvest.py first")
