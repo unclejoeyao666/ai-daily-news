@@ -113,6 +113,45 @@ def is_done(state: Dict[str, Any], step: str) -> bool:
     return get(state, step).get("status") == "ok"
 
 
+DELIVERY_KEYS = ("discord_text", "discord_audio")
+
+
+def is_complete(state: Dict[str, Any]) -> bool:
+    """True when every required step AND both deliveries are ok.
+
+    Used by daily_wake.py to short-circuit watchdog runs and by
+    health.py to compute the green/red verdict.
+    """
+    if not all(is_done(state, s) for s in STEPS):
+        return False
+    deliveries = state.get("deliveries", {})
+    return all(
+        deliveries.get(k, {}).get("status") == "ok" for k in DELIVERY_KEYS
+    )
+
+
+def mark_started(state: Dict[str, Any], step: str, **extra) -> Dict[str, Any]:
+    """Convenience: write status='running' with started_at.
+
+    Equivalent to mark(state, step, 'running', **extra) — exposed as a
+    named entry point so callers explicitly distinguish 'I'm starting'
+    from 'I'm running' and never silently skip the start mark.
+    """
+    return mark(state, step, "running", **extra)
+
+
+def has_running_step(state: Dict[str, Any]) -> Optional[str]:
+    """Return the first step in 'running' state, or None.
+
+    Watchdog uses this to defer when a stage cron is mid-flight, to
+    avoid two processes advancing the same .state.json concurrently.
+    """
+    for s in STEPS:
+        if get(state, s).get("status") == "running":
+            return s
+    return None
+
+
 def next_pending(state: Dict[str, Any],
                  from_step: Optional[str] = None) -> Optional[str]:
     """First step that isn't 'ok'. from_step skips ahead."""

@@ -205,14 +205,32 @@ class NewsDB:
         except sqlite3.IntegrityError:
             return None
 
-    def get_unplayed(self, limit: int = 10, min_importance: int = 0) -> List[sqlite3.Row]:
+    def get_unplayed(
+        self,
+        limit: int = 10,
+        min_importance: int = 0,
+        discovered_after: Optional[str] = None,
+    ) -> List[sqlite3.Row]:
+        """Top-N unplayed articles ordered by importance, then recency.
+
+        ``discovered_after`` is an ISO timestamp ('YYYY-MM-DD' or full datetime).
+        When set, articles discovered before that cutoff are excluded — this
+        prevents stale-but-high-importance items from being re-selected
+        months later. None preserves the legacy behaviour.
+        """
         conn = self.connect()
-        return conn.execute("""
-            SELECT * FROM news_articles
-            WHERE broadcast_status = 'unplayed' AND importance >= ?
-            ORDER BY importance DESC, discovered_at DESC
-            LIMIT ?
-        """, (min_importance, limit)).fetchall()
+        sql = [
+            "SELECT * FROM news_articles",
+            "WHERE broadcast_status = 'unplayed' AND importance >= ?",
+        ]
+        params: List[Any] = [min_importance]
+        if discovered_after:
+            sql.append("AND discovered_at >= ?")
+            params.append(discovered_after)
+        sql.append("ORDER BY importance DESC, discovered_at DESC")
+        sql.append("LIMIT ?")
+        params.append(limit)
+        return conn.execute("\n".join(sql), params).fetchall()
 
     def get_by_id(self, article_id: int) -> Optional[sqlite3.Row]:
         conn = self.connect()

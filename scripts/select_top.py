@@ -8,7 +8,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -18,6 +18,8 @@ from scripts.lib.news_db import NewsDB
 
 DB_PATH = ROOT / "data" / "news.db"
 OUT_PATH = ROOT / "daily-selected.json"
+
+DEFAULT_MAX_AGE_DAYS = 7  # 不再选 7 天前的旧文章 — 防止 importance 高的老文反复占名额
 
 
 def row_to_dict(row) -> dict:
@@ -40,14 +42,25 @@ def main():
     p = argparse.ArgumentParser()
     p.add_argument("--count", type=int, default=10)
     p.add_argument("--min-importance", type=int, default=0)
+    p.add_argument("--max-age-days", type=int, default=DEFAULT_MAX_AGE_DAYS,
+                   help=f"Reject articles older than N days (default {DEFAULT_MAX_AGE_DAYS})")
     p.add_argument("--out", default=str(OUT_PATH))
     args = p.parse_args()
 
+    cutoff = (datetime.now(timezone(timedelta(hours=2)))
+              - timedelta(days=args.max_age_days)).strftime("%Y-%m-%d")
+
     with NewsDB(str(DB_PATH)) as db:
-        rows = db.get_unplayed(limit=args.count, min_importance=args.min_importance)
+        rows = db.get_unplayed(
+            limit=args.count,
+            min_importance=args.min_importance,
+            discovered_after=cutoff,
+        )
         if not rows:
-            print("⚠️  no unplayed articles — run scripts/harvest.py first")
+            print(f"⚠️  no unplayed articles since {cutoff} — run scripts/harvest.py first")
             sys.exit(0)
+        if len(rows) < args.count:
+            print(f"⚠️  only {len(rows)}/{args.count} unplayed articles since {cutoff}")
         selected = [row_to_dict(r) for r in rows]
 
     with open(args.out, "w", encoding="utf-8") as f:

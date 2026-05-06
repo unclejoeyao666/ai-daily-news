@@ -19,9 +19,20 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 
-# SQLite WAL files (transient — main news.db IS tracked)
+# SQLite WAL files (transient)
 data/news.db-shm
 data/news.db-wal
+
+# v3: news.db is no longer tracked. It's regenerable from RSS harvest
+# and backed up via scripts/backup_db.sh → ~/Backups/ai-daily-news-db/.
+# Tracking caused 4.9MB rewrites on every commit and timed out the
+# daily backup cron (180s limit) for 7 days straight.
+data/news.db
+
+# v3: daily/<date>/audio.mp3 is an intermediate working copy. The
+# canonical audio served by GitHub Pages is site/public/audio/<DATE>.mp3
+# (still tracked). The daily/ copy is aged out locally by scripts/aging.sh.
+daily/**/audio.mp3
 
 # Astro / Node
 site/node_modules/

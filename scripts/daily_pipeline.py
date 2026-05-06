@@ -17,7 +17,7 @@ The 7 steps in order::
 
     1. harvest         → scripts/harvest.py
     2. select          → scripts/select_top.py
-    3. translate       → scripts/translate_batch.py
+    3. translate       → COGNITIVE (Stage B agent) + verify_translations.py
     4. publish_article → scripts/publish_article.py
     5. publish_brief   → scripts/publish_briefing.py
     6. audio           → scripts/render_audio.py
@@ -52,6 +52,14 @@ SELECTED_JSON = ROOT / "daily-selected.json"
 DAILY_ROOT = ROOT / "daily"
 SITE_BASE_URL = "https://unclejoeyao666.github.io/ai-daily-news"
 MIN_AUDIO_BYTES = 100_000  # 100 KB
+
+# Skill-owned verifier — single source of truth for "is translation done?".
+# Absolute path is mandatory: cron payloads run agents with arbitrary
+# working directories, and this is also called by daily_wake.py and
+# health.py with the same path. Do NOT replace with a relative reference.
+VERIFY_TRANSLATIONS = Path(
+    "/Users/unclejoe/.agents/skills/ai-news-workflow/scripts/verify_translations.py"
+)
 
 # Steps that are part of each cron group
 STEP_GROUPS = {
@@ -129,33 +137,46 @@ def step_select(date_str: str, state: Dict) -> Dict:
 
 
 def step_translate(date_str: str, state: Dict) -> Dict:
-    """Run translate_batch.py to generate audio_script.md + briefing.md.
+    """Verify cognitive translations are complete (does NOT do the work).
 
-    translate_batch.py reads daily-selected.json, translates articles,
-    writes audio_script.md and briefing.md, and updates DB.
+    Cognitive translation is the Stage B agent's responsibility — the agent
+    calls ``translate_helper.py write`` per article and ``finalize`` to
+    close the stage. This function is the deterministic path used by:
+
+      * the orchestrator when ``--resume`` lands on translate (e.g. watchdog)
+      * smoke tests / manual reruns
+
+    It runs the skill-owned verifier and reflects the result into state.
+    The previous implementation invoked ``translate_batch.py``, which set
+    ``translated_body = summary`` on failure — a silent fake-success path
+    responsible for the 2026-05-06 / 05-07 content degradation. That
+    script has been moved to ``archive/v2-stub/`` and must NOT be called
+    from any pipeline path.
     """
-    print("→ translate")
+    print("→ translate (verify-only)")
     dd = day_dir_for(date_str)
-    # translate_batch writes output to the day directory
-    r = run([
-        "python3", "scripts/translate_batch.py",
-        "--date", date_str,
-    ])
-    print(r.stdout.strip() if r.stdout else "")
 
-    # Verify outputs
+    if not VERIFY_TRANSLATIONS.exists():
+        return st.mark(state, "translate", "failed",
+                       error=f"verifier missing at {VERIFY_TRANSLATIONS}")
+
+    r = run(
+        ["python3", str(VERIFY_TRANSLATIONS), "--date", date_str],
+        check=False,
+    )
+
+    if r.returncode != 0:
+        # Verifier already printed details; fold its summary into state.
+        tail = (r.stdout or "").strip().splitlines()[-1:] or ["verifier rc=1"]
+        return st.mark(state, "translate", "failed",
+                       error=tail[0][:200])
+
+    # Sanity: audio_script.md must exist (agent writes it during Stage B).
     audio_script = dd / "audio_script.md"
-    briefing = dd / "briefing.md"
-    errors = []
     if not audio_script.exists():
-        errors.append(f"audio_script.md missing at {dd}")
-    if not briefing.exists():
-        errors.append(f"briefing.md missing at {dd}")
+        return st.mark(state, "translate", "failed",
+                       error=f"audio_script.md missing at {dd}")
 
-    if errors:
-        return st.mark(state, "translate", "failed", error="; ".join(errors))
-
-    # Mark articles as played
     sel = json.loads(SELECTED_JSON.read_text(encoding="utf-8"))
     ids = [a["id"] for a in sel.get("articles", [])]
     if ids:
