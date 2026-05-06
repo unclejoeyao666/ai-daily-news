@@ -153,6 +153,55 @@ def walk_days(days: int, budget_per_day: int) -> None:
             print(f"      {err}")
 
 
+SKILL_DRIFT_CHECK = Path(
+    "/Users/unclejoe/.agents/skills/ai-news-workflow/scripts/check_skill_drift.sh"
+)
+
+
+def today_complete_short_circuit() -> bool:
+    """Three-gate watchdog short-circuit. Returns True if we should exit early.
+
+    Gates (in order):
+      1. Skill drift check — if the SKILL/code contract is broken, refuse
+         to advance the pipeline; report and exit 2.
+      2. Race guard — if any step is mid-flight (status running/started),
+         a stage cron is currently advancing the pipeline. Defer to it.
+      3. is_complete — if today's 7 steps + 2 deliveries are all ok,
+         there's nothing for the watchdog to do.
+
+    Returns True iff the caller should sys.exit(0) or sys.exit(2) right
+    away. The exit code is set via sys.exit() inside this function for
+    fatal cases.
+    """
+    # 1. Skill drift — fatal.
+    if SKILL_DRIFT_CHECK.exists():
+        rc = subprocess.call(["bash", str(SKILL_DRIFT_CHECK)],
+                             stdout=subprocess.DEVNULL,
+                             stderr=subprocess.PIPE)
+        if rc != 0:
+            print("❌ skill drift detected — refusing to advance pipeline.")
+            print("   Run check_skill_drift.sh manually to see the issues.")
+            sys.exit(2)
+
+    # 2 & 3. Today's state checks.
+    today = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d")
+    sp = day_dir_for(today) / ".state.json"
+    if not sp.exists():
+        return False  # nothing to short-circuit; let walk_days handle
+    state = st.load(sp, today)
+
+    running = st.has_running_step(state)
+    if running:
+        print(f"⏸  {today}: '{running}' is running — watchdog defers")
+        return True
+
+    if st.is_complete(state):
+        print(f"✅ {today}: 7 steps + 2 deliveries all ok — watchdog noop")
+        return True
+
+    return False
+
+
 def main() -> None:
     p = argparse.ArgumentParser(description="AI Daily News pipeline wake")
     p.add_argument(
@@ -167,7 +216,17 @@ def main() -> None:
         "--budget-seconds", type=int, default=900,
         help="Soft budget for this wake (default: 900s)"
     )
+    p.add_argument(
+        "--skip-shortcircuit", action="store_true",
+        help="Bypass the today_complete short-circuit (manual debugging)"
+    )
     args = p.parse_args()
+
+    if not args.skip_shortcircuit and not args.date:
+        # Only short-circuit on the default day-walking path. --date is
+        # an explicit operator override that should always run.
+        if today_complete_short_circuit():
+            sys.exit(0)
 
     if args.date:
         date_str = parse_date(args.date)
