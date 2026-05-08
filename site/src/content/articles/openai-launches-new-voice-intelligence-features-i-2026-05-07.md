@@ -1,0 +1,25 @@
+---
+title: "OpenAI 在 API 中推出新语音智能功能"
+titleOriginal: "OpenAI launches new voice intelligence features in its API"
+description: "OpenAI 发布三项 Realtime API 新功能：GPT-Realtime-2 实现实时语音对话理解，GPT-Realtime-Translate 支持 70 余种语言的实时翻译，GPT-Realtime-Whisper 提供实时语音转文字服务。三款模型共同将实时音频从简单的问答推进到可听、可推理、可翻译、可转录并可采取行动的语音交互阶段。"
+pubDate: 2026-05-07
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/"
+sourceLang: en
+tags: ["model-release", "enterprise-app", "agent-tools"]
+---
+OpenAI 在其 Realtime API 中推出三项新语音智能功能，分别是 GPT-Realtime-2、GPT-Realtime-Translate 和 GPT-Realtime-Whisper。GPT-Realtime-2 模型具备理解能力，支持实时语音对话中的推理和操作；GPT-Realtime-Translate 可提供「跟上用户节奏」的实时翻译，支持超过 70 种输入语言和 13 种输出语言；GPT-Realtime-Whisper 则提供实时语音转文字功能，用户在对话过程中即可获取文字转录。
+
+OpenAI 表示：「我们今天推出的模型将实时音频从简单的呼叫响应推进到真正能够工作的语音界面：倾听、推理、翻译、转录，并在对话展开过程中采取行动。」这些功能对客服系统尤为有用，但在教育、创作者平台等多个领域也有广泛应用。翻译和 Whisper 按分钟计费，GPT-Realtime-2 按 token 消耗计费。
+
+## 对 AI 行业的影响
+
+实时语音交互能力的成熟标志着 AI 从文字交互向真正语音对话的重大跃迁。对于客服、教育等强语音依赖行业，这意味着 AI 替代纯人工语音服务的可行性显著提升。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/07/openai-launches-new-voice-intelligence-features-in-its-api/) · 2026-05-07
+
+> The new features could be handy for customer service systems, but OpenAI says they have applications that work across a variety of other fields, including education and creator platforms.

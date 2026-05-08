@@ -1,0 +1,25 @@
+---
+title: "OpenAI 为潜在自残风险新增「可信联系人」安全保护功能"
+titleOriginal: "OpenAI introduces new ‘Trusted Contact’ safeguard for cases of possible self-harm"
+description: "OpenAI 宣布为 ChatGPT 推出可选的「可信联系人」功能。当检测到用户对话涉及自我伤害或自杀主题时，系统在人工审核后，将向用户指定的成年联系人发送简短通知，不会分享聊天记录。该功能需用户主动开启，适用于全球 18 岁以上成年人。"
+pubDate: 2026-05-07
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/07/openai-introduces-new-trusted-contact-safeguard-for-cases-of-possible-self-harm/"
+sourceLang: en
+tags: ["safety-alignment", "policy-regulation"]
+---
+OpenAI 宣布为 ChatGPT 新增可选的「可信联系人」安全功能。当 ChatGPT 的自动化系统检测到用户可能谈论自残或自杀话题时，系统会先鼓励用户主动求助，并告知可能会通知其可信联系人。随后，一支经过专门培训的小型团队将对情况进行审核，若确认存在严重安全隐患，将通过邮件、短信或应用内推送向可信联系人发送简短通知。
+
+OpenAI 强调，该通知「有意受限」，不会向可信联系人分享任何聊天详情或对话记录。可信联系人功能采用主动加入模式，用户需在账户设置中添加联系人信息，联系人须在收到邀请后一周内接受。用户可随时移除或编辑其指定的联系人，联系人也可随时将自己移除。OpenAI 表示，该功能基于简单且经过专家验证的前提：当一个人可能处于危机状态时，与其熟悉信任的人建立联系可以带来有意义的帮助。
+
+## 对 AI 行业的影响
+
+这是 AI 行业首次将主动危机干预机制产品化的尝试。随着 AI 聊天机器人在心理健康支持领域的渗透加快，这一起草决策有望成为行业安全标准，对从事情绪陪伴类 AI 应用的公司具有参考意义。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/07/openai-introduces-new-trusted-contact-safeguard-for-cases-of-possible-self-harm/) · 2026-05-07
+
+> The company is expanding its efforts to protect ChatGPT users in cases where conversations may turn to self-harm.
