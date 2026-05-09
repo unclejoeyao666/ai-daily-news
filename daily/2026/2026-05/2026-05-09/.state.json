@@ -34,9 +34,8 @@
       "mp3_size": 2419004
     },
     "push": {
-      "status": "failed",
-      "finished_at": "2026-05-09T05:12:59.806342+00:00",
-      "error": "git_publish rc=1"
+      "status": "ok",
+      "finished_at": "2026-05-09T07:03:44+00:00"
     }
   }
 }
