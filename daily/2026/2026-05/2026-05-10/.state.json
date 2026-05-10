@@ -35,7 +35,7 @@
     },
     "push": {
       "status": "failed",
-      "finished_at": "2026-05-10T05:19:28.725916+00:00",
+      "finished_at": "2026-05-10T17:10:44.321225+00:00",
       "error": "git_publish rc=1"
     }
   }
