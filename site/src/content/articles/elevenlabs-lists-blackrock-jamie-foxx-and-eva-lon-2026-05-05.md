@@ -1,0 +1,29 @@
+---
+title: "ElevenLabs 获 5 亿美元 ARR，黑石、杰米·福克斯、伊娃·朗格利亚参投"
+titleOriginal: "ElevenLabs lists BlackRock, Jamie Foxx, and Eva Longoria as new investors"
+description: "语音 AI 独角兽 ElevenLabs 宣布 Series D 融资新投资者名单，包括黑石、Jamie Foxx、Eva Longoria 等，ARR 已突破 5 亿美元，估值达 110 亿美元，企业客户包括德意志电信、Revolut 和 Klarna。"
+pubDate: 2026-05-05
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/05/elevenlabs-lists-blackrock-jamie-foxx-and-eva-longoria-as-new-investors/"
+sourceLang: en
+tags: ["consumer-app", "funding-ipo"]
+---
+语音 AI 公司 ElevenLabs 宣布了 5 亿美元 Series D 融资的最新投资者名单，包括黑石、Wellington、D.E. Shaw、Schroders 等机构投资者，Nvidia、Salesforce Ventures、拉丁电信等企业投资者，以及 Jamie Foxx、Eva Longoria、《鱿鱼游戏》导演黄东赫等个人投资者。
+
+公司同时披露，年经常性收入（ARR）已突破 5 亿美元，去年年底为 3.5 亿美元，今年第一季度新增 1 亿美元净 ARR。公司估值从去年 9 月的 66 亿美元增长至今年 2 月的 110 亿美元。
+
+ElevenLabs CEO Mati Staniszewski 表示，消费者不会信任「听起来像机器人或互动奇怪」的系统，公司正在致力于构建「类人级别的 AI 语音模型」。上个月，公司收购了波兰语音 AI 创业公司 Papla 的团队以强化研究能力。
+
+近期企业客户包括德意志电信、Revolut 和 Klarna。
+
+## 对 AI 行业的影响
+
+ElevenLabs 的 5 亿美元 ARR 是一个重要的里程碑，它证明了语音 AI 从「技术玩具」到「企业级基础设施」的转化已经完成。5 亿美元的 ARR 规模意味着语音 AI 已经是一个独立的企业软件赛道，而不是某个大模型的附属功能。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/05/elevenlabs-lists-blackrock-jamie-foxx-and-eva-longoria-as-new-investors/) · 2026-05-05
+
+> ElevenLabs reveals new investors, hits $500M ARR, and expands enterprise footprint as voice AI becomes a critical interface.

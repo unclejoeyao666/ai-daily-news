@@ -34,9 +34,16 @@
       "mp3_size": 1865612
     },
     "push": {
-      "status": "failed",
-      "finished_at": "2026-05-10T17:10:44.321225+00:00",
-      "error": "git_publish rc=1"
+      "status": "ok",
+      "finished_at": "2026-05-10T19:16:59.751161+02:00"
+    }
+  },
+  "deliveries": {
+    "discord_text": {
+      "status": "pending"
+    },
+    "discord_audio": {
+      "status": "pending"
     }
   }
 }

@@ -1,0 +1,31 @@
+---
+title: "Meta 用 AI 分析身高和骨骼结构识别未成年用户，已在部分国家上线"
+titleOriginal: "Meta will use AI to analyze height and bone structure to identify if users are underage"
+description: "Meta 宣布使用 AI 分析照片和视频中的身高、骨骼结构等视觉线索，判断用户是否未满 13 岁，并将其从 Facebook 和 Instagram 移除。该系统目前已在部分国家运行，正在向更广泛地区推广。"
+pubDate: 2026-05-05
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/05/meta-will-use-ai-to-analyze-height-and-bone-structure-to-identify-if-users-are-underage/"
+sourceLang: en
+tags: ["safety-alignment", "consumer-app"]
+---
+Meta 周二宣布，将使用 AI 分析用户照片和视频中的视觉线索，包括身高和骨骼结构，来判断用户是否未满 13 岁并应被从 Facebook 和 Instagram 移除。
+
+Meta 明确表示：「这不是面部识别。我们的 AI 分析整体主题和视觉线索，例如身高或骨骼结构，来估计一个人的大致年龄；它不会识别图像中的特定个人。」公司补充称，结合文本分析和互动行为的综合判断，可以显著提高未成年账户的识别和清除数量。
+
+该系统目前已在部分国家运行，Meta 正致力于向更广泛地区推广。如果系统判断用户可能未成年，会停用其账户，用户需要通过年龄验证流程证明已成年，否则账户将被删除。
+
+此前，新墨西哥州一陪审团刚刚裁定 Meta 因误导消费者关于平台安全性的信息并使儿童面临风险，需支付 3.75 亿美元民事罚款，并被要求对平台进行根本性修改。Meta 已威胁要关闭在该州的社交媒体服务。
+
+此外，Meta 还宣布将针对青少年的「严格账户」功能扩展至欧盟和巴西的 27 个国家，并首次扩展至美国的 Facebook。
+
+## 对 AI 行业的影响
+
+骨骼结构分析作为年龄验证手段，是 AI 在内容审核领域的一个新前沿。它的准确性、隐私边界以及对未成年人的实际保护效果，都存在争议。但它显示了一个趋势：平台正在从「内容审核」转向「用户属性预测」，这对隐私和用户体验的影响深远。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/05/meta-will-use-ai-to-analyze-height-and-bone-structure-to-identify-if-users-are-underage/) · 2026-05-05
+
+> The visual analysis system is now operating in select countries, but Meta says it's working toward a broader rollout.
