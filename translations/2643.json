@@ -1,0 +1,11 @@
+{
+  "translated_title": "OpenAI发布Daybreak安全AI，剑指Claude Mythos竞品",
+  "translated_summary": "OpenAI推出Daybreak计划，利用Codex安全AI代理主动发现并修复代码漏洞，在攻击者之前构筑防线。",
+  "translated_body": "OpenAI于今日发布了名为Daybreak的全新AI安全计划，该项目专注于在攻击者发现之前主动识别并修复系统漏洞。\n\nDaybreak基于今年3月推出的Codex安全AI代理构建。该代理能够分析组织代码库，建立威胁模型，识别潜在攻击路径，验证漏洞可能性，并自动化检测高风险区域。\n\n这一举措被业界视为OpenAI面对Anthropic旗下Claude安全能力的正面回应。随着AI系统被广泛部署于企业关键业务，安全防护从被动响应转向主动预防已成行业趋势。\n\nOpenAI表示，Daybreak将优先面向企业级用户提供服务，帮助开发团队在产品上线前发现并修复安全问题。目前该计划的详细商业化方案仍在制定中。",
+  "impact_analysis": "面向企业安全市场，直接挑战Anthropic Claude安全能力",
+  "industry_tags": [
+    "safety-alignment",
+    "agent-tools"
+  ],
+  "_translated_at": "2026-05-13 06:35:58.749461"
+}

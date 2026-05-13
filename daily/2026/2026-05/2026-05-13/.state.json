@@ -1,23 +1,23 @@
 {
-  "date": "2026-05-12",
-  "started_at": "2026-05-11T22:02:37.608921+00:00",
+  "date": "2026-05-13",
+  "started_at": "2026-05-12T22:01:29.112386+00:00",
   "steps": {
     "harvest": {
       "status": "ok",
-      "finished_at": "2026-05-11T22:02:59.201196+00:00",
+      "finished_at": "2026-05-12T22:01:49.616428+00:00",
       "stats": {
-        "unplayed": 1155,
-        "total": 2579
+        "unplayed": 1257,
+        "total": 2681
       }
     },
     "select": {
       "status": "ok",
-      "finished_at": "2026-05-11T22:02:59.254293+00:00",
+      "finished_at": "2026-05-12T22:01:49.669127+00:00",
       "selected_count": 10
     },
     "translate": {
       "status": "failed",
-      "finished_at": "2026-05-13T06:03:42.503486+00:00",
+      "finished_at": "2026-05-13T06:03:42.442838+00:00",
       "error": "Fix the rows in SQLite (or rewrite audio_script.md) and re-run."
     },
     "publish_article": {
