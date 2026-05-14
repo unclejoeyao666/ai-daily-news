@@ -1,0 +1,31 @@
+---
+title: "Anthropic 产品负责人 Cat Wu：未来 AI 将在你意识到需求之前就已满足你"
+titleOriginal: "Anthropic’s Cat Wu says that, in the future, AI will anticipate your needs before you know what they are"
+description: "Anthropic Claude Code 与 Cowork 产品负责人 Cat Wu 表示，AI 的下一阶段重大飞跃是主动化：系统将提前预判用户需求，无需等待明确指令即可采取行动。这代表了 AI 从响应式工具向预测性伙伴的根本转变。"
+pubDate: 2026-05-13
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/"
+sourceLang: en
+tags: ["model-release", "agent-tools", "consumer-app"]
+---
+# Anthropic 产品负责人畅想主动式 AI 未来
+
+Anthropic Claude Code 与 Cowork 产品负责人 Cat Wu 近日在接受采访时表示，AI 的下一阶段重大飞跃将是「主动化」。
+
+Wu 指出：「企业客户越来越倾向于选择 Claude 而非 ChatGPT。最近的报告显示，Anthropic 已在企业客户中超越 OpenAI，市场份额自 2025 年 5 月以来翻四倍。」
+
+她认为，下一步 AI 将能够「在你意识到需求之前就已满足你」。这意味着 AI 助手不再被动等待用户指令，而是主动分析上下文、预判意图、提前行动。
+
+Wu 表示：「我们的模型仍在稳步提升，我们希望将这些进步带给用户。在部署策略上会有所调整——比如我们如何处理 Glasswing——但核心目标是让智能以安全的方式惠及更多人。」
+
+## 对 AI 行业的影响
+
+代表 AI 人机交互范式的根本转变，从被动响应走向主动预判，影响所有 AI 应用开发者。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/13/anthropics-cat-wu-says-that-in-the-future-ai-will-anticipate-your-needs-before-you-know-what-they-are/) · 2026-05-13
+
+> The head of product for Claude Code and Cowork says that the next big step for AI is proactivity.

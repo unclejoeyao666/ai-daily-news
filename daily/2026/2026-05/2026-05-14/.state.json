@@ -1,0 +1,42 @@
+{
+  "date": "2026-05-14",
+  "started_at": "2026-05-13T22:03:24.940121+00:00",
+  "steps": {
+    "harvest": {
+      "status": "ok",
+      "finished_at": "2026-05-13T22:03:46.386890+00:00",
+      "stats": {
+        "unplayed": 1352,
+        "total": 2776
+      }
+    },
+    "select": {
+      "status": "ok",
+      "finished_at": "2026-05-13T22:03:46.455242+00:00",
+      "selected_count": 10
+    },
+    "translate": {
+      "status": "ok",
+      "finished_at": "2026-05-14T04:36:47.368144+00:00",
+      "translated_count": 10
+    },
+    "publish_article": {
+      "status": "ok",
+      "finished_at": "2026-05-14T05:17:19.165213+00:00"
+    },
+    "publish_brief": {
+      "status": "ok",
+      "finished_at": "2026-05-14T05:17:19.214900+00:00"
+    },
+    "audio": {
+      "status": "ok",
+      "finished_at": "2026-05-14T05:18:00.517731+00:00",
+      "mp3_size": 2824508
+    },
+    "push": {
+      "status": "failed",
+      "finished_at": "2026-05-14T05:18:04.831187+00:00",
+      "error": "git_publish rc=1"
+    }
+  }
+}
