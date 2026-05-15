@@ -1,0 +1,11 @@
+{
+  "translated_title": "Clawdmeter：把Claude Code使用数据变成桌面小仪表盘",
+  "translated_summary": "一款名为Clawdmeter的开源工具现身，能将Claude Code的用户使用统计数据转化为精致的桌面小部件，为AI编程重度用户提供了实时的coding效率可视化面板。",
+  "translated_body": "一位独立开发者推出了一款名为Clawdmeter的开源工具，专门面向Claude Code的重度用户。该工具可以读取用户的Claude Code使用日志，将编码时长、调用次数、任务完成率等核心指标渲染为一块小巧的桌面仪表盘挂件。\n\nClawdmeter支持macOS、Windows和Linux系统，安装后会在系统托盘或桌面角落显示一个可定制的迷你面板。用户可以自行选择显示哪些指标，包括每日代码行数、API调用成本、任务成功率等数据。\n\n该工具已在GitHub上开源，吸引了大量开发者关注。有用户评论称，这是他见过的最实用的Claude Code配套工具之一，可以帮助团队量化AI编程助手的实际效率。\n\n值得注意的是，就在Clawdmeter发布的同时，OpenAI也宣布将Codex引入手机端，两条新闻几乎同步出现，被业内视为AI编程工具赛道竞争加剧的信号。",
+  "impact_analysis": "AI编程工具生态正在快速分化，从通用助手向专业化、定制化方向演进",
+  "industry_tags": [
+    "agent-tools",
+    "open-source"
+  ],
+  "_translated_at": "2026-05-15 06:35:37.254383"
+}
