@@ -1,0 +1,29 @@
+---
+title: "WhatsApp为Meta AI对话推出隐身模式"
+titleOriginal: "WhatsApp adds an incognito mode in Meta AI chats"
+description: "Meta在其即时通讯应用WhatsApp中加入AI对话隐身模式，用户开启后与Meta AI的对话不会被保存，关闭聊天窗口后消息默认自动消失。这是主流社交应用首次在AI对话场景中引入消失消息机制。"
+pubDate: 2026-05-13
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/"
+sourceLang: en
+tags: ["consumer-app", "policy-regulation", "model-release"]
+---
+Meta近日在WhatsApp中为Meta AI对话引入了「隐身模式」（Incognito Mode），用户在开启后与AI助手的对话将不会被保存，一旦关闭聊天窗口，所有消息默认自动消失。
+
+这一功能与WhatsApp此前的阅后即焚功能有相似逻辑，但针对AI对话场景做了专门设计。用户可以在与Meta AI的对话界面中手动开启或关闭隐身模式，且不影响与其他真实用户的正常聊天记录。
+
+Meta表示，推出这一功能的背景是用户对AI对话隐私的担忧日益增加。与AI助手的对话内容可能被用于模型训练或广告定向，这一行业惯例引发了广泛讨论。隐身模式的推出被视作Meta在AI隐私保护方面的一项主动措施。
+
+目前该功能正在逐步向全球WhatsApp用户推送，iOS和Android版本均已支持。
+
+## 对 AI 行业的影响
+
+主流社交平台开始在AI对话中引入消失消息机制，用户数据隐私标准正在被重新定义
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/13/whatsapp-adds-an-incognito-mode-in-meta-ai-chats/) · 2026-05-13
+
+> Meta said these incognito conversations are not saved, and messages will disappear by default once you close the chat.

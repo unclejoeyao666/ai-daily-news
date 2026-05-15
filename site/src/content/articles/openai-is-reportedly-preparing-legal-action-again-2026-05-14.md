@@ -1,0 +1,29 @@
+---
+title: "传OpenAI准备起诉苹果：合作未达预期，矛盾升级"
+titleOriginal: "OpenAI is reportedly preparing legal action against Apple; it wouldn’t be the first partner to feel burned"
+description: "OpenAI对苹果在ChatGPT整合协议中的表现极度不满，认为iPhone厂商未能兑现承诺的用户量与产品露出，已开始积极探讨对苹果提起法律诉讼的可能性。这也是最新一家对苹果感到失望的合作伙伴。"
+pubDate: 2026-05-14
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/"
+sourceLang: en
+tags: ["policy-regulation", "consumer-app", "industry-trend"]
+---
+据多位知情人士透露，OpenAI正在认真考虑对苹果提起诉讼，原因是该公司认为其在iPhone上的ChatGPT整合未能带来当初承诺的用户规模和产品露出。
+
+这一纠纷源于苹果与OpenAI去年达成的合作协议：根据该协议，ChatGPT被整合进苹果设备的部分AI功能中。作为交换，OpenAI获得了在苹果生态中的高级别系统级访问权限。
+
+然而，OpenAI内部认为实际效果远低于预期。消息人士指出，苹果用户从ChatGPT获得的订阅转化率微乎其微，同时苹果在系统界面中对ChatGPT的品牌展示也不够突出。
+
+这并非苹果首次与合作伙伴产生摩擦。此前微软与苹果在必应搜索整合问题上也曾发生类似矛盾，最终导致合作进展受阻。法律行业内部人士分析，如果OpenAI真对苹果提起诉讼，可能涉及合同违约与反垄断相关议题。
+
+## 对 AI 行业的影响
+
+OpenAI与苹果合作关系恶化，科技平台间AI整合的利益分配矛盾浮出水面
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/14/openai-is-reportedly-preparing-legal-action-against-apple-it-wouldnt-be-the-first-partner-to-feel-burned/) · 2026-05-14
+
+> OpenAI is so frustrated with Apple over a ChatGPT integration that failed to deliver the subscribers and prominence it expected that the company is now actively exploring legal action against the iPhone maker.
