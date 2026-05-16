@@ -1,0 +1,31 @@
+---
+title: "OpenAI推出ChatGPT个人理财功能，可绑定银行账户"
+titleOriginal: "OpenAI launches ChatGPT for personal finance, will let you connect bank accounts"
+description: "用户关联账户后，可在ChatGPT内查看投资组合表现、消费支出、定额订阅以及待还账单。这项新功能通过Plaid与全美12000家金融机构打通，被视为AI进入个人财务核心场景的标志性动作。"
+pubDate: 2026-05-15
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/"
+sourceLang: en
+tags: ["consumer-app", "policy-regulation"]
+---
+OpenAI于本周一宣布，ChatGPT即将支持绑定银行账户功能，用户在设置中关联账户后，将看到一个专属的理财仪表盘，涵盖投资组合收益、日常消费支出、定额订阅订阅费用以及即将到期的账单提醒。这是通用聊天机器人向个人财务核心场景延伸的首次大规模尝试。
+
+该功能通过Plaid平台实现与金融机构的对接。目前Plaid覆盖美国超过12000家金融机构，包括嘉信理财、富达等主流平台。用户绑定后，ChatGPT将能够读取账户余额、交易流水、股票投资组合以及抵押贷款、信用卡负债等负债信息。
+
+OpenAI表示，目前每月已有超过2亿次与财务相关的提问在ChatGPT上发生。新发布的GPT-5.5模型在结合上下文的推理能力上显著提升，被认为是支撑这一功能的关键技术基础。OpenAI还透露，已与金融专业人士合作建立专项基准测试数据集，以提升模型在个人理财场景下的回答质量。
+
+值得注意的是，该功能目前仅提供读取权限，ChatGPT无法对银行账户进行任何操作或修改。但OpenAI在隐私说明中留有模糊空间——除了用于AI训练这一用途外，并未明确承诺不会将用户的财务数据用于其他目的，这引发了一定的隐私担忧。
+
+用户可随时在设置中解除账户绑定，但OpenAI拥有最长30天的数据删除宽限期。用户也可以查看和删除ChatGPT记住的"财务记忆"，包括理财目标或财务承诺等个性化信息。
+
+## 对 AI 行业的影响
+
+AI助手全面切入个人财务入口，隐私边界和数据用途成核心争议
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/15/openai-launches-chatgpt-for-personal-finance-will-let-you-connect-bank-accounts/) · 2026-05-15
+
+> Once users connect their accounts, they will see a dashboard of their portfolio performance, spending, subscriptions, and upcoming payments.
