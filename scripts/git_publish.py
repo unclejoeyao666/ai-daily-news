@@ -33,7 +33,7 @@ def main():
     # 1. Sync with remote
     run(["git", "pull", "--rebase", "origin", "main"], check=False)
 
-    # 2. Stage
+    # 2. Stage — skip paths that are gitignored
     paths = [
         "data/news.db",
         "site/src/content/articles",
@@ -41,7 +41,12 @@ def main():
         "site/public/audio",
         "daily",
     ]
-    run(["git", "add", "--"] + paths)
+    for p in paths:
+        r = subprocess.run(["git", "-check-ignore", "-q", p], capture_output=True)
+        if r.returncode == 0:
+            print(f"ℹ️  skipping gitignored: {p}")
+            continue
+        run(["git", "add", "--", p], check=False)
 
     # 3. Diff check
     diff = run(["git", "diff", "--cached", "--stat"], check=False)
