@@ -25,6 +25,64 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from scripts.lib import state as st
+from scripts.lib import config
+
+
+def _past_drop_deadline(date_str: str, now_utc=None) -> bool:
+    """True when the deterministic translate fallback is allowed for date_str.
+
+    TODAY ONLY, and only after DROP_DEADLINE_UTC — the cognitive Stage
+    B + its retry crons get their full window first. Past days are
+    deliberately excluded: translate_helper operates on the single,
+    daily-overwritten daily-selected.json (today's selection), so
+    running the fallback for a historical stuck day would mutate it
+    against the wrong article set. Historically wedged days are left
+    to age out (see spec §3 module 6) — they cannot be safely
+    backfilled by this mechanism.
+
+    now_utc is injectable for testing; defaults to the real clock.
+    """
+    if now_utc is None:
+        now_utc = datetime.now(timezone.utc)
+    today_berlin = now_utc.astimezone(timezone(timedelta(hours=2))).date()
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    if d != today_berlin:
+        return False
+    hh, mm = config.DROP_DEADLINE_UTC
+    return (now_utc.hour, now_utc.minute) >= (hh, mm)
+
+
+def force_translate_fallback(date_str: str, budget: int) -> dict:
+    """Run the deterministic drop-untranslated finalize for date_str.
+
+    This is the ONLY translate-unblocking the watchdog can do (it
+    cannot translate — that's cognitive). It drops still-untranslated
+    ids, requires >= MIN_BRIEFING survivors, synthesizes audio_script
+    if needed, then verifies+marks translate ok. If too few articles
+    are translated it exits non-zero and translate stays not-ok (the
+    failureAlert path), which is the correct, non-faking behavior.
+    """
+    cmd = [
+        "python3", "scripts/translate_helper.py", "finalize",
+        "--date", date_str, "--drop-untranslated",
+    ]
+    print(f"🩹 {date_str}: translate stuck past deadline — deterministic "
+          f"drop-untranslated fallback")
+    start = time.time()
+    try:
+        r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
+                            timeout=budget, check=False)
+        if r.stdout.strip():
+            print(r.stdout.strip())
+        if r.returncode != 0 and r.stderr.strip():
+            print(r.stderr.strip(), file=sys.stderr)
+        return {"ok": r.returncode == 0, "rc": r.returncode,
+                "elapsed": time.time() - start}
+    except subprocess.TimeoutExpired:
+        return {"ok": False, "rc": -1, "elapsed": budget}
 
 
 def parse_date(s: str) -> str:
@@ -126,6 +184,18 @@ def walk_days(days: int, budget_per_day: int) -> None:
         if not next_step:
             print(f"✅ {date_str}: pipeline complete")
             continue
+
+        # next_pending == 'translate' implies harvest+select are ok
+        # (they precede it in STEPS). If we're past the cognitive
+        # retry window, deterministically unblock so publish→push can
+        # still ship the day.
+        if next_step == "translate" and _past_drop_deadline(date_str):
+            force_translate_fallback(date_str, budget_per_day)
+            state = st.load(sp, date_str)
+            next_step = st.next_pending(state)
+            if not next_step:
+                print(f"✅ {date_str}: pipeline complete")
+                continue
 
         label = st.STEP_LABELS.get(next_step, next_step)
         print(f"▶️  {date_str}: resuming '{next_step}' ({label}), budget={budget_per_day}s")
@@ -236,6 +306,13 @@ def main() -> None:
         if not next_step:
             print(f"✅ {date_str}: pipeline complete")
             return
+        if next_step == "translate" and _past_drop_deadline(date_str):
+            force_translate_fallback(date_str, args.budget_seconds)
+            state = st.load(sp, date_str) if sp.exists() else None
+            next_step = st.next_pending(state) if state else None
+            if not next_step:
+                print(f"✅ {date_str}: pipeline complete")
+                return
         label = st.STEP_LABELS.get(next_step, next_step)
         print(f"▶️  {date_str}: resuming '{next_step}' ({label})")
         r = run_pipeline(date_str, args.budget_seconds)
