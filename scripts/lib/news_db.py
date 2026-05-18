@@ -212,7 +212,17 @@ class NewsDB:
         published_after: Optional[str] = None,
         discovered_after: Optional[str] = None,
     ) -> List[sqlite3.Row]:
-        """Top-N unplayed articles ordered by importance, then recency.
+        """Unplayed candidate pool ordered by **recency** (newest first).
+
+        Returns up to ``limit`` rows ordered by
+        ``COALESCE(published_at, discovered_at) DESC``. The caller
+        (select_top.py) then computes a time-decay score in Python and
+        picks the final top-N. Ordering by recency here — instead of
+        the old ``importance DESC`` — guarantees fresh articles always
+        enter the pool and can never be crowded out of it by a
+        high-importance stale backlog item (the 2026-05 "播 6 天前旧闻"
+        regression). ``limit`` is therefore a pool size, not the final
+        selection size.
 
         Freshness filters (both optional, applied if non-None):
 
@@ -241,10 +251,39 @@ class NewsDB:
         if discovered_after:
             sql.append("AND discovered_at >= ?")
             params.append(discovered_after)
-        sql.append("ORDER BY importance DESC, COALESCE(published_at, discovered_at) DESC")
+        sql.append("ORDER BY COALESCE(published_at, discovered_at) DESC")
         sql.append("LIMIT ?")
         params.append(limit)
         return conn.execute("\n".join(sql), params).fetchall()
+
+    def archive_stale_unplayed(self, cutoff_iso: str) -> int:
+        """Archive unplayed articles older than the cutoff.
+
+        Demotes ``broadcast_status`` from ``unplayed`` to ``archived``
+        for every article whose ``COALESCE(published_at, discovered_at)``
+        is strictly before ``cutoff_iso``. This stops a failed day's
+        un-played backlog from accumulating and resurfacing as stale
+        "news" (time-decay already de-prioritizes it; aging removes it
+        from the pool entirely). Idempotent: re-running archives only
+        rows still unplayed. Returns the number of rows archived.
+        """
+        conn = self.connect()
+        conn.execute("BEGIN")
+        try:
+            cur = conn.execute(
+                """
+                UPDATE news_articles
+                   SET broadcast_status = 'archived'
+                 WHERE broadcast_status = 'unplayed'
+                   AND COALESCE(published_at, discovered_at) < ?
+                """,
+                (cutoff_iso,),
+            )
+            conn.execute("COMMIT")
+            return cur.rowcount
+        except Exception:
+            conn.execute("ROLLBACK")
+            raise
 
     def get_by_id(self, article_id: int) -> Optional[sqlite3.Row]:
         conn = self.connect()
