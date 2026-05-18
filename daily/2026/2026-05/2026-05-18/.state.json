@@ -34,8 +34,22 @@
       "mp3_size": 3402668
     },
     "push": {
-      "status": "running",
-      "started_at": "2026-05-18T05:16:04.369498+00:00"
+      "status": "ok",
+      "finished_at": "2026-05-18T05:16:07.577315+00:00"
+    }
+  },
+  "deliveries": {
+    "discord_text": {
+      "status": "ok",
+      "finished_at": "2026-05-18T06:04:55.123040+00:00",
+      "chars": 1743,
+      "message_id": "1505813325253054505"
+    },
+    "discord_audio": {
+      "status": "ok",
+      "finished_at": "2026-05-18T06:04:55.123135+00:00",
+      "mp3_size": 3402668,
+      "message_id": "1505813379019837493"
     }
   }
 }

@@ -17,20 +17,25 @@
     },
     "translate": {
       "status": "failed",
-      "finished_at": "2026-05-18T04:04:39.776239+00:00",
+      "finished_at": "2026-05-18T05:17:27.903731+00:00",
       "error": "Fix the rows in SQLite (or rewrite audio_script.md) and re-run."
     },
     "publish_article": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-18T07:07:49.917824+00:00"
     },
     "publish_brief": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-18T07:07:50.007153+00:00"
     },
     "audio": {
-      "status": "pending"
+      "status": "failed",
+      "finished_at": "2026-05-18T07:07:50.067600+00:00",
+      "error": "render_audio rc=1"
     },
     "push": {
-      "status": "pending"
+      "status": "running",
+      "started_at": "2026-05-18T07:07:50.101472+00:00"
     }
   }
 }
