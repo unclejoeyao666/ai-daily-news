@@ -233,6 +233,15 @@ def compute_pending(date_str: str) -> dict:
     done, pending = [], []
     if ids:
         valid_tags = set(load_valid_tags())
+        if not valid_tags:
+            # tags.json missing/corrupt: every article would be judged
+            # "pending" purely from a config failure (and the skill
+            # verifier returns rc=2 for the same reason). Fail loud and
+            # specific instead of silently reporting 0 done.
+            print(f"❌ no valid tags loaded from {TAGS_JSON} — cannot "
+                  f"judge translation completeness; fix tags.json",
+                  file=sys.stderr)
+            sys.exit(2)
         with NewsDB(str(DB_PATH)) as db:
             for aid in ids:
                 ok = _is_translated(db.get_by_id(aid), valid_tags)
