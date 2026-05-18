@@ -44,6 +44,13 @@ def _past_drop_deadline(date_str: str, now_utc=None) -> bool:
     """
     if now_utc is None:
         now_utc = datetime.now(timezone.utc)
+    # UTC+2 is the codebase-wide "Berlin" convention (parse_date in
+    # daily_pipeline/translate_helper/git_publish, walk_days' own
+    # `today`). Must stay identical to those — diverging here (e.g. to
+    # zoneinfo) would make this date compare disagree with the date
+    # the rest of the pipeline uses at the winter DST boundary, which
+    # is worse than the shared ~1h/yr off-by-one. The deadline itself
+    # is pure UTC (DROP_DEADLINE_UTC) so it is DST-immune.
     today_berlin = now_utc.astimezone(timezone(timedelta(hours=2))).date()
     try:
         d = datetime.strptime(date_str, "%Y-%m-%d").date()
@@ -66,7 +73,7 @@ def force_translate_fallback(date_str: str, budget: int) -> dict:
     failureAlert path), which is the correct, non-faking behavior.
     """
     cmd = [
-        "python3", "scripts/translate_helper.py", "finalize",
+        "python3", str(ROOT / "scripts" / "translate_helper.py"), "finalize",
         "--date", date_str, "--drop-untranslated",
     ]
     print(f"🩹 {date_str}: translate stuck past deadline — deterministic "
@@ -190,7 +197,15 @@ def walk_days(days: int, budget_per_day: int) -> None:
         # retry window, deterministically unblock so publish→push can
         # still ship the day.
         if next_step == "translate" and _past_drop_deadline(date_str):
-            force_translate_fallback(date_str, budget_per_day)
+            fb = force_translate_fallback(date_str, budget_per_day)
+            if not fb["ok"]:
+                # < MIN_BRIEFING translated (or timed out): translate
+                # stays not-ok by design; re-running run_pipeline would
+                # just re-fail the verifier. Leave it for failureAlert /
+                # a later cognitive retry. Skip this day this tick.
+                print(f"⏭  {date_str}: drop fallback rc={fb['rc']} — "
+                      f"translate left not-ok (failureAlert surfaces it)")
+                continue
             state = st.load(sp, date_str)
             next_step = st.next_pending(state)
             if not next_step:
@@ -307,7 +322,11 @@ def main() -> None:
             print(f"✅ {date_str}: pipeline complete")
             return
         if next_step == "translate" and _past_drop_deadline(date_str):
-            force_translate_fallback(date_str, args.budget_seconds)
+            fb = force_translate_fallback(date_str, args.budget_seconds)
+            if not fb["ok"]:
+                print(f"⏭  {date_str}: drop fallback rc={fb['rc']} — "
+                      f"translate left not-ok (failureAlert surfaces it)")
+                return
             state = st.load(sp, date_str) if sp.exists() else None
             next_step = st.next_pending(state) if state else None
             if not next_step:

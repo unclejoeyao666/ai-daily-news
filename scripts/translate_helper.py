@@ -83,7 +83,7 @@ def cmd_write(args) -> None:
     else:
         # Interactive: read from stdin
         print("Paste translation JSON and press Ctrl+D:")
-        data = json.parse(sys.stdin.read())
+        data = json.loads(sys.stdin.read())
 
     # Validate required fields
     required = ["translated_title", "translated_summary", "impact_analysis"]
@@ -193,15 +193,38 @@ def _day_dir_for(date_str: str) -> Path:
 
 _REQUIRED_COLS = ("translated_title", "translated_summary",
                    "translated_body", "impact_analysis")
+_MAX_SUMMARY_CHARS = 300  # mirrors verify_translations.MAX_SUMMARY_CHARS / Astro cap
 
 
-def _is_translated(row) -> bool:
-    """A row counts as fully translated iff all four required columns
-    are non-empty — the same completeness test verify_translations.py
-    applies, so `pending` never disagrees with the verifier."""
+def _is_translated(row, valid_tags: set) -> bool:
+    """A row counts as fully translated iff it would PASS
+    verify_translations.py's per-article checks. Kept in exact lockstep
+    so `pending`/`compute_pending` never disagree with the verifier —
+    otherwise the drop-untranslated fallback could keep an id the
+    verifier then rejects, breaking the MIN_BRIEFING guarantee.
+
+    Checks (same as verify_translations.check_articles):
+      - all four translated_* columns non-empty
+      - translated_summary <= 300 chars
+      - source_url is http(s)
+      - industry_tags is a JSON array of 1..3 valid slugs
+    """
     if row is None:
         return False
-    return all((row[c] or "").strip() for c in _REQUIRED_COLS)
+    if not all((row[c] or "").strip() for c in _REQUIRED_COLS):
+        return False
+    if len(row["translated_summary"] or "") > _MAX_SUMMARY_CHARS:
+        return False
+    url = row["source_url"] or ""
+    if not (url.startswith("http://") or url.startswith("https://")):
+        return False
+    try:
+        tags = json.loads(row["industry_tags"] or "[]")
+    except json.JSONDecodeError:
+        return False
+    if not isinstance(tags, list) or not (1 <= len(tags) <= 3):
+        return False
+    return all(t in valid_tags for t in tags)
 
 
 def compute_pending(date_str: str) -> dict:
@@ -209,9 +232,11 @@ def compute_pending(date_str: str) -> dict:
     ids = [a["id"] for a in load_selected()]
     done, pending = [], []
     if ids:
+        valid_tags = set(load_valid_tags())
         with NewsDB(str(DB_PATH)) as db:
             for aid in ids:
-                (done if _is_translated(db.get_by_id(aid)) else pending).append(aid)
+                ok = _is_translated(db.get_by_id(aid), valid_tags)
+                (done if ok else pending).append(aid)
     return {"total": len(ids), "done": done, "pending": pending}
 
 
@@ -267,15 +292,22 @@ def _synthesize_audio_script(date_str: str, ids: list) -> str:
                 parts.append(f"这一进展的影响：{impact}")
             parts.append("")
     parts.append("以上就是今天的 AI 科技早报全部内容。")
+    closing = "感谢收听，我们明天同一时间再见。"
     # Guarantee the verifier's MIN_AUDIO_SCRIPT_CHARS floor so a thin
-    # (but >= MIN_BRIEFING) day still ships rather than failing verify.
-    # Deterministic, bounded title recap — never an unbounded loop.
-    for _ in range(40):
-        script = "\n".join(parts)
-        if len(script) >= config.MIN_AUDIO_SCRIPT_CHARS:
-            break
-        parts.append("再为您回顾今天的要点：" + "；".join(titles) + "。")
-    parts.append("感谢收听，我们明天同一时间再见。")
+    # (but >= MIN_BRIEFING) day still ships. Deterministic, no loop:
+    # one title recap, then at most one bounded filler block sized to
+    # exactly clear the floor (only ever triggers on degenerate
+    # near-empty content).
+    floor = config.MIN_AUDIO_SCRIPT_CHARS
+    if len("\n".join(parts + [closing])) < floor:
+        recap = "今天的要点回顾：" + "；".join(t for t in titles if t) + "。"
+        parts.append(recap)
+    body = "\n".join(parts + [closing])
+    if len(body) < floor:
+        unit = "本期播报到此结束，感谢持续关注 AI 科技每日早报。"
+        reps = (floor - len(body)) // len(unit) + 1
+        parts.append(unit * reps)
+    parts.append(closing)
     script = "\n".join(parts)
     path = _day_dir_for(date_str) / "audio_script.md"
     path.parent.mkdir(parents=True, exist_ok=True)

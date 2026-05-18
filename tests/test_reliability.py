@@ -127,7 +127,9 @@ def _patch_th(tmp_path, monkeypatch, ids_translated, ids_pending):
     sel = []
     for i in ids_translated:
         rid = _ins(db, story_hash=f"d{i}", tt=f"标题{i}", ts="摘要" * 30,
-                   tb="正文" * 40, ia="影响" * 20)
+                   tb="正文" * 40, ia="影响" * 20,
+                   tags=json.dumps(["model-release"]),
+                   source_url="https://example.com/a")
         sel.append(rid)
     for i in ids_pending:
         rid = _ins(db, story_hash=f"p{i}")  # empty translation cols
@@ -147,6 +149,35 @@ def test_compute_pending(tmp_path, monkeypatch):
     assert info["total"] == 5
     assert len(info["done"]) == 3 and len(info["pending"]) == 2
     assert set(info["done"]) | set(info["pending"]) == set(sel)
+
+
+def test_is_translated_lockstep_with_verifier(tmp_path):
+    """4 cols filled but verifier-invalid (bad tags / long summary / bad
+    url) must NOT count as done — else drop-untranslated keeps an id the
+    verifier then rejects, breaking the MIN_BRIEFING guarantee."""
+    db = tmp_path / "n.db"
+    _mkdb(db)
+    valid = {"model-release", "china-ai"}
+    good = _ins(db, story_hash="g", tt="标", ts="摘", tb="体", ia="影",
+                tags=json.dumps(["model-release"]),
+                source_url="https://x.com/a")
+    bad_tag = _ins(db, story_hash="bt", tt="标", ts="摘", tb="体", ia="影",
+                   tags=json.dumps(["not-a-real-tag"]),
+                   source_url="https://x.com/a")
+    no_tag = _ins(db, story_hash="nt", tt="标", ts="摘", tb="体", ia="影",
+                  tags="", source_url="https://x.com/a")
+    long_sum = _ins(db, story_hash="ls", tt="标", ts="摘" * 301, tb="体",
+                    ia="影", tags=json.dumps(["china-ai"]),
+                    source_url="https://x.com/a")
+    bad_url = _ins(db, story_hash="bu", tt="标", ts="摘", tb="体", ia="影",
+                   tags=json.dumps(["china-ai"]), source_url="ftp://x")
+    with NewsDB(str(db)) as d:
+        assert th._is_translated(d.get_by_id(good), valid) is True
+        assert th._is_translated(d.get_by_id(bad_tag), valid) is False
+        assert th._is_translated(d.get_by_id(no_tag), valid) is False
+        assert th._is_translated(d.get_by_id(long_sum), valid) is False
+        assert th._is_translated(d.get_by_id(bad_url), valid) is False
+        assert th._is_translated(None, valid) is False
 
 
 def test_load_valid_tags_from_json():
