@@ -42,7 +42,7 @@ def main():
         "daily",
     ]
     for p in paths:
-        r = subprocess.run(["git", "-check-ignore", "-q", p], capture_output=True)
+        r = subprocess.run(["git", "check-ignore", "-q", p], capture_output=True)
         if r.returncode == 0:
             print(f"ℹ️  skipping gitignored: {p}")
             continue
