@@ -1,0 +1,10 @@
+{
+  "translated_title": "Google I/O 2026：Gemini 3.5 Flash发布，Google押注智能体而非聊天机器人",
+  "translated_summary": "Google在年度开发者大会上发布了Gemini 3.5 Flash，这是其迄今为止最强大的编程与智能体AI模型。该模型能够自主执行复杂任务、从头构建软件，标志着Google明确将智能体作为下一代AI战略的核心方向。模型现已通过Antigravity和Gemini API开放。",
+  "impact_analysis": "Gemini 3.5 Flash的发布是Google从「聊天机器人」向「智能体」战略转移的明确信号。模型具备自主编程能力，代表了AI从被动回答向主动执行的重要跨越。对开发者而言，这是个可直接使用的生产级工具，与GPT-4o、Claude 3.7形成直接竞争。",
+  "industry_tags": [
+    "model-release",
+    "agent-tools"
+  ],
+  "_translated_at": "2026-05-20 06:37:20.263994"
+}

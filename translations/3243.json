@@ -1,0 +1,10 @@
+{
+  "translated_title": "Ocean获2800万美元融资：用AI代理对抗邮件钓鱼攻击",
+  "translated_summary": "由Iron Dome研究员创办的邮件安全初创公司Ocean宣布获得2800万美元融资，投资方为Lightspeed Venture Partners。该公司使用小型语言模型分析每封邮件的上下文，检测欺诈和身份冒充攻击，目前已为Kayak、Kingston Technology、Headspace等公司每月审查数十亿封邮件。",
+  "impact_analysis": "邮件安全是AI落地的高价值场景，Ocean用垂直小模型解决特定问题的路径值得关注。2800万美元的融资规模表明，风投对「AI安全」赛道的信心在增强，尤其在邮件钓鱼攻击日益AI化的背景下。关注其技术与传统邮件安全厂商（如Barracuda、Proofpoint）的差异。",
+  "industry_tags": [
+    "funding-ipo",
+    "enterprise-app"
+  ],
+  "_translated_at": "2026-05-20 06:37:20.276634"
+}

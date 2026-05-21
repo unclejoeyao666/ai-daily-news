@@ -1,0 +1,9 @@
+{
+  "translated_title": "Google发布Android CLI：AI编程代理轻松构建Android应用",
+  "translated_summary": "Google在I/O大会上宣布Android CLI正式版发布，支持Claude Code、OpenAI Codex等AI编程代理从命令行构建Android应用。此举承认了AI编程代理的普及趋势，Google意在让更多开发者（无论是否使用Google的工具）能够利用Android的开发能力。",
+  "impact_analysis": "Google主动为竞争对手的AI编程工具提供Android构建支持，反映了平台策略的务实转变。开发者生态的争夺已从IDE延伸到了AI代理层面。Android CLI的开放有望让更多AI原生开发者进入Android生态，对Google Play生态有长期正面影响。",
+  "industry_tags": [
+    "agent-tools"
+  ],
+  "_translated_at": "2026-05-20 06:37:20.273993"
+}
