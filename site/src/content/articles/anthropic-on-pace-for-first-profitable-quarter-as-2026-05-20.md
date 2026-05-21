@@ -1,0 +1,23 @@
+---
+title: "Anthropic 收入暴增，有望迎来公司史上首个盈利季度"
+titleOriginal: "Anthropic on Pace for First Profitable Quarter as Revenue Surges"
+description: "Anthropic 营收大幅增长，距离实现公司历史首个盈利季度仅一步之遥，标志着这家 AI 公司从烧钱扩张转向商业化正轨。"
+pubDate: 2026-05-20
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-05-20/anthropic-on-pace-for-first-profitable-quarter-as-revenue-surges"
+sourceLang: en
+tags: ["funding-ipo", "enterprise-app"]
+---
+Anthropic 预计即将公布公司史上首个盈利季度，营收增速显著。其 AI 软件产品线在企业市场获得强劲需求，推动收入大幅攀升。这一里程碑意味着 Anthropic 已度过纯烧钱阶段，正式迈入可持续商业化轨道。若季度财报最终确认盈利，将对整个 AI 行业产生示范效应，证明大语言模型公司有能力将技术优势转化为长期可持续盈利，同时也为竞争对手的上市与融资计划提供更强的市场信心支撑。
+
+## 对 AI 行业的影响
+
+首个盈利季度将是 Anthropic 发展的重要转折点，表明 AI 软件公司从规模扩张转向利润导向的商业模式。若这一趋势持续，可能推动更多 AI 公司优化成本结构，加速行业从「砸钱换增长」向「盈利驱动」转型，同时为后续 IPO 定价提供更强的财务基础。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-05-20/anthropic-on-pace-for-first-profitable-quarter-as-revenue-surges) · 2026-05-20
+
+> Anthropic PBC is on pace for its first profitable quarter after experiencing a surge in revenue driven by demand for its artificial intelligence software.
