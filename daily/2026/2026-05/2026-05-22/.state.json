@@ -17,7 +17,7 @@
     },
     "translate": {
       "status": "ok",
-      "finished_at": "2026-05-22T04:44:53.117810+00:00",
+      "finished_at": "2026-05-22T06:25:14.527269+00:00",
       "translated_count": 10
     },
     "publish_article": {
@@ -34,8 +34,8 @@
       "mp3_size": 2025452
     },
     "push": {
-      "status": "running",
-      "started_at": "2026-05-22T05:10:19.171659+00:00"
+      "status": "ok",
+      "finished_at": "2026-05-22T05:10:23.473668+00:00"
     }
   }
 }
