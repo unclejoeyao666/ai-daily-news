@@ -37,5 +37,15 @@
       "status": "ok",
       "finished_at": "2026-05-22T05:10:23.473668+00:00"
     }
+  },
+  "deliveries": {
+    "discord_text": {
+      "status": "ok",
+      "chars": 1863
+    },
+    "discord_audio": {
+      "status": "ok",
+      "mp3_size": 2025452
+    }
   }
 }
