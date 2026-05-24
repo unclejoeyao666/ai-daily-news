@@ -1,0 +1,33 @@
+---
+title: "法拉利与 IBM 合作：用 AI 为 F1 打造超级粉丝"
+titleOriginal: "Ferrari is using IBM’s AI to create F1 superfans"
+description: "IBM 与法拉利 HP 合作，利用 AI 重塑 F1 观赛体验，通过个性化内容与数据分析让粉丝深度参与。"
+pubDate: 2026-05-23
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/"
+sourceLang: en
+tags: ["consumer-app", "enterprise-app"]
+---
+## 合作背景
+
+两年前，IBM 发现其体育赞助矩阵中缺少一个关键板块：一级方程式赛车。Netflix 纪录片《极速求生》让 F1 在美国迅速出圈，IBM 随即与法拉利 HP 车队达成合作，共同开发一套基于 AI 的粉丝参与系统。
+
+## 技术方案
+
+该系统整合了车手数据、比赛实时统计与车迷行为画像，生成个性化内容推荐与互动体验。IBM 的企业级 AI 工具链为这一体验提供了底层支撑，法拉利则贡献了 F1 生态中的独家数据与场景。
+
+## 市场意义
+
+F1 已从一个小众高端赛事转变为全球最受关注的运动之一，其美国观众在过去三年增长超过百分之五十。IBM 借助法拉利绑定这一高净值受众群体，是其 B2B AI 品牌背书的精准布局。
+
+## 对 AI 行业的影响
+
+对法拉利而言，AI 驱动的粉丝运营是其数字化转型的核心一步，有望将观赛用户从被动观看者转化为主动参与者，显著提升用户粘性与商业变现路径。对 IBM 来说，F1 场景是其企业级 AI 能力的最强展示场，在与微软、谷歌的 AI 赞助竞争中抢下一个高端体育营销高地。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/23/ferrari-is-using-ai-to-create-f1-superfans/) · 2026-05-23
+
+> IBM and Scuderia Ferrari HP take TechCrunch inside how they are redefining the fan experience.

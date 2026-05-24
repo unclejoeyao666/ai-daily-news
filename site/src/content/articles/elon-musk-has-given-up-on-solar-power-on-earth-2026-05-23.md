@@ -1,0 +1,33 @@
+---
+title: "马斯克放弃太阳能：xAI 押注天然气与太空数据中心"
+titleOriginal: "Elon Musk has given up on solar power (on Earth)"
+description: "xAI 全面转向天然气发电与太空数据中心业务，令外界质疑其曾承诺的\"太阳能电力经济\"去向何方。"
+pubDate: 2026-05-23
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/"
+sourceLang: en
+tags: ["enterprise-app", "industry-trend"]
+---
+## 战略转向
+
+本周披露的 SpaceX IPO 文件揭示了马斯克旗下 xAI 的最新动向：数据中心将建设在近地轨道上，优先使用天然气发电，彻底放弃了地面太阳能基础设施。这一决定与他早年勾勒的"加速可持续发展世界"愿景形成鲜明反差。
+
+## 背后逻辑
+
+算力需求是 xAI 转型的核心驱动力。GPU 集群耗电量巨大，地面可再生能源无法保障稳定供给，而天然气具有部署快、密度高的优势，轨道数据中心则可借助 SpaceX 运力直接部署，绕过地面环评限制。
+
+## 争议与影响
+
+批评者指出，马斯克早年利用Tesla太阳能故事获得大量政策优惠与公众信任，如今彻底转向化石能源有违其建立的环保人设。这一转变也将重塑投资者对 xAI 能源路线的评估框架。
+
+## 对 AI 行业的影响
+
+xAI 的战略转向表明，AI 算力需求与绿色能源目标之间的矛盾比许多从业者承认的更加尖锐。这对整个行业的能源叙事是一次现实检验：短期内，算力军备竞赛仍将由化石能源支撑，监管机构应对 AI 数据中心的碳排放提出更严格要求。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/23/elon-musk-has-given-up-on-solar-power-on-earth/) · 2026-05-23
+
+> Elon Muks's xAI has gone all in on natural gas, while SpaceX is obsessed with orbital data centers. What happened to the "solar-electric economy" he promised?
