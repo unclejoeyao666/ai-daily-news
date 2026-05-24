@@ -1,0 +1,11 @@
+{
+  "translated_title": "Google 搜索的 AI 更新让「disregard」一词彻底失效",
+  "translated_summary": "在 Google 搜索上线 AI 功能更新后，「disregard」（忽略）这个词现在会在搜索界面中引发异常，令搜索功能近乎崩溃，成为 AI 生成内容与自然语言处理缺陷的最新案例。",
+  "impact_analysis": "该问题折射出大语言模型与搜索引擎界面交互时的脆弱性。当日常高频词汇因语义歧义引发系统异常时，说明 AI 在真实用户场景中的鲁棒性仍存在明显短板。此类问题若频繁出现，将影响用户对 Google 搜索 AI 功能的信任度。",
+  "industry_tags": [
+    "consumer-app",
+    "model-release"
+  ],
+  "translated_body": "在 Google 搜索推出最新 AI 功能更新后，一个简单的英文单词「disregard」（意为「忽略」）现在会导致搜索界面发生异常，令搜索功能几乎失效。这不是恶作剧，而是 AI 语言模型在处理歧义性日常词汇时的真实翻车案例，暴露了大模型与搜索产品结合时的脆弱性。",
+  "_translated_at": "2026-05-23 06:34:16.875263"
+}
