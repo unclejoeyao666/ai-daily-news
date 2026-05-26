@@ -16,21 +16,26 @@
       "selected_count": 10
     },
     "translate": {
-      "status": "failed",
-      "finished_at": "2026-05-26T04:01:26.326300+00:00",
-      "error": "Fix the rows in SQLite (or rewrite audio_script.md) and re-run."
+      "status": "ok",
+      "finished_at": "2026-05-26T04:35:37.634635+00:00",
+      "translated_count": 10
     },
     "publish_article": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-26T05:16:04.922250+00:00"
     },
     "publish_brief": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-26T05:16:04.974545+00:00"
     },
     "audio": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-05-26T06:01:40.425832+00:00",
+      "mp3_size": 2366444
     },
     "push": {
-      "status": "pending"
+      "status": "running",
+      "started_at": "2026-05-26T06:01:40.426234+00:00"
     }
   }
 }
