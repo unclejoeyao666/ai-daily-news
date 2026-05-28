@@ -1,0 +1,33 @@
+---
+title: "Meta 全球推出 Instagram、Facebook 和 WhatsApp 付费订阅"
+titleOriginal: "Meta launches Instagram, Facebook, and WhatsApp subscriptions, with more to come, including AI plans"
+description: "Meta 正式向全球用户推出 Instagram Plus、Facebook Plus 和 WhatsApp Plus 付费订阅计划，月费二点九九至三点九九美元，并提供自定义图标、超级反应、故事洞察等增值功能，同时开始测试 AI 订阅和创作者订阅。"
+pubDate: 2026-05-27
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/"
+sourceLang: en
+tags: ["consumer-app", "industry-trend"]
+---
+## 报道核心
+
+Meta 周三宣布向全球用户推出 Instagram、Facebook、WhatsApp 的付费 Plus 订阅计划，并开始测试名为 Meta One 的更高层级订阅，涵盖 AI 功能、创作者工具和商业服务。
+
+## 关键细节
+
+Instagram Plus 和 Facebook Plus 月费三点九九美元，WhatsApp Plus 二月二九美元。Plus 计划提供故事洞察、自定义图标、超级动画反应等功能，但不替代现有的 Meta Verified 验证服务。AI 订阅 Meta One Plus（七点九九美元）和 Meta One Premium（十九点九九美元）将于下月在部分国家测试。
+
+## 行业反应
+
+这是 Meta 在用户增长见顶后的变现深化策略——从数十亿存量用户中挖掘更多收入，减少对广告的依赖。AI 订阅的定价模式紧随 OpenAI 和 Anthropic 的先例。
+
+## 对 AI 行业的影响
+
+Meta 的全面订阅化标志着社交平台从纯广告模式向混合变现的转折。对广告主而言，付费用户比例上升可能降低广告触达效率；对 AI 行业而言，Meta AI 订阅的推出意味着二十亿级用户与 AI 产品之间首次建立直接付费关系，可能成为全球最大规模的 AI 消费者订阅实践。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/) · 2026-05-27
+
+> Meta is rolling out paid subscription plans for Instagram, Facebook, and WhatsApp worldwide, while also testing new AI, creator, and business-focused offerings under its broader “Meta One” subscription brand.

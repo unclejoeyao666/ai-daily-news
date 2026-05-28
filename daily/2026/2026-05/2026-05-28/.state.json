@@ -1,0 +1,41 @@
+{
+  "date": "2026-05-28",
+  "started_at": "2026-05-27T22:01:25.764403+00:00",
+  "steps": {
+    "harvest": {
+      "status": "ok",
+      "finished_at": "2026-05-27T22:01:39.129976+00:00",
+      "stats": {
+        "unplayed": 489,
+        "total": 3965
+      }
+    },
+    "select": {
+      "status": "ok",
+      "finished_at": "2026-05-27T22:01:39.200899+00:00",
+      "selected_count": 10
+    },
+    "translate": {
+      "status": "ok",
+      "finished_at": "2026-05-28T04:34:28.105731+00:00",
+      "translated_count": 10
+    },
+    "publish_article": {
+      "status": "ok",
+      "finished_at": "2026-05-28T05:18:57.857178+00:00"
+    },
+    "publish_brief": {
+      "status": "ok",
+      "finished_at": "2026-05-28T05:18:57.911882+00:00"
+    },
+    "audio": {
+      "status": "failed",
+      "finished_at": "2026-05-28T06:34:07.270659+00:00",
+      "error": "render_audio rc=2"
+    },
+    "push": {
+      "status": "running",
+      "started_at": "2026-05-28T06:34:23.362942+00:00"
+    }
+  }
+}
