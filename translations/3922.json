@@ -1,0 +1,11 @@
+{
+  "translated_title": "Robinhood 上线 AI agent 自动交易股票功能",
+  "translated_summary": "股票交易平台 Robinhood 正式推出 AI agent 交易功能，用户可为自己的 AI agent 创建独立钱包并授权其进行股票交易。agent 可分析投资组合、制定交易策略，但仅能使用预存余额下单，每笔交易用户将收到通知。",
+  "translated_body": "## 报道核心\n\nRobinhood 周三宣布支持 AI agent 交易，用户可通过平台的 MCP 接口连接自己的 AI agent，实现自动化股票分析、策略制定和交易执行。同时推出 AI agent 专用虚拟信用卡。\n\n## 关键细节\n\nagent 可以读取和分析用户投资组合、识别集中度风险、查看分析师报告寻找投资机会，但只能使用专属钱包中的预存余额下单。部分交易需要用户预先审批。Robinhood 内置了欺诈检测机制，可疑交易将由团队人工审查。目前仅支持股票交易，未来将扩展至期权、加密货币、期货等。\n\n## 行业反应\n\nRobinhood 并非孤例，Stripe、Amazon 和 Google 也在构建 agent 支付基础设施。这说明 AI agent 从信息处理向实际金融操作的跨越正在加速。",
+  "impact_analysis": "Robinhood 的 agent 交易功能标志着 AI agent 正式进入金融执行层，而非仅停留在信息分析层面。这对传统券商的财富管理业务构成直接冲击——如果 agent 可以自主执行交易策略，人工投顾的价值进一步被压缩。对监管机构而言，agent 交易的问责机制和风控标准将成为新的政策焦点。",
+  "industry_tags": [
+    "agent-tools",
+    "consumer-app"
+  ],
+  "_translated_at": "2026-05-28 06:33:39.469637"
+}

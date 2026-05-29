@@ -1,0 +1,11 @@
+{
+  "translated_title": "斯坦福团队押注印度零工经济，用摄像头采集物理 AI 训练数据",
+  "translated_summary": "硅谷创业公司 Human Archive 利用印度零工经济中的家政、餐饮从业者，佩戴摄像头帽采集第一人称视频数据，用于训练机器人的物理世界操作能力。公司已获 820 万美元融资。",
+  "translated_body": "## 报道核心\n\n由 UC Berkeley 和 Stanford 四名研究者创立的 Human Archive 正在印度与家政服务平台合作，让工人佩戴装有摄像头的帽子，采集日常家务的第一人称视频数据。这些数据将被用来训练机器人执行物理世界中的实际任务。\n\n## 商业模式\n\nHuman Archive 已部署超过 1000 个采集设备，合作方覆盖家政、酒店和餐饮行业。公司近日完成 820 万美元融资，投资方包括 Wing Venture Capital、Y Combinator，以及来自 OpenAI、Nvidia、Google 的 angel 投资人。不过，印度头部家政平台 Urban Company 和 Pronto 已公开拒绝合作。\n\n## 行业背景\n\n机器人训练面临的核心瓶颈是高质量物理世界数据的匮乏。Human Archive 的逻辑是利用劳动力成本较低的印度零工经济，规模化采集训练数据，这一做法引发了数据伦理和劳动权益的争议。",
+  "impact_analysis": "Human Archive 的做法折射出物理 AI 训练数据的短缺困境。如果规模化成功，将大幅降低机器人训练的数据获取成本，加速具身智能落地。但数据采集中的知情同意、报酬公平性等问题可能引发监管关注。对 Nvidia、Tesla 等布局机器人的公司而言，数据供应链的建立将成为竞争壁垒。",
+  "industry_tags": [
+    "agent-tools",
+    "research-paper"
+  ],
+  "_translated_at": "2026-05-27 06:32:00.057306"
+}

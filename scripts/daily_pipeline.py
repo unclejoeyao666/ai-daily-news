@@ -25,10 +25,14 @@ The 7 steps in order::
 
 Recommended cron split::
 
-    04:00 UTC  harvest                          300 s
-    04:30 UTC  select + translate + publish_article   1200 s
-    05:00 UTC  publish_brief + audio + push     900 s
-    05:30 UTC  notify (separate skill)          120 s
+    04:00 UTC  Stage A: harvest + select        300 s
+    04:30 UTC  Stage B: cognitive translate     1200 s
+    05:15 UTC  Stage B retry: pending ids       1200 s
+    06:00 UTC  Stage B deep-retry: pending ids  1200 s
+    06:25 UTC  Stage B fallback finalize        300 s
+    06:30 UTC  Stage C: publish + audio + push  1200 s
+    07:00 UTC  Stage D: Discord deliver         600 s
+    hourly     Watchdog: deterministic resume   1200 s
 """
 from __future__ import annotations
 

@@ -116,6 +116,22 @@ def is_done(state: Dict[str, Any], step: str) -> bool:
 DELIVERY_KEYS = ("discord_text", "discord_audio")
 
 
+def is_real_delivery_id(value: Any) -> bool:
+    """True for a real Discord snowflake, false for cron placeholders."""
+    if value in (None, "", "cron-announce", "unknown", "none"):
+        return False
+    s = str(value)
+    return s.isdigit() and 12 <= len(s) <= 25
+
+
+def is_delivery_done(state: Dict[str, Any], key: str) -> bool:
+    block = state.get("deliveries", {}).get(key, {})
+    return (
+        block.get("status") == "ok"
+        and is_real_delivery_id(block.get("message_id"))
+    )
+
+
 def is_complete(state: Dict[str, Any]) -> bool:
     """True when every required step AND both deliveries are ok.
 
@@ -124,10 +140,7 @@ def is_complete(state: Dict[str, Any]) -> bool:
     """
     if not all(is_done(state, s) for s in STEPS):
         return False
-    deliveries = state.get("deliveries", {})
-    return all(
-        deliveries.get(k, {}).get("status") == "ok" for k in DELIVERY_KEYS
-    )
+    return all(is_delivery_done(state, k) for k in DELIVERY_KEYS)
 
 
 def mark_started(state: Dict[str, Any], step: str, **extra) -> Dict[str, Any]:
