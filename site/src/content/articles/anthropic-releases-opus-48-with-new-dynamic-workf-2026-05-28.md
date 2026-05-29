@@ -1,0 +1,23 @@
+---
+title: "Anthropic 发布 Opus 4.8，推出全新「动态工作流」多代理协调工具"
+titleOriginal: "Anthropic releases Opus 4.8 with new ‘dynamic workflow’ tool"
+description: "Anthropic 发布 Claude Opus 4.8 模型，距上一代仅 41 天，升级周期大幅缩短。新模型更擅长主动标记不确定性，同时推出 Dynamic Workflows 功能，可协调数百个并行子代理处理复杂任务。"
+pubDate: 2026-05-28
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/"
+sourceLang: en
+tags: ["model-release", "agent-tools"]
+---
+Anthropic 发布了 Claude Opus 4.8，这是其最先进公开可用模型的最新版本。距 Opus 4.7 发布仅 41 天，升级速度远超以往（Sonnet 和 Haiku 分别已发布 3 个月和 7 个月）。快速迭代可能与 Opus 4.7 收到的冷淡反馈有关，部分用户对上一代表现感到失望。在此期间，OpenAI 的 Codex 和 Google 的 Gemini Flash 相继发布重要更新，给 Anthropic 带来竞争压力。Opus 4.8 在保持顶级基准成绩的同时，特别注重模型对不良或不确定数据的处理能力。Bridgewater 早期测试者表示，最大改进是「Opus 4.8 能主动标记输入输出的问题，其他模型常常忽略这些问题」。与模型一同发布的 Dynamic Workflows 功能目前处于研究预览阶段，旨在帮助大型模型协调数百个并行子代理完成复杂任务。Claude Code 配合 Opus 4.8 可执行百万行级别的代码库迁移。
+
+## 对 AI 行业的影响
+
+Opus 4.8 的快速迭代反映了 AI 模型竞争的残酷节奏——41 天的更新周期已成为新常态。Dynamic Workflows 功能直接对标 OpenAI 和 Google 的代理能力，多代理协调将成为下一代 AI 平台的核心竞争力。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/28/anthropic-releases-opus-4-8-with-new-dynamic-workflow-tool/) · 2026-05-28
+
+> The new Opus model comes with a tool called Dynamic Workflows, for coordinating swarms of subagents.

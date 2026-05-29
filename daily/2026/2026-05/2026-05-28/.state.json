@@ -29,13 +29,31 @@
       "finished_at": "2026-05-28T05:18:57.911882+00:00"
     },
     "audio": {
-      "status": "failed",
-      "finished_at": "2026-05-28T06:34:07.270659+00:00",
-      "error": "render_audio rc=2"
+      "status": "ok",
+      "finished_at": "2026-05-28T07:03:40.012579+00:00",
+      "mp3_size": 2904140
     },
     "push": {
-      "status": "running",
-      "started_at": "2026-05-28T06:34:23.362942+00:00"
+      "status": "ok",
+      "finished_at": "2026-05-28T06:34:25.660076+00:00"
+    }
+  },
+  "deliveries": {
+    "discord_text": {
+      "status": "ok",
+      "message_id": "1509452131625730169",
+      "channel_id": "1490344209847287830",
+      "method": "openclaw_message",
+      "finished_at": "2026-05-28T07:03:56.936709+00:00",
+      "chars": 1729
+    },
+    "discord_audio": {
+      "status": "ok",
+      "message_id": "1509452172247564359",
+      "channel_id": "1490344209847287830",
+      "method": "openclaw_message",
+      "finished_at": "2026-05-28T07:04:05.575500+00:00",
+      "mp3_size": 2904140
     }
   }
 }

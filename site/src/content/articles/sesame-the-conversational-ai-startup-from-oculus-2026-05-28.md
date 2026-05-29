@@ -1,0 +1,23 @@
+---
+title: "Oculus 创始人打造的对话 AI 公司 Sesame 发布 iOS 应用"
+titleOriginal: "Sesame, the conversational AI startup from Oculus founders, launches its iOS app"
+description: "由 Oculus 创始人联合创立的 Sesame 发布 iOS 应用，提供四款具有不同个性和记忆能力的 AI 代理。其技术核心是在说话的同时进行多路并行搜索，实现更接近人类的对话体验。"
+pubDate: 2026-05-28
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/"
+sourceLang: en
+tags: ["consumer-app", "model-release"]
+---
+AI 初创公司 Sesame 正式发布 iOS 应用公测版，这是其开发超过一年的对话式 AI 代理的首次公开亮相。Sesame 由 Oculus 创始人等 VR 公司元老联合创立。公司正在重新定义传统 AI 聊天体验——不是在 ChatGPT 等应用的模式上做微调，而是创造一个即便 AI 需要思考时间也能自然流畅对话的体验。公司表示：「快速回复和花时间构思深思熟虑的回应之间存在固有张力。较慢的回复通常更准确，但如果耗时过长也会显得不自然。」为了解决这一挑战，Sesame 构建了快速的搜索和检索系统，使 AI 能获取最新信息，以及允许在说话的同时运行多路并行搜索的技术，将结果编织到对话中。这意味着 AI 可以在说话中途改变方向，像人类一样在想起关键点时随时补充。应用提供四位 AI 代理：Maya、Miles、Simone 和 Charlie，各有不同的声音、个性和记忆。Maya 和 Miles 此前在研究预览版中上线，前几周内就吸引了超过百万用户。公司此前以 2.5 亿美元估值完成 Sequoia 领投的 Series B 融资。
+
+## 对 AI 行业的影响
+
+Sesame 的发布代表着对话 AI 从「打字聊天」向「自然语音对话」的重要演进。其多路并行搜索和边说边思考的技术路线，为 AI 交互体验树立了新标准。由 Oculus 创始团队操刀，也让人期待他们在消费级硬件集成方面的布局。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/28/sesame-the-conversational-ai-startup-from-oculus-founders-launches-its-ios-app/) · 2026-05-28
+
+> Sesame’s new iOS app brings its conversational AI agents to the public, offering more natural back-and-forth interactions designed to feel less like traditional chatbots and more like talking to a person.
