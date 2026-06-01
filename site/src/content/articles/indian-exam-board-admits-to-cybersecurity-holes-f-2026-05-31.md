@@ -1,0 +1,23 @@
+---
+title: "印度考试委员会承认青少年发现其网络安全漏洞"
+titleOriginal: "Indian Exam Board Admits to Cybersecurity Holes Found by Teen"
+description: "印度一个国家考试委员会表示，一名青少年网络安全研究人员发现的该国最重要升学考试在线评分门户漏洞，委员会一直在监控并已控制住。"
+pubDate: 2026-05-31
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-05-31/indian-exam-board-fixes-cybersecurity-flaws-found-by-teen"
+sourceLang: en
+tags: ["safety-alignment", "policy-regulation", "china-ai"]
+---
+印度一个国家考试委员会表示，已发现并控制住其在线评分门户的安全漏洞，这些漏洞最初由一名青少年网络安全研究人员发现。该门户用于处理印度最重要的升学考试之一的评分工作。这名青少年研究人员发现了该平台的安全隐患并进行了报告，考试委员会随后表示一直在监控情况并已采取措施修补漏洞。这一事件再次引发了人们对印度大规模教育考试系统数字化的安全担忧。
+
+## 对 AI 行业的影响
+
+此事件凸显了大型政府数字化系统中的安全挑战——即使是一个青少年也能发现关键基础设施的漏洞。这对新兴市场的教育科技安全提出了警示：当数百万人依赖单一评分系统时，任何安全缺陷都可能造成严重后果。对于网络安全行业而言，这也是一个正面案例——负责任的漏洞披露机制正在发挥作用。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-05-31/indian-exam-board-fixes-cybersecurity-flaws-found-by-teen) · 2026-05-31
+
+> A national school exam board in India said it has been monitoring and has contained vulnerabilities in its online grading portal for one of the country’s most important school-leaving exams that were first flagged by a teenage cybersecurity researcher.

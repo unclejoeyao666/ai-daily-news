@@ -37,5 +37,23 @@
       "status": "ok",
       "finished_at": "2026-05-31T06:03:32.540509+00:00"
     }
+  },
+  "deliveries": {
+    "discord_text": {
+      "status": "ok",
+      "message_id": "1510539145896923319",
+      "channel_id": "1490344209847287830",
+      "method": "openclaw_message",
+      "finished_at": "2026-05-31T07:03:19.533457+00:00",
+      "chars": 1704
+    },
+    "discord_audio": {
+      "status": "ok",
+      "message_id": "1510539173537386517",
+      "channel_id": "1490344209847287830",
+      "method": "openclaw_message",
+      "finished_at": "2026-05-31T07:03:25.792252+00:00",
+      "mp3_size": 2736668
+    }
   }
 }

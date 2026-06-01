@@ -1,0 +1,23 @@
+---
+title: "埃琳·布劳克维奇将矛头指向数据中心保密问题"
+titleOriginal: "Erin Brockovich takes aim at data center secrecy"
+description: "环保活动家埃琳·布劳克维奇发起了新使命：推动数据中心建设及其对社区影响的透明度。"
+pubDate: 2026-05-31
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/05/31/erin-brockovich-takes-aim-at-data-center-secrecy/"
+sourceLang: en
+tags: ["policy-regulation", "chips-infra", "industry-trend"]
+---
+环保活动家埃琳·布劳克维奇发起了一项新使命：推动数据中心建设及其对周边社区影响的透明度。布劳克维奇——因朱莉娅·罗伯茨主演的改编电影而广为人知——最近推出了一个数据中心地图网站。该网站描述该地图为“进行中的工作”，收录了由社区成员报告的数据中心信息。布劳克维奇在Substack上表示，自4月份呼吁人们报告数据中心相关问题以来，仅第一个月就收到了近4000份提交。她写道：“最常见的担忧——超过噪音、超过用水量、超过上涨的电费——是反复出现在每一份报告中的一个词：透明度。”布劳克维奇补充说，她并非反对数据中心或AI，而是反对“地图上记录的那种模式：许可证已经获批后才公布的项目、不回复电话的开发商、在邻居们得知项目之前就已签署保密协议的地方官员。”
+
+## 对 AI 行业的影响
+
+埃琳·布劳克维奇的介入为数据中心选址争议带来了强大的公众关注力。她擅长将复杂的环境正义问题转化为大众能理解的叙事。随着AI驱动的数据中心建设激增，社区反弹压力正在加大，这可能会影响未来的监管政策和选址决策。此举可能推动更多地方政府要求数据中心项目提前进行社区信息披露。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/05/31/erin-brockovich-takes-aim-at-data-center-secrecy/) · 2026-05-31
+
+> Environmental activist Erin Brockovich has a new mission.
