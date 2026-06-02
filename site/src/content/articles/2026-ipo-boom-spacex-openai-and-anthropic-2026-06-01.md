@@ -1,0 +1,35 @@
+---
+title: "2026 超级 IPO 之年：SpaceX、OpenAI 和 Anthropic 排队上市"
+titleOriginal: "2026 IPO Boom: Spacex, OpenAI and Anthropic"
+description: "2026 年迎来前所未有的科技 IPO 热潮。SpaceX 计划 6 月 12 日上市（目标 2 万亿估值），Anthropic 已秘密提交上市文件，OpenAI 也即将跟进，三大 AI 巨头将在华尔街展开历史性竞赛。"
+pubDate: 2026-06-01
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/videos/2026-06-01/2026-ipo-boom-spacex-openai-and-anthropic-video"
+sourceLang: en
+tags: ["funding-ipo", "industry-trend"]
+---
+## 报道核心
+
+2026 年正在成为史上最重磅的科技 IPO 年份。SpaceX、Anthropic 和 OpenAI 三大 AI 巨头几乎同时启动上市进程。Anthropic 已秘密向 SEC 提交上市草案，一旦落地将与其长期竞争对手 OpenAI 在今年秋季之前争夺华尔街首秀。
+
+## SpaceX 领跑
+
+SpaceX 计划 6 月 12 日 IPO，目标融资超过 750 亿美元，估值 2 万亿美元，有望成为史上最大 IPO。其 AI 子公司 xAI 和与 Anthropic 签署的价值 150 亿美元/年的数据中心租约成为估值核心驱动力。
+
+## AI 双雄争锋
+
+Anthropic 和 OpenAI 的上市竞赛几乎同时展开。前者以 9650 亿估值暂时领先，后者以 8520 亿估值紧随其后。两者合计市值预计超过 1.8 万亿美元，将深刻改变 AI 产业的资本结构。
+
+> 原文为 Bloomberg 视频内容，本文基于摘要翻译，未含完整视频细节。
+
+## 对 AI 行业的影响
+
+三家公司集中上市将创造有史以来最大的科技 IPO 浪潮，募资金额合计可能超过 2000 亿美元。对 AI 行业而言，这意味着从私人资本驱动转向公开市场驱动的关键转折；对投资者而言，这是首次有机会通过公开市场大规模配置 AI 核心资产。但集中上市也可能造成市场资金分流，相互拉低估值。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/videos/2026-06-01/2026-ipo-boom-spacex-openai-and-anthropic-video) · 2026-06-01
+
+> Anthropic PBC has confidentially submitted draft paperwork for a public listing as it races longtime rival OpenAI to make a Wall Street debut as soon as this fall. Anthony Hughes and James Seyffart have more on "Bloomberg ETF IQ." (Source: Bloomberg)
