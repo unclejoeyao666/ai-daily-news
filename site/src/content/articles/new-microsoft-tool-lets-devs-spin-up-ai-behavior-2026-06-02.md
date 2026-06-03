@@ -1,0 +1,33 @@
+---
+title: "微软推出 ASSERT 框架 用自然语言描述自动生成 AI 行为测试"
+titleOriginal: "New Microsoft tool lets devs spin up AI behavior tests using text descriptions"
+description: "微软开源了 ASSERT 框架，开发者只需用自然语言描述 AI 预期行为和政策，系统会自动生成测试用例并评分，让应用级 AI 行为测试变得前所未有的简单。"
+pubDate: 2026-06-02
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/"
+sourceLang: en
+tags: ["agent-tools", "enterprise-app"]
+---
+## 报道核心
+
+微软在 6 月 2 日发布开源框架 ASSERT，旨在简化 AI 系统应用级行为测试。该框架利用 AI 本身将高级自然语言描述的目标、政策或预期行为转化为结构化的可评分测试用例。
+
+## 关键细节
+
+ASSERT 的工作流程包括：将 AI 模型预期行为的自然语言描述转化为可接受和不可接受行为的结构化集合；生成问题场景和测试用例；在目标系统上运行并评分。它还能记录 AI 系统的执行路径，包括中间操作和工具调用，让开发者精确定位失败环节。
+
+## 行业反应
+
+开发者可以指定系统上下文、工具和约束条件，让测试更贴合实际应用场景。例如，指定一个文档研究 AI 不应向公司外部人员发送邮件，ASSERT 就会持续生成测试来检查该规则是否遵守。这填补了通用评估无法覆盖应用层面上下文和策略的空白。
+
+## 对 AI 行业的影响
+
+ASSERT 将极大降低企业落地 AI 应用的质量保障门槛。此前企业评估 AI 行为依赖人工审核或通用基准测试，既不精准也无法规模化。ASSERT 使得每家公司的 AI 策略都能获得自动化的持续测试，这对于金融、医疗等监管严格的行业尤为重要。它也可能成为 AI 应用领域的 CI/CD 工具标准。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/02/new-microsoft-tool-lets-devs-spin-up-ai-behavior-tests-using-text-descriptions/) · 2026-06-02
+
+> Microsoft on Tuesday took the wraps off Adaptive Spec-driven Scoring for Evaluation and Regression Testing, an open source framework for spinning up AI evaluations.
