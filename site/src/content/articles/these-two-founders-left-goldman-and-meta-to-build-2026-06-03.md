@@ -1,0 +1,33 @@
+---
+title: "前 Goldman 和 Meta 员工创业：为非洲和中东搭建语音 AI"
+titleOriginal: "These two founders left Goldman and Meta to build voice AI for markets everyone else overlooked"
+description: "AI 语音初创公司 AethexAI 完成 300 万美元 pre-seed 融资，致力于为非洲和中东市场构建本地化语音 AI。创始团队自主研发了小模型和编排层，以适配当地英语、法语和阿拉伯语的方言口音，现已处理日均 17000+ 通话。"
+pubDate: 2026-06-03
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/"
+sourceLang: en
+tags: ["consumer-app", "enterprise-app", "funding-ipo"]
+---
+## 公司定位
+
+AethexAI 由 Mariama Diallo（CEO，前 Goldman Sachs）和 Ayooluwa Odemuyiwa（CTO，前 Meta、Caltech 毕业）联合创立，专注于非洲和中东市场的 AI 语音客服。公司放弃使用 Vapi、LiveKit 等现成工具链，自研了适配当地方言的模型和编排层。
+
+## 融资背景
+
+本轮 300 万美元由 4DX Ventures 领投，Enza Capital、Dorm Room Fund 等跟投，个人投资者包括 Stanford 教授和 Anthropic AI 研究员。公司同时发布了面向企业的 SaaS 平台和开发者 API/SDK。
+
+## 市场痛点
+
+埃及某呼叫中心曾因 AI 效果不佳回滚了自动化系统。多个非洲地区客服中心表示，以合理成本招聘和实施语音 AI 自动化是持续性难题。AethexAI 针对当地网络延迟和方言差异做了专门优化。
+
+## 对 AI 行业的影响
+
+语音 AI 虽已是热门赛道，但多数产品以英语母语市场为中心。AethexAI 切入非洲和中东这个长期被忽视的差异化市场，展现了 AI 落地的"最后一公里"机会——不是技术突破，而是本地化适配。大厂不会优先服务的小语种/新兴市场，正是垂直 AI 初创的沃土。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/03/these-two-founders-left-goldman-and-meta-to-build-voice-ai-for-markets-everyone-else-overlooked/) · 2026-06-03
+
+> The startup's own stack for Africa and Middle East is now handling more than 17,000 calls per day.

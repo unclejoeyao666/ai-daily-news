@@ -1,0 +1,33 @@
+---
+title: "AI 越强大，越暴露它的空洞承诺"
+titleOriginal: "As AI gets better, it reveals an empty promise"
+description: "The Verge 评论文章。Google 新发布的 Gemini AI Agent Spark 能力令人惊叹——它知道你的狗叫什么、你妻子的名字——但作者质疑这种\"生产力\"承诺的本质。AI 正在解决的是科技公司自己制造的问题（注意力碎片化、工作生活边界模糊），而非真正需要被解决的问题。"
+pubDate: 2026-06-03
+sourceName: "The Verge AI"
+sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/942629/as-ai-gets-better-it-reveals-an-empty-promise"
+sourceLang: en
+tags: ["consumer-app", "industry-trend", "safety-alignment"]
+---
+## 核心观点
+
+Google 的 Gemini AI Agent Spark 展现了惊人的能力：它知道 David 的狗叫 Frida，知道 Jay 妻子的小名，尽管两人从未明确告诉 Google。但 The Verge 的评论文章质疑：这一切正在导向一个完全误解人类需求的"生产力未来"。
+
+## 批判性分析
+
+"生产力"一直被包装成万能药——仿佛不够高效就是道德缺陷。当代工作中的任务往往同时让你感到既重要又紧急，即使它们并不真的重要。这正是"忙碌陷阱"和"软件大脑"的不幸联姻。
+
+## 更深层的问题
+
+Google、Microsoft、Apple 们花费数十年模糊了工作与个人生活的边界。法国政府曾立法"断联权"。Spark 能帮你给日历着色，AI 能帮你回复邮件——但这些都在解决公司们自己制造的问题。作者担忧当 AI 无所不知时，付出的代价可能远超获得的便利。
+
+## 对 AI 行业的影响
+
+这篇评论触及 AI 行业的核心盲区：技术公司以"生产力"为名销售的每个新功能，实质上是在强化用户对数字生态的依赖。当 AI Agent 越来越了解你的个人生活，"便利"与"控制"的边界将越来越模糊。这不是一篇否定 AI 发展的文章，而是对当前 AI 产品路线图的人性化追问。
+
+---
+
+## 原文参考
+
+来源：[The Verge AI](https://www.theverge.com/ai-artificial-intelligence/942629/as-ai-gets-better-it-reveals-an-empty-promise) · 2026-06-03
+
+> This week we've got tandem hands-ons with Google's new Gemini AI agent - Spark - from my colleagues David Pierce and Jay Peters. Their takeaways are similar: It's so effective that it's scary. Spark knew that David's dog is named Frida and knew the first name of Jay's wife, even though neither of them explicitly [&#8230;]

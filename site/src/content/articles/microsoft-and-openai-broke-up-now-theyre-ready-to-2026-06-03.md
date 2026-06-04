@@ -1,0 +1,33 @@
+---
+title: "Microsoft 和 OpenAI 分手之后——现在他们准备开战"
+titleOriginal: "Microsoft and OpenAI broke up — now they’re ready to fight"
+description: "Microsoft 在 Build 开发者大会上密集发布了一系列 AI 产品：超级应用、自研推理模型、安全工具和 AI Agent，标志着与 OpenAI 分道扬镳后的全面独立。AI 负责人 Mustafa Suleyman 直言目标是要成为世界前四大 AI 实验室之一——目前前三是 Google DeepMind、OpenAI 和 Anthropic。"
+pubDate: 2026-06-03
+sourceName: "The Verge AI"
+sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/942242/microsoft-build-ai-agents-openai-competition"
+sourceLang: en
+tags: ["model-release", "agent-tools", "industry-trend"]
+---
+## 产品布局
+
+Microsoft Build 大会上公司密集发布了一连串重大 AI 产品。CEO Satya Nadella 将此次会议称为"拥抱变革"的时刻。AI 负责人 Suleyman 发布了 MAI-Thinking-1——Microsoft 首个推理模型，外加 6 个聚焦图像、语音、转录和编程的专用模型。
+
+## 独立宣言
+
+Microsoft 与 OpenAI 的戏剧性关系在今年 4 月底正式"分居"，但仍保留 OpenAI 主要云合作伙伴身份——目前。Suleyman 在采访中毫不客气地表示："我们要证明自己能成为世界四大实验室之一。目前有三大实验室——Google DeepMind、OpenAI、Anthropic。我们还不是，但这正是我加入的原因。"
+
+## 竞争态势
+
+Microsoft 在推理模型上比 OpenAI 和 Anthropic 落后多年（OpenAI 2024 年秋就推出了 o1）。但 Suleyman 强调 MAI-Thinking-1 的中型版本针对企业部署进行了优化。Build 大会的整体氛围像一场"刚恢复单身的离婚人士发的社交媒体热帖"——急切且有攻击性。
+
+## 对 AI 行业的影响
+
+Microsoft-OpenAI 联盟的解体标志着 AI 行业进入了新的竞争阶段。当客户和云平台合二为一时，是一种共生关系；当它们变成竞争者时，整个 AI SaaS 格局将重新洗牌。Microsoft 拥有全栈分发优势（Azure、Office、Windows、LinkedIn），独立后的 AI 路线图将直接挑战 OpenAI 和 Anthropic 的企业市场。未来 12 个月的代理战争才刚开始。
+
+---
+
+## 原文参考
+
+来源：[The Verge AI](https://www.theverge.com/ai-artificial-intelligence/942242/microsoft-build-ai-agents-openai-competition) · 2026-06-03
+
+> At Microsoft's annual Build conference on Tuesday, the company announced a slew of new or expanded AI initiatives, including a super app, in-house reasoning models, a cybersecurity tool, and OpenClaw-esque AI agents. All this news added up to a clear message: Microsoft is positioned to be one of the biggest players in AI, and it's [&#8230;]
