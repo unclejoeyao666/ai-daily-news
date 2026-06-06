@@ -17,7 +17,7 @@
     },
     "translate": {
       "status": "failed",
-      "finished_at": "2026-06-05T05:10:40.830238+00:00",
+      "finished_at": "2026-06-06T05:06:59.328561+00:00",
       "error": "Fix the rows in SQLite (or rewrite audio_script.md) and re-run."
     },
     "publish_article": {

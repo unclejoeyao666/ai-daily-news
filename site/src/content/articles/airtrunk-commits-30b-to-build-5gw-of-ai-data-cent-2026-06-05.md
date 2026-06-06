@@ -1,0 +1,23 @@
+---
+title: "AirTrunk 承诺在印度投入 300 亿美元建设 5GW AI 数据中心"
+titleOriginal: "AirTrunk commits $30B to build 5GW of AI data centers in India"
+description: "Blackstone 支持的数据中心运营商 AirTrunk 宣布在印度投资 300 亿美元，到 2030 年建设 5GW 数据中心容量，印度正成为全球 AI 基础设施的新热土。"
+pubDate: 2026-06-05
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/"
+sourceLang: en
+tags: ["chips-infra", "funding-ipo"]
+---
+Blackstone 旗下数据中心运营商 AirTrunk 宣布将在 2030 年前在印度投资 300 亿美元，建设 5GW 的新数据中心容量。这是印度数字基础设施领域最大规模的外资承诺之一。AirTrunk 今年早些时候通过收购 Lumina CloudInfra 进入印度市场，目前已在其西部的 Raigad 地区规划一个 3GW 的超大型数据中心（投资约 210 亿美元）。印度数据中心容量预计将从目前的约 1.5GW 增长到 2030 年的 8GW。印度政府此前已向外国云服务商提供 2047 年前的税收豁免，以吸引全球 AI 工作负载落地印度。
+
+## 对 AI 行业的影响
+
+对关注 AI 基础设施投资和全球算力布局的读者很重要。300 亿美元的单笔承诺规模极为罕见，印度正在从 IT 外包中心转型为 AI 基础设施重镇，全球算力版图正在重构。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/05/airtrunk-commits-30b-to-build-5gw-of-ai-data-centers-in-india/) · 2026-06-05
+
+> The Australian data center operator plans to set up 5GW of capacity in India.

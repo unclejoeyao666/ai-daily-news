@@ -1,0 +1,23 @@
+---
+title: "Apollo 与 Blackstone 敲定 350 亿美元债务融资，为 Anthropic 采购 AI 芯片"
+titleOriginal: "Apollo Wraps Up $35 Billion Debt to Buy AI Chips for Anthropic"
+description: "Apollo Global Management 与 Blackstone 完成 350 亿美元债务融资包，用于 Anthropic 扩展 AI 基础设施，标志着 AI 竞赛中的又一起超级交易。"
+pubDate: 2026-06-05
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic"
+sourceLang: en
+tags: ["funding-ipo", "chips-infra"]
+---
+Apollo Global Management 与 Blackstone 联合为 Anthropic 完成了一笔 350 亿美元的债务融资，专门用于采购 AI 芯片和扩建基础设施。这是 AI 军备竞赛中最新的一笔巨额融资交易，凸显了顶级 AI 公司在算力上的疯狂投入。Anthropic 近期已与 SpaceX 签署每月 12.5 亿美元的算力租赁协议，如今再获大规模债务融资，加速 GPU 集群扩张。这笔交易表明，华尔街巨头正全力押注 AI 基础设施的长期价值。
+
+## 对 AI 行业的影响
+
+对关注 AI 基础设施投资的读者意义重大。350 亿美元的债务融资规模在 AI 行业极为罕见，意味着算力成为比人才更稀缺的战略资源。同时也说明 Anthropic 正在激进追赶 OpenAI，资本市场对 AI 赛道的信心仍然高涨。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-06-05/apollo-wraps-up-35-billion-debt-to-buy-ai-chips-for-anthropic) · 2026-06-05
+
+> Apollo Global Management Inc. and Blackstone Inc. have finalized a $35 billion financing package for Anthropic PBC to expand its AI infrastructure, marking the latest mega-deal in the artificial intelligence race.
