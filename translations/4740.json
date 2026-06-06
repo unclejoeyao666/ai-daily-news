@@ -1,0 +1,12 @@
+{
+  "translated_title": "Google 每月向 SpaceX 支付 9.2 亿美元租赁算力，AI 产品需求超出预期",
+  "translated_summary": "Google 与 SpaceX 签署协议，每月支付 9.2 亿美元租赁约 11 万块 NVIDIA GPU 及配套算力，合同期至 2029 年 6 月，因 Gemini Enterprise 等 AI 产品需求远超预期。",
+  "translated_body": "Google 与 SpaceX 达成一项重大算力租赁协议，将从 2026 年 10 月至 2029 年 6 月每月支付 9.2 亿美元，获取约 11 万块 NVIDIA GPU、CPU、内存及相关组件的使用权。Google 表示其 Agent 平台 Gemini Enterprise 的需求远超预期，这笔交易是应对短期算力缺口的桥梁方案。此前 Anthropic 已与 SpaceX 达成每月 12.5 亿美元的算力租赁协议。尽管 Google 已是全球最大的 AI 算力拥有者之一，但仍然面临算力短缺的压力。",
+  "impact_analysis": "对了解 AI 行业格局和算力生态的读者非常关键。Google 每月 9.2 亿美元的算力开支表明：即使是最富有的科技巨头也面临算力瓶颈。AI 产品爆发带来的算力饥渴远超预期，算力正成为 AI 行业最核心的稀缺资源。",
+  "industry_tags": [
+    "chips-infra",
+    "enterprise-app",
+    "funding-ipo"
+  ],
+  "_translated_at": "2026-06-06 06:31:56.875572"
+}

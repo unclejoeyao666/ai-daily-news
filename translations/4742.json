@@ -1,0 +1,11 @@
+{
+  "translated_title": "Token 账单到期：AI 成本失控，全行业紧急应对",
+  "translated_summary": "Uber 四个月烧完全年 AI 预算，Microsoft 撤销开发者的 Claude Code 授权。随着 AI Agent 普及，Token 消耗量暴增，Linux 基金会牵头成立 Tokenomics Foundation，推动算力成本治理标准化。",
+  "translated_body": "AI 行业的成本危机正在全面爆发。Uber 在 4 个月内用完了 2026 全年 AI 编码预算；Microsoft 在启用不久后撤销了开发者的 Claude Code 授权；Priceline 的一名员工透露 Cursor 续约价格涨了 4 到 5 倍。尽管单 Token 价格持续下降，但 AI Agent 的普及让 Token 总消耗量呈指数级增长。企业正从能用就行的思维转向成本可见性、可审计性和 Token 控制的治理模式。为此 Linux 基金会本周宣布成立 Tokenomics Foundation，旨在像 FinOps 治理云成本一样标准化 AI Token 成本管理。",
+  "impact_analysis": "对所有使用 AI 工具的企业和开发者都极具现实意义。AI 的免费午餐时代正在结束，Token 成本治理将成为每家公司不可回避的议题。Tokenomics Foundation 的成立标志着行业开始正视这一系统性挑战。",
+  "industry_tags": [
+    "enterprise-app",
+    "industry-trend"
+  ],
+  "_translated_at": "2026-06-06 06:31:56.875623"
+}
