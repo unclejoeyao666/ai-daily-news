@@ -1,0 +1,23 @@
+---
+title: "Anthropic应政府要求切断Fable 5和Mythos 5访问权限"
+titleOriginal: "Anthropic cuts off Fable 5 and Mythos 5 access following government order"
+description: "上周五晚，政府以国家安全为由命令Anthropic禁止所有外国实体（包括美国境内和境外）访问Fable 5和Mythos 5。该命令甚至涵盖了Anthropic的员工。为满足要求，公司已完全切断所有客户对这些模型的访问权限。"
+pubDate: 2026-06-13
+sourceName: "The Verge AI"
+sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/949553/anthropic-fable-5-mythos-5-government-national-security"
+sourceLang: en
+tags: ["policy-regulation", "model-release", "safety-alignment"]
+---
+上周五晚，美国政府以国家安全为由向Anthropic下达了一道极为罕见的命令：立即阻止所有外国实体——无论位于美国境内还是境外——访问Fable 5和Mythos 5两款AI模型。这一命令甚至适用于Anthropic自己的员工，其严厉程度前所未有。Anthropic被迫在极短时间内执行了全面封禁，所有客户和合作伙伴的访问权限均被即时切断。此举标志着美国政府首次对AI模型本身实施出口管制级别的限制，为AI技术的全球化流动设置了一道新的壁垒。
+
+## 对 AI 行业的影响
+
+政府首次对具体AI模型实施全面出口管制，标志着AI监管从企业合规层面升级至国家安全层面的直接干预。这将深刻影响全球AI模型的跨境使用和开源生态。
+
+---
+
+## 原文参考
+
+来源：[The Verge AI](https://www.theverge.com/ai-artificial-intelligence/949553/anthropic-fable-5-mythos-5-government-national-security) · 2026-06-13
+
+> On Friday evening, the government ordered Anthropic to block access to Fable 5 and Mythos 5 for all foreign nations, both inside and outside the US, due to national security concerns. That order included employees of Anthropic. To meet those demands, the company has completely cut off access to the models for all customers. In [&#8230;]

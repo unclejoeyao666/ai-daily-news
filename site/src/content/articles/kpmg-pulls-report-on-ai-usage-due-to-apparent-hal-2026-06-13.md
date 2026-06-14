@@ -1,0 +1,23 @@
+---
+title: "KPMG因明显幻觉撤回AI使用报告"
+titleOriginal: "KPMG pulls report on AI usage due to apparent hallucinations"
+description: "AI再次证明自己在报道AI相关话题时是多么不可靠。四大会计师事务所之一的KPMG发布的一份关于AI使用的报告被发现存在明显的事实性错误和幻觉内容，随后被迫撤回。这一事件凸显了即使专业机构在使用AI工具时也会陷入信任陷阱。"
+pubDate: 2026-06-13
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/"
+sourceLang: en
+tags: ["safety-alignment", "enterprise-app"]
+---
+四大会计师事务所KPMG近日因一份关于AI使用情况的报告出现明显幻觉而被追撤回。该报告本应展示KPMG在AI领域的专业能力，却反而暴露了AI工具在信息准确性上的严重短板。讽刺的是，AI在自我描述时产生了看似合理但实际错误的内容，这再次警示行业：AI生成内容需要严格的人工审核，即使是顶级专业机构也不例外。这一事件对咨询行业和企业的AI采用策略提出了严峻质疑。
+
+## 对 AI 行业的影响
+
+顶级审计机构因AI幻觉撤回报告，严重打击企业界对AI生成内容可信度的信心。这将促使更多企业建立AI内容审核机制，也可能加速监管机构对AI在专业服务领域使用的限制。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/13/kpmg-pulls-report-on-ai-usage-due-to-apparent-hallucinations/) · 2026-06-13
+
+> Once again, AI proves to be an unreliable source of information about AI.

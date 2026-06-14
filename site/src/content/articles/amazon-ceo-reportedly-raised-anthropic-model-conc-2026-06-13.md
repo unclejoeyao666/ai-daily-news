@@ -1,0 +1,23 @@
+---
+title: "报道称亚马逊CEO曾在政府打压前提出对Anthropic模型的担忧"
+titleOriginal: "Amazon CEO reportedly raised Anthropic model concerns before government crackdown"
+description: "亚马逊CEO Andy Jassy可能正是引发Anthropic上周五切断两个模型全球访问权限的安全担忧的源头。报道称Jassy在与白宫的沟通中表达了对Anthropic模型安全性的关切，这直接导致了后续的政府干预。"
+pubDate: 2026-06-13
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/"
+sourceLang: en
+tags: ["policy-regulation", "safety-alignment", "funding-ipo"]
+---
+据多方报道，亚马逊CEO Andy Jassy可能是导致Anthropic上周五切断两款AI模型全球访问权限的关键推手。Jassy据称在与白宫的沟通中表达了对Anthropic模型安全性的严重关切，这些担忧随后转化为了政府层面的行动。这一事件揭示了大型科技公司之间复杂的竞争与合规博弈——作为Anthropic的重要投资者和合作伙伴，亚马逊的立场转变意义重大。Anthropic被迫执行了全球范围的模型访问限制，这在此前极为罕见。
+
+## 对 AI 行业的影响
+
+亚马逊CEO直接推动政府干预竞争对手的AI模型，反映了科技巨头之间围绕AI安全的政治博弈正在加剧。这将重新定义AI公司、投资方与监管机构之间的权力关系。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/13/amazon-ceo-reportedly-raised-anthropic-model-concerns-before-government-crackdown/) · 2026-06-13
+
+> Amazon CEO Andy Jassy may have been the source of security concerns that led Anthropic to cut off worldwide access to two models on Friday.
