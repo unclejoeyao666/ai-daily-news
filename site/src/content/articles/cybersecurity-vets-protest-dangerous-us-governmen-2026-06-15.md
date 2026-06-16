@@ -1,0 +1,33 @@
+---
+title: "网络安全专家联名抗议美国封禁 Anthropic 最强模型"
+titleOriginal: "Cybersecurity vets protest ‘dangerous’ US government ban on Anthropic’s most powerful models"
+description: "数十名网络安全专家联名致信白宫，要求撤销对 Anthropic 的 Fable 5 和 Mythos 5 模型的出口管制限制。他们警告称，这一禁令将严重削弱全球网络安全防御能力，让攻击者获得不对称优势。"
+pubDate: 2026-06-15
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/"
+sourceLang: en
+tags: ["policy-regulation", "safety-alignment"]
+---
+## 报道核心
+
+包括多名前政府安全官员在内的数十名网络安全专家联合致信白宫，强烈要求撤销对 Anthropic 最新模型的出口管制令。Fable 5 和 Mythos 5 是专门用于网络安全防御的 AI 模型，能够自主发现软件和系统中的安全漏洞。
+
+## 关键论点
+
+专家们认为，这一禁令将"限制网络安全防御者保护其软件和产品的核心能力"。Fable 5 的能力超越此前任何公开模型，原本有望大幅提升全球软件安全水平。禁令反而让攻击者——他们不受美国管制约束——获得了不对称优势。
+
+## 微妙处境
+
+Anthropic 此前已在安全问题上采取极端谨慎态度，将 Mythos 5 仅授权给 200 家伙伴组织，并发布降低风险的报告。然而政府的干预直接导致这些安全工具完全下线，让防御者比攻击者损失更大。
+
+## 对 AI 行业的影响
+
+此事件揭示了政府安全政策与 AI 安全之间的深层冲突：限制 AI 模型出口的本意是防止技术外流，却让全球网络安全防御水平急剧下降。如果这一禁令成为先例，其他 AI 实验室也将面临"发布就受限"的风险，进而抑制整个行业在安全领域的创新投入。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/15/cybersecurity-vets-protest-dangerous-us-government-ban-on-anthropics-most-powerful-models/) · 2026-06-15
+
+> A group made up of dozens of cybersecurity experts urged the White House to remove export-control restrictions on Anthropic’s Fable and Mythos models, arguing that the order is going to limit the ability of cybersecurity defenders to secure their software and products.
