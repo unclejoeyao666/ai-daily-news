@@ -1,0 +1,37 @@
+---
+title: "调查：60% 美国消费者反感品牌营销中使用「AI」字眼"
+titleOriginal: "Sixty percent of US consumers say ‘AI’ in brand messaging is a turnoff, survey finds"
+description: "WordPress VIP 最新调查显示，60% 美国消费者认为品牌营销中使用「AI」一词令人反感，86% 不完全信任 AI 回答，仍希望查看原始来源。42% 消费者表示无明确归因的 AI 回答可信度甚至低于航空公司和医疗账单。"
+pubDate: 2026-06-16
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/16/sixty-percent-of-u-s-consumers-say-ai-in-brand-messaging-is-a-turnoff-survey-finds/"
+sourceLang: en
+tags: ["consumer-app", "industry-trend"]
+---
+## 调查发现
+
+WordPress VIP 发布的 2026 年网络未来报告显示，品牌在营销信息中使用「AI」字眼反而适得其反。60% 的美国消费者表示这种做法令人反感，86% 不完全信任 AI 输出结果，希望自行查看原始资料。
+
+近四分之三的受访者认为，互联网相比十年前「更缺乏人性」。
+
+## 悖论
+
+尽管消费者对 AI 持怀疑态度，企业端的 AI 引用流量却在增长。60% 的企业受访者表示过去一年来自 AI 搜索引擎和问答平台的流量有所增加，74% 的企业决策者认为 AI 可发现性和归因至关重要。
+
+WordPress VIP 的 CTO Brian Alvey 指出：「人们曾经为他人建网站，现在你需要为代人类用户行事的 AI Agent 建网站。如果你的网站内容不能被 AI 读取，你在日益增长的搜索方式中就不存在。而如果内容不够人性化、不值得信任，那些仅存的人肉点击者也不会回来第二次。」
+
+## 启示
+
+品牌面临双重挑战：既要适应 AI 搜索时代的可见性要求，又要保持人性化的品牌表达，避免因过度标榜 AI 而失去消费者信任。
+
+## 对 AI 行业的影响
+
+这项调查揭示了 AI 行业的一个核心悖论：企业争先恐后融入 AI 的同时，消费者对 AI 的信任正在下降。对于品牌而言，透明归因和人性化表达可能比「AI 标签」更能赢得市场。这也给 AI 公司提出了产品设计和沟通策略的重要课题。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/16/sixty-percent-of-u-s-consumers-say-ai-in-brand-messaging-is-a-turnoff-survey-finds/) · 2026-06-16
+
+> WordPress VIP’s latest survey suggests consumers are wary of AI-generated answers even as companies increasingly view AI search as an important referral channel.
