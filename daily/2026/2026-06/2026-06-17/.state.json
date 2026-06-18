@@ -34,8 +34,26 @@
       "mp3_size": 2385164
     },
     "push": {
-      "status": "running",
-      "started_at": "2026-06-17T05:01:34.913428+00:00"
+      "status": "ok",
+      "finished_at": "2026-06-17T05:01:38.100972+00:00"
+    }
+  },
+  "deliveries": {
+    "discord_text": {
+      "status": "ok",
+      "message_id": "1516698928584855592",
+      "channel_id": "1490344209847287830",
+      "method": "openclaw_message",
+      "finished_at": "2026-06-17T07:00:04.301791+00:00",
+      "chars": 1778
+    },
+    "discord_audio": {
+      "status": "ok",
+      "message_id": "1516698947031269387",
+      "channel_id": "1490344209847287830",
+      "method": "openclaw_message",
+      "finished_at": "2026-06-17T07:00:08.406421+00:00",
+      "mp3_size": 2385164
     }
   }
 }
