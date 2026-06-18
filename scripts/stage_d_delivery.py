@@ -1,14 +1,22 @@
 #!/usr/bin/env python3
-"""Prepare and record Stage D Discord deliveries.
+"""Prepare, send, and record Stage D Discord deliveries.
 
-This script deliberately does not send Discord messages. OpenClaw's message
-tool is only available in agent sessions, so Stage D uses this helper to make
-all non-network work deterministic:
+Stage D delivery is fully deterministic. It does NOT require a cognitive agent
+turn. The `openclaw message send --json` CLI sends a Discord message (with
+optional media) directly through the running Gateway and returns the real
+Discord message id, so this helper can:
 
 1. validate the daily pipeline state
 2. build the exact Discord payloads
 3. copy the mp3 into OpenClaw's allow-listed media directory
-4. record a delivery only after the agent provides a real Discord message id
+4. send each needed delivery via `openclaw message send --json`
+5. record a delivery only after a real Discord snowflake message id is returned
+
+Subcommands:
+  prepare  build the exact payload JSON (no send)
+  send     build, send via openclaw message send, and record (the cron path)
+  record   record one delivery from an externally-obtained message id
+  clear    clear delivery state during operator recovery
 """
 from __future__ import annotations
 
@@ -18,6 +26,7 @@ import os
 import re
 import shutil
 import sqlite3
+import subprocess
 import sys
 import tempfile
 from datetime import datetime, timezone, timedelta
@@ -43,6 +52,24 @@ DISCORD_CHAR_LIMIT = 1900
 OPENCLAW_MEDIA_LIMIT = 8 * 1024 * 1024
 DELIVERY_KEYS = ("discord_text", "discord_audio")
 INVALID_MESSAGE_IDS = {"", "cron-announce", "unknown", "none", None}
+SEND_TIMEOUT_SECONDS = 300
+# Stale-tolerant lock so the Stage D cron (07:00) and the watchdog delivery
+# backstop (hourly) can never both post the same briefing. A SIGKILLed run's
+# lock ages out after this many seconds.
+SEND_LOCK_TTL_SECONDS = 600
+# Only the `fanli` Discord bot account has access to the news + management
+# channels (guild 1482433009666887967). The CLI default account does not, so
+# `openclaw message send` must be told which account to use.
+DISCORD_ACCOUNT = os.environ.get("STAGE_D_DISCORD_ACCOUNT", "fanli")
+
+
+def openclaw_bin() -> str:
+    """Resolve the openclaw CLI used to send Discord messages."""
+    return (
+        os.environ.get("OPENCLAW_BIN")
+        or shutil.which("openclaw")
+        or "/opt/homebrew/bin/openclaw"
+    )
 
 
 def today_berlin() -> str:
@@ -153,28 +180,25 @@ def build_text_message(date_str: str, meta: dict[str, Any]) -> str:
     raise SystemExit(f"compact Discord message is still too long: {len(message)} chars")
 
 
-def prepare(date_str: str, json_out: Path | None) -> dict[str, Any]:
+def build_payload(date_str: str) -> dict[str, Any]:
+    """Build the exact Stage D payload without printing or sending."""
     state = load_state(date_str)
     push_status = state.get("steps", {}).get("push", {}).get("status")
     if push_status != "ok":
-        payload = {
+        return {
             "status": "skip",
             "reason": f"push is {push_status or 'missing'}",
             "date": date_str,
         }
-        write_payload(payload, json_out)
-        return payload
 
     needs_text = not delivery_is_ok(state, "discord_text")
     needs_audio = not delivery_is_ok(state, "discord_audio")
     if not needs_text and not needs_audio:
-        payload = {
+        return {
             "status": "complete",
             "reason": "discord_text and discord_audio already have real message ids",
             "date": date_str,
         }
-        write_payload(payload, json_out)
-        return payload
 
     dd = day_dir(date_str)
     meta = load_json(dd / "meta.json")
@@ -198,7 +222,7 @@ def prepare(date_str: str, json_out: Path | None) -> dict[str, Any]:
         f"🌐 完整网页：{meta['briefing_url']}"
     )
 
-    payload = {
+    return {
         "status": "ready",
         "date": date_str,
         "channel": "discord",
@@ -217,6 +241,10 @@ def prepare(date_str: str, json_out: Path | None) -> dict[str, Any]:
             },
         },
     }
+
+
+def prepare(date_str: str, json_out: Path | None) -> dict[str, Any]:
+    payload = build_payload(date_str)
     write_payload(payload, json_out)
     return payload
 
@@ -228,42 +256,240 @@ def write_payload(payload: dict[str, Any], json_out: Path | None) -> None:
     print(data)
 
 
-def record(args: argparse.Namespace) -> int:
-    date_str = parse_date(args.date)
-    if not is_real_message_id(args.message_id):
-        print(f"refusing non-Discord message id: {args.message_id}", file=sys.stderr)
-        return 1
+def record_delivery(
+    date_str: str,
+    key: str,
+    message_id: str,
+    *,
+    chars: int | None = None,
+    mp3_size: int | None = None,
+    force: bool = False,
+) -> tuple[int, dict[str, Any]]:
+    """Record one delivery. Returns (exit_code, entry_or_info)."""
+    if not is_real_message_id(message_id):
+        return 1, {"error": f"refusing non-Discord message id: {message_id}"}
 
     state = load_state(date_str)
     deliveries = state.setdefault("deliveries", {})
-    existing = deliveries.get(args.key, {})
+    existing = deliveries.get(key, {})
     if (
         existing.get("status") == "ok"
         and is_real_message_id(existing.get("message_id"))
-        and not args.force
+        and not force
     ):
-        print(
-            f"delivery {args.key} already recorded with real message id "
-            f"{existing.get('message_id')}",
-            file=sys.stderr,
-        )
-        return 2
+        return 2, {
+            "error": (
+                f"delivery {key} already recorded with real message id "
+                f"{existing.get('message_id')}"
+            ),
+            "message_id": existing.get("message_id"),
+        }
 
     entry: dict[str, Any] = {
         "status": "ok",
-        "message_id": str(args.message_id),
+        "message_id": str(message_id),
         "channel_id": NEWS_CHANNEL_ID,
         "method": "openclaw_message",
         "finished_at": datetime.now(timezone.utc).isoformat(),
     }
-    if args.chars is not None:
-        entry["chars"] = args.chars
-    if args.mp3_size is not None:
-        entry["mp3_size"] = args.mp3_size
+    if chars is not None:
+        entry["chars"] = chars
+    if mp3_size is not None:
+        entry["mp3_size"] = mp3_size
 
-    deliveries[args.key] = entry
+    deliveries[key] = entry
     atomic_write_json(state_path(date_str), state)
-    print(json.dumps({"status": "recorded", "date": date_str, "key": args.key, **entry}, ensure_ascii=False))
+    return 0, entry
+
+
+def record(args: argparse.Namespace) -> int:
+    date_str = parse_date(args.date)
+    code, info = record_delivery(
+        date_str,
+        args.key,
+        args.message_id,
+        chars=args.chars,
+        mp3_size=args.mp3_size,
+        force=args.force,
+    )
+    if code != 0:
+        print(info.get("error", "record failed"), file=sys.stderr)
+        return code
+    print(json.dumps({"status": "recorded", "date": date_str, "key": args.key, **info}, ensure_ascii=False))
+    return 0
+
+
+def find_message_id(obj: Any) -> str | None:
+    """Recursively find a real Discord snowflake under a messageId key.
+
+    Only keys explicitly naming a message id are accepted, so a channelId
+    (also a snowflake) is never mistaken for the delivered message id.
+    """
+    if isinstance(obj, dict):
+        for key in ("messageId", "message_id", "id"):
+            if key in obj and is_real_message_id(obj[key]):
+                return str(obj[key])
+        for value in obj.values():
+            found = find_message_id(value)
+            if found:
+                return found
+    elif isinstance(obj, list):
+        for value in obj:
+            found = find_message_id(value)
+            if found:
+                return found
+    return None
+
+
+def parse_send_stdout(stdout: str) -> dict[str, Any] | None:
+    """Parse the JSON object emitted by `openclaw message send --json`."""
+    text = stdout.strip()
+    if not text:
+        return None
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        for line in text.splitlines():
+            line = line.strip()
+            if line.startswith("{"):
+                try:
+                    return json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+    return None
+
+
+def send_discord(target: str, message: str, media: str | None, dry_run: bool) -> str | None:
+    """Send one Discord message via the openclaw CLI.
+
+    Returns the real Discord message id on success, or None on a dry run.
+    Raises SystemExit (loudly) on any failure so no delivery is recorded.
+    """
+    cmd = [
+        openclaw_bin(),
+        "message",
+        "send",
+        "--channel",
+        "discord",
+        "--account",
+        DISCORD_ACCOUNT,
+        "--target",
+        target,
+        "--message",
+        message,
+        "--json",
+    ]
+    if media:
+        cmd += ["--media", media]
+    if dry_run:
+        cmd += ["--dry-run"]
+
+    try:
+        proc = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            timeout=SEND_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired:
+        raise SystemExit(f"openclaw message send timed out after {SEND_TIMEOUT_SECONDS}s")
+
+    if proc.returncode != 0:
+        detail = (proc.stderr or proc.stdout or "").strip()
+        raise SystemExit(f"openclaw message send failed (rc={proc.returncode}): {detail}")
+
+    if dry_run:
+        return None
+
+    result = parse_send_stdout(proc.stdout)
+    message_id = find_message_id(result) if result is not None else None
+    if not message_id:
+        raise SystemExit(
+            "openclaw message send returned no real Discord message id: "
+            f"{proc.stdout.strip()[:500]}"
+        )
+    return message_id
+
+
+def _acquire_send_lock(date_str: str) -> Path | None:
+    """Return the lock path if acquired, or None if a fresh lock is held."""
+    dd = day_dir(date_str)
+    dd.mkdir(parents=True, exist_ok=True)
+    lock = dd / ".stage_d.lock"
+    if lock.exists():
+        age = datetime.now(timezone.utc).timestamp() - lock.stat().st_mtime
+        if age < SEND_LOCK_TTL_SECONDS:
+            return None
+    lock.write_text(
+        f"{os.getpid()} {datetime.now(timezone.utc).isoformat()}\n",
+        encoding="utf-8",
+    )
+    return lock
+
+
+def send(args: argparse.Namespace) -> int:
+    """Build payloads, send each needed delivery, and record the message ids.
+
+    Deterministic, single-shot per delivery, idempotent across runs. On any
+    send failure it exits non-zero without recording a partial success. A
+    stale-tolerant lock serializes concurrent senders (Stage D cron vs the
+    watchdog backstop) so a briefing can never be double-posted.
+    """
+    date_str = parse_date(args.date)
+    payload = build_payload(date_str)
+    status = payload.get("status")
+    if status in ("skip", "complete"):
+        print(json.dumps({"status": status, "date": date_str, "reason": payload.get("reason"), "sent": []}, ensure_ascii=False))
+        return 0
+    if status != "ready":
+        raise SystemExit(f"unexpected prepare status: {status}")
+
+    lock = None
+    if not args.dry_run:
+        lock = _acquire_send_lock(date_str)
+        if lock is None:
+            print(json.dumps({"status": "skip", "date": date_str,
+                              "reason": "another Stage D send in flight (lock held)",
+                              "sent": []}, ensure_ascii=False))
+            return 0
+    try:
+        return _send_locked(date_str, payload, args.dry_run)
+    finally:
+        if lock is not None:
+            try:
+                lock.unlink()
+            except FileNotFoundError:
+                pass
+
+
+def _send_locked(date_str: str, payload: dict[str, Any], dry_run: bool) -> int:
+    target = payload["target"]
+    deliveries = payload["deliveries"]
+    results: list[dict[str, Any]] = []
+
+    text = deliveries["discord_text"]
+    if text.get("needed"):
+        message_id = send_discord(target, text["message"], None, dry_run)
+        if dry_run:
+            results.append({"key": "discord_text", "dryRun": True})
+        else:
+            code, info = record_delivery(date_str, "discord_text", message_id, chars=text.get("chars"))
+            if code not in (0, 2):
+                raise SystemExit(f"failed to record discord_text: {info.get('error')}")
+            results.append({"key": "discord_text", "message_id": message_id, "recorded": code == 0})
+
+    audio = deliveries["discord_audio"]
+    if audio.get("needed"):
+        message_id = send_discord(target, audio["message"], audio.get("media_path"), dry_run)
+        if dry_run:
+            results.append({"key": "discord_audio", "dryRun": True})
+        else:
+            code, info = record_delivery(date_str, "discord_audio", message_id, mp3_size=audio.get("mp3_size"))
+            if code not in (0, 2):
+                raise SystemExit(f"failed to record discord_audio: {info.get('error')}")
+            results.append({"key": "discord_audio", "message_id": message_id, "recorded": code == 0})
+
+    print(json.dumps({"status": "sent" if not dry_run else "dry-run", "date": date_str, "results": results}, ensure_ascii=False))
     return 0
 
 
@@ -288,6 +514,10 @@ def main() -> int:
     p_prepare.add_argument("--date", default="today")
     p_prepare.add_argument("--json-out", type=Path, default=None)
 
+    p_send = sub.add_parser("send", help="Build, send via openclaw, and record (deterministic, no agent)")
+    p_send.add_argument("--date", default="today")
+    p_send.add_argument("--dry-run", action="store_true", help="Build and call openclaw with --dry-run; record nothing")
+
     p_record = sub.add_parser("record", help="Record one successful Discord send")
     p_record.add_argument("--date", default="today")
     p_record.add_argument("--key", required=True, choices=DELIVERY_KEYS)
@@ -304,6 +534,8 @@ def main() -> int:
     if args.command == "prepare":
         prepare(parse_date(args.date), args.json_out)
         return 0
+    if args.command == "send":
+        return send(args)
     if args.command == "record":
         return record(args)
     if args.command == "clear":

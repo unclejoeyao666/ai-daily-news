@@ -301,11 +301,16 @@ def run_steps(
     from_step: Optional[str] = None,
     to_step: Optional[str] = None,
     steps_only: Optional[List[str]] = None,
-) -> None:
+) -> Optional[str]:
     """Run pipeline steps from from_step to to_step (inclusive).
 
     If steps_only is given, only run those named steps.
     Respects already-ok steps (won't re-run).
+
+    Returns the name of the step that failed (and stopped the run), or
+    None if every executed step finished ok. Callers use this to set a
+    non-zero exit code so a `command` cron's failureAlert can fire — a
+    silently-swallowed failure here was the old exit-0-on-failure bug.
     """
     sp = state_path_for(date_str)
     state = st.load(sp, date_str)
@@ -352,12 +357,86 @@ def run_steps(
             print(f"⛔ Step '{step}' failed — stopping pipeline.")
             print(f"   Run with --step {step} to retry after fixing the issue.")
             print(f"   Or run with --resume to try the next pending step.")
-            break
+            return step
 
         # Stop at to_step
         if to_step and step == to_step:
             print(f"✓ Reached to_step={to_step} — stopping.")
             break
+
+    return None
+
+
+# ── Deterministic stage entrypoints (command-cron contract) ─────────
+#
+# Each stage maps to a `command` cron. Exit-code contract:
+#   0       success, OR precondition not met (skip — no failureAlert)
+#   nonzero a real failure (failureAlert fires on the cron)
+# The model is never invoked here; cognitive translation lives in
+# scripts/stage_b.py. Stages A/C/fallback are pure deterministic Python.
+
+STAGE_DEFS: Dict[str, Dict] = {
+    # Stage A (04:00): harvest fresh RSS + select the daily set. No gate.
+    "ingest": {"steps": ["harvest", "select"], "require": None},
+    # Stage C (06:30): render + audio + push. Only after translate is ok.
+    "publish": {
+        "steps": ["publish_article", "publish_brief", "audio", "push"],
+        "require": ("translate", "ok"),
+    },
+}
+
+
+def run_fallback(date_str: str) -> int:
+    """Stage B deterministic fallback (06:25): drop-untranslated finalize.
+
+    Gate: only act when select is ok AND translate is not yet ok. Defers
+    cleanly (exit 0) otherwise so the cron never alerts on a no-op. When
+    it does run and too few articles are translated, translate_helper
+    exits 1 (< MIN_BRIEFING) and that propagates so failureAlert fires.
+    """
+    state = st.load(state_path_for(date_str), date_str)
+    if st.get(state, "select").get("status") != "ok":
+        print("⏭️  fallback: select not ok — nothing to finalize (skip, exit 0)")
+        return 0
+    if st.is_done(state, "translate"):
+        print("⏭️  fallback: translate already ok — skip (exit 0)")
+        return 0
+    th = ROOT / "scripts" / "translate_helper.py"
+    r = run(["python3", str(th), "finalize", "--date", date_str,
+             "--drop-untranslated"], check=False)
+    if r.returncode != 0:
+        print(f"⛔ fallback: translate_helper finalize rc={r.returncode}")
+        return r.returncode
+    print("✅ fallback: translate finalized via drop-untranslated")
+    return 0
+
+
+def run_stage(date_str: str, stage: str) -> int:
+    """Run one deterministic stage; return the process exit code."""
+    if stage == "fallback":
+        return run_fallback(date_str)
+
+    spec = STAGE_DEFS.get(stage)
+    if not spec:
+        print(f"unknown stage: {stage}", file=sys.stderr)
+        return 2
+
+    require = spec["require"]
+    if require:
+        rstep, rstatus = require
+        actual = st.get(st.load(state_path_for(date_str), date_str),
+                        rstep).get("status", "pending")
+        if actual != rstatus:
+            print(f"⏭️  {stage}: precondition {rstep}={rstatus} not met "
+                  f"(is '{actual}') — skip (exit 0)")
+            return 0
+
+    failed = run_steps(date_str, steps_only=spec["steps"])
+    if failed:
+        print(f"⛔ {stage}: step '{failed}' failed — exit 1")
+        return 1
+    print(f"✅ {stage}: all steps ok")
+    return 0
 
 
 def main() -> None:
@@ -387,6 +466,11 @@ def main() -> None:
         help="Run all pending steps (from next pending to end)"
     )
     p.add_argument(
+        "--stage", choices=["ingest", "publish", "fallback"],
+        help="Run one deterministic stage as a command cron "
+             "(gated precondition; exit 0=ok/skip, nonzero=real failure)"
+    )
+    p.add_argument(
         "--status", action="store_true",
         help="Print pipeline state and exit"
     )
@@ -400,9 +484,12 @@ def main() -> None:
         print_status(state)
         return
 
+    if args.stage:
+        sys.exit(run_stage(date_str, args.stage))
+
     if args.step:
-        run_steps(date_str, steps_only=[args.step])
-        return
+        failed = run_steps(date_str, steps_only=[args.step])
+        sys.exit(1 if failed else 0)
 
     from_step = getattr(args, "from_step", None)
     to_step = args.to_step
@@ -417,12 +504,12 @@ def main() -> None:
             print_status(state)
             return
         print(f"▶️  Resuming from: {next_step} ({st.STEP_LABELS.get(next_step, next_step)})")
-        run_steps(date_str, from_step=next_step)
-        return
+        failed = run_steps(date_str, from_step=next_step)
+        sys.exit(1 if failed else 0)
 
     if from_step or to_step:
-        run_steps(date_str, from_step=from_step, to_step=to_step)
-        return
+        failed = run_steps(date_str, from_step=from_step, to_step=to_step)
+        sys.exit(1 if failed else 0)
 
     # Default: auto pace through all pending steps
     state = st.load(sp, date_str)
@@ -433,12 +520,13 @@ def main() -> None:
         print_status(state)
         return
     print(f"▶️  Starting from: {next_step} ({st.STEP_LABELS.get(next_step, next_step)})")
-    run_steps(date_str, from_step=next_step)
+    failed = run_steps(date_str, from_step=next_step)
 
     # Final status
     state = st.load(sp, date_str)
     print()
     print_status(state)
+    sys.exit(1 if failed else 0)
 
 
 if __name__ == "__main__":

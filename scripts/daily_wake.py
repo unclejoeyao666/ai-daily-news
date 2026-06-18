@@ -27,6 +27,48 @@ sys.path.insert(0, str(ROOT))
 from scripts.lib import state as st
 from scripts.lib import config
 
+# The Stage A cron harvests + selects at this UTC time. The watchdog must
+# not INITIATE a fresh pipeline for a day before this instant, or it would
+# harvest hours too early and build the morning briefing from stale news
+# (delivery is 07:00 UTC). Before Stage A's time the watchdog only RESUMES
+# days that already have state; after it, the watchdog is the harvest
+# backstop should the Stage A cron itself have failed. Pure UTC → DST-immune
+# and identical to the `0 4 * * * UTC` Stage A cron expression.
+STAGE_A_UTC = (4, 0)
+# The Stage D cron broadcasts to Discord at this UTC time. The watchdog
+# delivery backstop must NOT fire before it, or a day whose steps finish
+# early (e.g. the watchdog itself published at 05:00) would be broadcast
+# hours ahead of schedule. Matches the `0 7 * * * UTC` Stage D cron.
+STAGE_D_UTC = (7, 0)
+
+
+def _before_stage_d(date_str: str, now_utc=None) -> bool:
+    """True if it is too early for the delivery backstop to fire for date_str."""
+    if now_utc is None:
+        now_utc = datetime.now(timezone.utc)
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    hh, mm = STAGE_D_UTC
+    stage_d_instant = datetime(d.year, d.month, d.day, hh, mm,
+                               tzinfo=timezone.utc)
+    return now_utc < stage_d_instant
+
+
+def _before_stage_a(date_str: str, now_utc=None) -> bool:
+    """True if it is too early to initiate date_str's pipeline from scratch."""
+    if now_utc is None:
+        now_utc = datetime.now(timezone.utc)
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d").date()
+    except ValueError:
+        return False
+    hh, mm = STAGE_A_UTC
+    stage_a_instant = datetime(d.year, d.month, d.day, hh, mm,
+                               tzinfo=timezone.utc)
+    return now_utc < stage_a_instant
+
 
 def _past_drop_deadline(date_str: str, now_utc=None) -> bool:
     """True when the deterministic translate fallback is allowed for date_str.
@@ -164,6 +206,45 @@ def run_pipeline(date_str: str, budget: int) -> dict:
         }
 
 
+def deliver_today_backstop(budget: int) -> None:
+    """Re-attempt today's Discord delivery if Stage D missed it.
+
+    Stage D (07:00) is the primary, deterministic deliverer. This is a
+    backstop ONLY: it acts for *today* only, and only once all 7 steps are
+    ok but a delivery is still pending (e.g. a transient send error or a
+    late push made the single 07:00 run skip/fail). stage_d_delivery.py is
+    idempotent and lock-guarded, so this can never double-post or race the
+    Stage D cron. Past days are never auto-delivered — stale news must not
+    resurface. Delivery is fully deterministic (openclaw message send), so
+    the watchdog can safely own this backstop with no model involvement.
+    """
+    today = datetime.now(timezone(timedelta(hours=2))).strftime("%Y-%m-%d")
+    if _before_stage_d(today):
+        return  # before the scheduled broadcast — leave it to the Stage D cron
+    sp = day_dir_for(today) / ".state.json"
+    if not sp.exists():
+        return
+    state = st.load(sp, today)
+    if not all(st.is_done(state, s) for s in st.STEPS):
+        return  # pipeline not finished — nothing to deliver yet
+    if st.is_complete(state):
+        return  # already delivered (both real message ids present)
+
+    cmd = ["python3", str(ROOT / "scripts" / "stage_d_delivery.py"),
+           "send", "--date", today]
+    print(f"📤 {today}: steps ok but a delivery is pending — "
+          f"watchdog delivery backstop")
+    try:
+        r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True,
+                           timeout=min(budget, 300), check=False)
+        if r.stdout.strip():
+            print(r.stdout.strip()[:400])
+        if r.returncode != 0 and r.stderr.strip():
+            print(r.stderr.strip()[:400], file=sys.stderr)
+    except subprocess.TimeoutExpired:
+        print(f"⏱  {today}: delivery backstop timed out", file=sys.stderr)
+
+
 def walk_days(days: int, budget_per_day: int) -> None:
     """Check and advance recent days, newest first."""
     tz2 = timezone(timedelta(hours=2))
@@ -176,11 +257,19 @@ def walk_days(days: int, budget_per_day: int) -> None:
         sp = day_dir_for(date_str) / ".state.json"
 
         if not sp.exists():
-            # No pipeline run yet — skip unless it's today
-            if d == 0:
-                print(f"⏭  {date_str}: no state file, starting fresh")
+            # No pipeline run yet. Only today is eligible to be started by
+            # the watchdog, and only once Stage A's own scheduled time has
+            # passed — before that, leave the fresh harvest to the Stage A
+            # cron so the briefing is built from the freshest news.
+            if d == 0 and not _before_stage_a(date_str):
+                print(f"⏭  {date_str}: no state file, starting fresh "
+                      f"(Stage A backstop)")
                 r = run_pipeline(date_str, budget_per_day)
                 results.append((date_str, r))
+            elif d == 0:
+                print(f"⏭  {date_str}: no state file, before Stage A "
+                      f"{STAGE_A_UTC[0]:02d}:{STAGE_A_UTC[1]:02d} UTC — "
+                      f"leaving fresh harvest to Stage A")
             else:
                 print(f"⏭  {date_str}: no state file, skipping (not today)")
             continue
@@ -225,6 +314,9 @@ def walk_days(days: int, budget_per_day: int) -> None:
         else:
             label_after = st.STEP_LABELS.get(next_step_after, next_step_after)
             print(f"⏳ {date_str}: next pending = '{next_step_after}' ({label_after})")
+
+    # Delivery backstop (today only) — re-attempt if Stage D missed it.
+    deliver_today_backstop(budget_per_day)
 
     # Summary
     print()
