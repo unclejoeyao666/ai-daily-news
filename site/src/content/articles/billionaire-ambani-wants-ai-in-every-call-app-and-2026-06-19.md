@@ -1,0 +1,23 @@
+---
+title: "亿万富翁安巴尼要把 AI 嵌入每一个电话、应用和家庭"
+titleOriginal: "Billionaire Ambani wants AI in every call, app, and home"
+description: "印度信实工业在股东大会上宣布推出 Jio Call Agent AI 助手、AI 版 MyJio 应用和 TeleFrame 家庭智能屏，将 AI 深度整合进覆盖 5 亿用户的电信网络。信实同时披露 Jio Platforms IPO 计划，拟发行 2.7 亿股新股。"
+pubDate: 2026-06-19
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/19/billionaire-ambani-wants-ai-in-every-call-app-and-home/"
+sourceLang: en
+tags: ["consumer-app", "china-ai", "industry-trend"]
+---
+在印度争夺全球 AI 版图之际，亿万富翁 Mukesh Ambani 正将信实工业定位为本土 AI 领军者。在年度股东大会上，信实发布了多项 AI 服务：Jio Call Agent 可在通话中转录、摘要并执行订车、订餐等任务；AI 版 MyJio 应用支持自然语言操作；TeleFrame 家庭智能屏可主动推送天气、日程等信息。这标志着 AI 从独立应用升级为电信网络的原生能力。信实还宣布 Jio Platforms 董事会已批准 IPO 招股说明书草案，计划发行多达 2.7 亿股新股。与此同时，印度对外部 AI 模型的依赖（如 Anthropic 最近的模型限制事件）正在推动本土企业加速自建 AI 基础设施。信实已投资 1100 亿美元用于 AI 基础设施建设，并与 Google、Meta 和 Nvidia 建立了战略合作。
+
+## 对 AI 行业的影响
+
+信实的 AI 战略代表了一种「基础设施即渠道」的模式——当 AI 嵌入电信网络层面，用户无需安装额外的应用即可获得 AI 能力，这将在印度这个全球第二大互联网市场创造巨大的用户触达优势。对于全球 AI 产业而言，这展示了大型电信运营商如何将 AI 转化为核心业务增长引擎。同时，Jio 的 IPO 将是今年全球最受关注的科技 IPO 之一。信实与 Anthropic 模型限制事件的关联也说明：外部 AI 供应风险正在加速各国的 AI 自主化进程。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/19/billionaire-ambani-wants-ai-in-every-call-app-and-home/) · 2026-06-19
+
+> Reliance is weaving AI into telecom services used by more than 500 million people.

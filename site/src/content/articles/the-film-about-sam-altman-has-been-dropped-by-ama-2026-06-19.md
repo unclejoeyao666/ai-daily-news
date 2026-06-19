@@ -1,0 +1,23 @@
+---
+title: "萨姆·奥尔特曼传记片被亚马逊 MGM 放弃发行"
+titleOriginal: "The film about Sam Altman has been dropped by Amazon MGM"
+description: "卢卡·瓜达尼诺执导的 OpenAI CEO 萨姆·奥尔特曼传记片《Artificial》被亚马逊 MGM 放弃发行。影片由安德鲁·加菲尔德主演，讲述 2023 年奥尔特曼被解雇又复职的五天事件。亚马逊称将协助为影片寻找新的发行方。"
+pubDate: 2026-06-19
+sourceName: "The Verge AI"
+sourceUrl: "https://www.theverge.com/ai-artificial-intelligence/952906/sam-altman-film-artificial-openai-amazon-mgm-dropped"
+sourceLang: en
+tags: ["consumer-app", "industry-trend"]
+---
+由 Luca Guadagnino 执导的 OpenAI CEO Sam Altman 传记片《Artificial》已被亚马逊 MGM 放弃发行。该片由 Andrew Garfield 主演，剧情围绕 2023 年奥尔特曼被 OpenAI 董事会解雇又五天后复职的戏剧性事件展开。卡司还包括 Monica Barbaro 饰演 OpenAI CTO Mira Murati，Ike Barinholtz 饰演 Elon Musk，以及《Anora》主演 Yura Borisov 饰演 OpenAI 首席科学家 Ilya Sutskever。亚马逊 MGM 在声明中表示，「相信该片由其他发行方发布更为合适」，并正与电影制作团队紧密合作寻找新东家。值得注意的是，亚马逊与 OpenAI 关系密切，今年 2 月刚宣布对 OpenAI 投资 500 亿美元，这一利益冲突可能也是亚马逊放弃发行的考量因素之一。
+
+## 对 AI 行业的影响
+
+亚马逊 MGM 放弃发行奥尔特曼传记片，表面上是一个娱乐行业新闻，但深层反映了 AI 行业的资本与叙事之间的复杂关系。亚马逊作为 OpenAI 的 500 亿美元投资方，对一部可能呈现奥尔特曼争议面的影片保持距离，说明大企业在 AI 领域的商业利益正在影响内容的传播方式。对于 AI 行业而言，这种「叙事管控」现象值得关注——当全球最大的科技公司深度绑定 AI 巨头时，关于 AI 领导者的独立叙事空间会受到多大程度的压缩？
+
+---
+
+## 原文参考
+
+来源：[The Verge AI](https://www.theverge.com/ai-artificial-intelligence/952906/sam-altman-film-artificial-openai-amazon-mgm-dropped) · 2026-06-19
+
+> Luca Guadagnino's film about OpenAI CEO Sam Altman, Artificial, has reportedly been dropped by Amazon MGM. The film, which stars Andrew Garfield and covers the rollercoaster five days in 2023 spanning Altman's termination and reinstatement as CEO, had been in the works for about a year. The cast also includes A Complete Unknown actress Monica [&#8230;]
