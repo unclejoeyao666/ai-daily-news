@@ -1,0 +1,33 @@
+---
+title: "AI 世界正进入「Loop 时代」：永不停止的智能体集群"
+titleOriginal: "The AI world is getting ‘loopy’"
+description: "Claude Code 创始人 Boris Cherny 在 Meta @Scale 大会上提出「Loop」概念——授权一群 AI 智能体在后台持续不断地工作、提交代码、优化架构，彻底颠覆传统的「单次任务」模式。"
+pubDate: 2026-06-22
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/22/the-ai-world-is-getting-loopy/"
+sourceLang: en
+tags: ["agent-tools", "industry-trend"]
+---
+## 报道核心
+
+在 Meta @Scale 大会上，Claude Code 创始人 Boris Cherny 被问及「Loops 是下一个炒作周期还是真实趋势」，他给出了肯定的回答——Loops 是真实的，其重要性不亚于从手写代码到 AI Agent 的跨越。
+
+## 技术原理
+
+Cherny 描述了自己的实践：一个智能体持续寻找改进代码架构的方式，另一个智能体检查并合并重复抽象。它们像普通程序员一样提交 Pull Request。由于代码在不断变化，这些智能体永不停止运行。与传统递归循环不同，这些 Loop 遵循非确定性逻辑——由子智能体自行决定何时停止。
+
+## 行业意义
+
+此前 Agentic AI 的重点在于「管好单个 Agent」——设定清晰目标、检查阶段性成果、不让其偏离提示范围。Loop 则更进一步，授权一群智能体持续在后台工作，对 AI 模型的可靠性提出了更高的信任要求。随着模型能力快速提升，这可能是 AI 真正承担实质工作的下一步。
+
+## 对 AI 行业的影响
+
+Loop 概念若普及，将彻底改变软件开发范式——从 CI/CD 流水线转向永不停止的 AI 代码协作者。这对 GitHub Copilot、GitLab、Cursor 等开发者工具平台构成战略级冲击，它们需要从「辅助编码」进化到「自主运维」。同时，Loop 对 AI 安全和对齐提出了全新挑战——如何确保永不停止的 Agent 集群不产生失控行为。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/22/the-ai-world-is-getting-loopy/) · 2026-06-22
+
+> The loop takes agentic AI a step further by authorizing a swarm of agents to work continuously in the background, endlessly.
