@@ -1,0 +1,36 @@
+{
+  "date": "2026-06-28",
+  "started_at": "2026-06-28T04:00:00.109549+00:00",
+  "steps": {
+    "harvest": {
+      "status": "ok",
+      "finished_at": "2026-06-28T04:00:20.232656+00:00",
+      "stats": {
+        "unplayed": 469,
+        "total": 6566
+      }
+    },
+    "select": {
+      "status": "ok",
+      "finished_at": "2026-06-28T04:00:20.311379+00:00",
+      "selected_count": 10
+    },
+    "translate": {
+      "status": "failed",
+      "finished_at": "2026-06-28T06:01:20.261629+00:00",
+      "error": "   - audio_script.md missing: /Users/unclejoe/Media_Workspace/ai-daily-news/daily/2026/2026-06/2026-06-28/audio_script.md"
+    },
+    "publish_article": {
+      "status": "pending"
+    },
+    "publish_brief": {
+      "status": "pending"
+    },
+    "audio": {
+      "status": "pending"
+    },
+    "push": {
+      "status": "pending"
+    }
+  }
+}
