@@ -14,7 +14,7 @@
   "resilience": {"min_briefing": 3, "min_audio_bytes": 100000, "min_audio_script_chars": 800, "drop_deadline_local": "08:25"},
   "discord": {"channel": "1490344209847287830", "account": "fanli", "mode": "split"},
   "stage_b": {
-    "model": "deepseek/deepseek-v4-flash",
+    "model": "zai/glm-5.2",
     "agent": "fanli",
     "agent_timeout": 1050,
     "prompt": "执行 daily-news skill 的 Stage B（认知翻译）。项目根: {root}\n\n只翻译尚未翻译的文章，不重复劳动：\n1. cd {root}\n2. 查待翻 ID: python3 scripts/translate_helper.py pending --date today\n   - 若 0 条 pending 且已 finalize → 无需操作。\n3. 阅读 references/translation-workflow.md 的全部规则。\n4. 对每个 pending ID：翻译 5 个字段（translated_title / translated_summary / translated_body / impact_analysis / 1-3 个来自 data/tags.json 的合法 industry_tags），写入 /tmp/article-<ID>.json，调用:\n   python3 scripts/translate_helper.py write --id <ID> --json-file /tmp/article-<ID>.json\n5. 写 daily/<Y>/<Y-M>/<DATE>/audio_script.md（1500-2500 中文字符，TTS 安全）。\n6. 关闭本阶段: python3 scripts/translate_helper.py finalize --date today\n\n硬规则：绝不直接改 news_articles 的翻译字段（只用 translate_helper write）；绝不手写 state.translate=ok；绝不编造 tag slug；中途失败已写入的翻译会保留，后续只处理剩余 pending。\n最后仅回复字面量 NO_REPLY。"
