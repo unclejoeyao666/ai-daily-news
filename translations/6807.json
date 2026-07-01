@@ -1,0 +1,12 @@
+{
+  "translated_title": "Claude Science 瞄准科研工作流",
+  "translated_summary": "Anthropic 推出 Claude Science，把数据库、科研工具、子助手和事实核查放进同一工作台，重点服务计算科研流程。",
+  "translated_body": "## 报道核心\n\nAnthropic 发布 Claude Science，一个面向科学家的 AI 工作台。公司强调这不是新模型，也不是专门更强的生物模型，而是把现有 Claude 模型、科研数据库、工具包和多智能体协作放进一个专用环境，减少研究人员在数据库、管线和工具之间来回切换。\n\n## 关键细节\n\nClaude Science 由一个主助手承担项目经理角色，可连接六十多个科学数据库，并配有基因组学、蛋白结构、化学等预置工具包。主助手可以创建子助手拆分任务，也可以把工作交给用户自定义的专家助手。另有事实核查 AI 检查引用和计算结果，但报道提醒，这仍是同一底层模型在自查，不等于独立真相来源。\n\n## 行业反应\n\nAnthropic 把 Claude Science 作为垂直工作流产品来推，而不是只卖模型能力。这条路线和 Claude Code 类似，核心是掌握特定行业的操作层。OpenAI 的 GPT-Rosalind 走专门模型与企业准入路线，Google DeepMind 则拥有 AlphaFold、AlphaGenome 等科学基础模型，三家公司正在用不同分发策略争夺科研市场。",
+  "impact_analysis": "Claude Science 说明 Anthropic 正从通用聊天入口转向行业操作系统，尤其是科研、制药和计算生物领域。对 OpenAI 和 Google DeepMind 的影响是，竞争会从谁的模型更强，转向谁能把模型嵌入真实科研流程、权限体系、数据库和可复现机制。",
+  "industry_tags": [
+    "enterprise-app",
+    "agent-tools",
+    "industry-trend"
+  ],
+  "_translated_at": "2026-07-01 13:57:34.154966"
+}
