@@ -16,21 +16,26 @@
       "selected_count": 10
     },
     "translate": {
-      "status": "failed",
-      "finished_at": "2026-07-01T06:01:20.266297+00:00",
-      "error": "   - audio_script.md missing: /Users/unclejoe/Media_Workspace/ai-daily-news/daily/2026/2026-07/2026-07-01/audio_script.md"
+      "status": "ok",
+      "finished_at": "2026-07-01T11:58:29.099097+00:00",
+      "translated_count": 10
     },
     "publish_article": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-07-01T11:59:49.384600+00:00"
     },
     "publish_brief": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-07-01T11:59:49.455994+00:00"
     },
     "audio": {
-      "status": "pending"
+      "status": "ok",
+      "finished_at": "2026-07-01T12:00:13.511457+00:00",
+      "mp3_size": 6917804
     },
     "push": {
-      "status": "pending"
+      "status": "running",
+      "started_at": "2026-07-01T12:00:13.511795+00:00"
     }
   }
 }

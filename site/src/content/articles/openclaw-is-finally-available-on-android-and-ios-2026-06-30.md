@@ -1,0 +1,33 @@
+---
+title: "OpenClaw 登陆 iOS 与 Android"
+titleOriginal: "OpenClaw is finally available on Android and iOS"
+description: "开源 AI agent 工具 OpenClaw 推出 iOS 与 Android 应用，用户可通过手机连接 OpenClaw Gateway 调度自己的 agents。"
+pubDate: 2026-06-30
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/"
+sourceLang: en
+tags: ["agent-tools", "consumer-app", "open-source"]
+---
+## 报道核心
+
+OpenClaw 终于推出 iOS 与 Android 应用。这个免费开源的 AI agent 项目今年早些时候曾在网络上走红，如今用户可以在手机上连接 OpenClaw Gateway，通过路由层把请求发送给自己的 agents，以及这些 agents 可调用的工具和 skills。
+
+## 关键细节
+
+移动端的核心意义是让用户把自动化 agent 带进口袋，而不是只在桌面或服务器环境中运行。TechCrunch 提到，OpenClaw 用户已经把它用于编程、餐食规划等任务，但也有人报告过不理想的使用结果。项目创始人 Peter Steinberger 今年二月加入 OpenAI，也让 OpenClaw 的生态发展更受关注。
+
+## 行业反应
+
+OpenClaw 早前因 MoltBook 事件获得大量关注，后来研究者称其中部分互动由人类伪装成 agent，营销效果之外也带来可信度成本。即便如此，移动应用发布仍说明 agent 正从开发者工作台进入更普通的消费设备，并与 ChatGPT、Claude 等移动入口争夺用户日常任务调度权。
+
+## 对 AI 行业的影响
+
+OpenClaw 移动端会推动开源 agent 从实验性桌面工具走向随身入口。对 OpenAI、Anthropic 和独立开发者生态的影响是，agent 的竞争会延伸到移动端控制权、工具路由、权限管理和用户习惯，而不只是模型调用能力。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/06/30/openclaw-is-finally-available-on-android-and-ios/) · 2026-06-30
+
+> The free open source agentic program is finally invading your phone.
