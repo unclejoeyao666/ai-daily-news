@@ -1,0 +1,33 @@
+---
+title: "印度新规允许银行资助并购，私人信贷基金或受挤压"
+titleOriginal: "India M&amp;A Funding Rule to Squeeze Private Credit, Moody’s Says"
+description: "穆迪评级表示，印度允许银行为收购交易提供融资的新规可能压缩私人信贷基金的回报空间，影响这一利润丰厚的业务领域。"
+pubDate: 2026-07-02
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-02/india-m-a-funding-rule-to-squeeze-private-credit-moody-s-says"
+sourceLang: en
+tags: ["industry-trend", "funding-ipo"]
+---
+## 报道核心
+
+印度出台新规，允许银行为并购交易提供融资，穆迪评级警告称这可能对私人信贷基金造成显著冲击。
+
+## 关键细节
+
+此前印度并购融资中，私人信贷基金凭借灵活性和速度占据了利润丰厚的细分市场。银行获准进入后，其更低的资金成本和更广泛的客户网络将改变竞争格局。
+
+这一政策变动对 AI 和科技行业并购也有间接影响。随着印度科技公司的并购活动增加，融资渠道的多元化可能加速行业整合。
+
+> 原文为付费内容，本文基于 RSS 摘要翻译，未含全文细节。
+
+## 对 AI 行业的影响
+
+印度并购融资新规虽非直接针对 AI 行业，但对科技并购生态有间接影响。银行资金进入后，印度 AI 初创公司的并购退出路径可能更通畅，因为收购方融资成本降低。对软银和 Tiger Global 等在印度市场重仓的基金而言，被投企业的并购退出环境有所改善，但私人信贷基金在印度科技并购中的角色将被削弱。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-02/india-m-a-funding-rule-to-squeeze-private-credit-moody-s-says) · 2026-07-02
+
+> India’s decision allowing banks to fund acquisitions can potentially hurt private credit funds as it would squeeze returns in one of their most lucrative businesses, Moody’s Ratings said.

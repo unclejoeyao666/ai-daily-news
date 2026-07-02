@@ -1,0 +1,31 @@
+---
+title: "高盛前分析师创办的 AI 投研公司 LinqAlpha 据悉融资两千二百万美元"
+titleOriginal: "Former Goldman Analyst’s AI Startup Is Said to Raise $22 Million"
+description: "AI 投资研究公司 LinqAlpha 接近完成两千二百万美元 A 轮融资，公司由前高盛分析师创立，致力于用人工智能技术变革投资研究行业。"
+pubDate: 2026-07-02
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-02/former-goldman-analyst-s-ai-startup-is-said-to-raise-22-million"
+sourceLang: en
+tags: ["funding-ipo", "enterprise-app"]
+---
+## 报道核心
+
+据知情人士透露，由前高盛分析师创立的 AI 投资研究公司 LinqAlpha 正接近完成两千二百万美元的 A 轮融资。该公司专注于利用人工智能技术赋能投资研究流程。
+
+## 关键细节
+
+LinqAlpha 的融资反映了金融行业对 AI 工具的旺盛需求。投资研究长期以来依赖大量人工分析，而大语言模型和智能体技术的成熟正在重塑这一领域。从财报分析到行业研究，AI 工具已能显著提升分析师的工作效率。
+
+> 原文为付费内容，本文基于 RSS 摘要翻译，未含全文细节。
+
+## 对 AI 行业的影响
+
+LinqAlpha 的融资说明 AI 在金融投研领域的渗透正在加速。对 Bloomberg 和 Refinitiv 等传统投研数据提供商而言，新兴 AI 原生平台正在蚕食其附加值服务市场。预计未来十二个月内，将有更多 AI 投研初创公司获得融资，传统金融机构也将加速内部 AI 工具的部署。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-02/former-goldman-analyst-s-ai-startup-is-said-to-raise-22-million) · 2026-07-02
+
+> LinqAlpha Inc., an artificial intelligence investment research company, is close to raising $22 million in a Series A funding round, according to people familiar with the matter.
