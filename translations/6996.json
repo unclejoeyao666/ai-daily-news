@@ -1,0 +1,11 @@
+{
+  "translated_title": "有人用 OpenClaw 和 Claude Code 搭自动交友脚本",
+  "translated_summary": "TechCrunch 报道了一位用户利用 OpenClaw、Claude Code 和 Instagram 试用功能搭建自动化交友脚本的经历，展示了 AI 智能体在个人社交场景中的争议性应用。",
+  "translated_body": "## 报道核心\n\nTechCrunch 报道，一位名叫 Ben Guez 的用户利用 OpenClaw、Claude Code 和 Instagram 试用功能搭建了自动化交友脚本，据称他的私信中已有大量潜在的国际交友对象。\n\n## 技术实现\n\n该脚本结合了 OpenClaw 的自动化能力、Claude Code 的编程能力和 Instagram 的社交功能，实现了从匹配到沟通的自动化流程。这标志着 AI 智能体从工作场景向个人社交场景的延伸。\n\n## 争议与反思\n\n这类应用虽然技术上令人印象深刻，但也引发了关于社交自动化边界的伦理讨论。自动化交友可能涉及欺骗和操控问题，平台也在加强对此类自动化行为的检测和限制。",
+  "impact_analysis": "这条新闻的价值不在于交友本身，而在于它展示了 AI 智能体工具组合的易用性已达到个人用户可快速搭建复杂自动化流程的程度。对 OpenClaw 和 Anthropic 来说，这类非预期用途既是产品能力的证明，也带来品牌关联的风险。对 Instagram 等社交平台而言，AI 驱动的自动化互动正在成为新的治理挑战。",
+  "industry_tags": [
+    "consumer-app",
+    "agent-tools"
+  ],
+  "_translated_at": "2026-07-03 06:32:48.788383"
+}
