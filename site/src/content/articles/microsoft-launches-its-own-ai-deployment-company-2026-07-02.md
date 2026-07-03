@@ -1,0 +1,33 @@
+---
+title: "微软成立 AI 部署公司，承诺投入二十五亿美元"
+titleOriginal: "Microsoft launches its own AI deployment company with $2.5 billion commitment"
+description: "微软宣布成立新运营实体 Microsoft Frontier Company，专注企业 AI 部署，承诺投入二十五亿美元和六千名工程与行业专家，跟进 Amazon、OpenAI 和 Anthropic 的类似布局。"
+pubDate: 2026-07-02
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/"
+sourceLang: en
+tags: ["enterprise-app", "industry-trend"]
+---
+## 报道核心
+
+微软宣布成立名为 Microsoft Frontier Company 的新运营实体，专注于利用微软现有 AI 工具为企业交付成功的 AI 部署。该计划由二十五亿美元投资和六千名工程及行业专家支持。
+
+## 超越 FDE 模式
+
+微软商务业务 CEO Judson Althoff 在声明中拒绝使用业内常见的 Forward Deployed Engineer 即前沿部署工程师标签，称这超越了 FDE 范畴，将成为业内最大、最具工程执行力的组织。
+
+## 竞争格局
+
+此举紧随 AWS 两天前宣布的十亿美元 AI 部署投资。OpenAI 和 Anthropic 也已 launched 类似的企业 AI 服务合资项目，引入了私募股权的外部资金。微软的优势在于其庞大的现有企业客户群，早期合作伙伴包括伦敦证券交易所集团、联合利华、Accenture 等。
+
+## 对 AI 行业的影响
+
+四大 AI 巨头同时押注企业部署，标志着 AI 行业从模型竞赛进入落地竞赛阶段。微软凭借 Fortune 五百强客户基础具有先发优势，但二十五亿美元的价格标签也意味着部署成本居高不下。对 Salesforce、ServiceNow 等 SaaS 公司而言，这股 FDE 浪潮正在侵蚀它们的企业 AI 落地空间。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/02/microsoft-launches-its-own-ai-deployment-company-with-2-5-billion-commitment/) · 2026-07-02
+
+> Microsoft follows Amazon, OpenAI, and Anthropic with its new AI deployment group.

@@ -1,0 +1,33 @@
+---
+title: "扎克伯格坦承 AI 智能体进展不及预期"
+titleOriginal: "Mark Zuckerberg tells staff that AI agents haven’t progressed as quickly as he’d hoped"
+description: "在内部全体会议上，Meta CEO 扎克伯格告诉员工，AI 智能体的开发速度并未如管理层此前预期的那样加速，并承认此前的裁员不够干净。"
+pubDate: 2026-07-02
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/"
+sourceLang: en
+tags: ["agent-tools", "industry-trend"]
+---
+## 报道核心
+
+据路透社报道，Meta CEO 扎克伯格在本周的内部 town hall 上对员工表示，AI 智能体的发展速度没有像高管预期的那样加速。他还承认今年早些时候的裁员并不够干净利落。
+
+## 裁员与重组
+
+今年早些时候，Meta 裁减了约八千名员工，占公司职员总数的百分之十，另有七千人被重新分配到各个 AI 团队，包括一个名为 Agent Transformation 的部门。扎克伯格解释说，裁员是因为高管担心公司不够快地适应技术变革。
+
+## 内部困境
+
+扎克伯格承认 AI 重组的预期收益尚未兑现，但表示未来三到六个月内会看到改善。此前多家媒体报道称，Meta 成立仅数月的 AI 部门内部文化恶劣，被工程师形容为令人窒息的牢笼。Meta 今年在 AI 基础设施上的投入预计高达一千四百五十亿美元。
+
+## 对 AI 行业的影响
+
+扎克伯格的坦白证实了行业对 AI 智能体落地速度的怀疑。这对 Meta 构成短期压力：投入巨大但产出滞后，投资者耐心可能被消耗。对竞争对手 OpenAI 和 Anthropic 而言，Meta 的困境间接说明通用智能体的技术门槛仍高，盲目承诺的风险在上升。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/) · 2026-07-02
+
+> At an internal meeting, the Meta CEO reportedly said that AI development efforts were not moving as quickly as anticipated.
