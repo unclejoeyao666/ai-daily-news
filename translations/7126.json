@@ -1,0 +1,12 @@
+{
+  "translated_title": "阿里巴巴禁止员工使用 Claude Code，改推自研工具",
+  "translated_summary": "阿里巴巴将 Anthropic 的编程工具 Claude Code 列为高风险软件，要求员工从七月十日起停用，转而使用公司自研的 Qoder 编程工具，理由是 Claude Code 存在数据回传风险。",
+  "translated_body": "## 报道核心\n\n据路透社等多家媒体报道，阿里巴巴已将 Anthropic 的 Claude Code 列为高风险软件，自七月十日起禁止员工使用，并要求转用公司自研编程工具 Qoder。\n\n## 背景与争议\n\n此前有 Reddit 用户发现，Anthropic 曾在 Claude Code 中嵌入识别中国用户的实验性代码，官方称此举旨在打击未授权分销商和保护模型不被蒸馏。Anthropic 工程师 Thariq Shihipar 在 X 上回应称这是三月启动的实验，已经在着手移除。\n\nAnthropic 本身已禁止中国公司及受中国公司控制的外国实体使用其模型，并一直在努力封堵中国用户访问 Claude 的漏洞。这一禁令实际上在合规层面与 Anthropic 的政策方向一致，但阿里巴巴选择主动出击以消除数据安全风险。\n\n## 行业反应\n\n这一事件凸显了中美 AI 工具供应链的持续撕裂。阿里巴巴作为中国最大的云服务商之一，其内部工具决策具有风向标意义。自研 Qoder 的推出也说明中国科技巨头正在加速构建自主 AI 开发工具链。",
+  "impact_analysis": "对 Anthropic 而言，阿里巴巴的禁令虽然在其既有政策框架内影响有限，但释放了明确信号：中国头部科技企业将在开发工具层面全面去美化。对国内市场，阿里云和通义体系内的开发者将更深度绑定 Qoder，可能削弱 Claude Code 在中国市场的间接渗透。长期来看，这加速了 AI 开发工具的双轨分裂。",
+  "industry_tags": [
+    "china-ai",
+    "agent-tools",
+    "policy-regulation"
+  ],
+  "_translated_at": "2026-07-05 06:32:51.051478"
+}
