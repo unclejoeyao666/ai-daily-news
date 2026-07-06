@@ -1,0 +1,33 @@
+---
+title: "英外交大臣警告：AI 是十年来最大安全挑战"
+titleOriginal: "AI Poses Biggest Security Challenge of Decade, UK’s Cooper Warns"
+description: "英国外交大臣 Cooper 即将发表重要讲话，警告人工智能构成十年来最大安全威胁，呼吁全球紧急建立 AI 防护栏杆和监管框架。"
+pubDate: 2026-07-05
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-05/ai-poses-biggest-security-challenge-of-decade-uk-s-cooper-warns"
+sourceLang: en
+tags: ["safety-alignment", "policy-regulation"]
+---
+## 报道核心
+
+据彭博科技报道，英国外交大臣 Cooper 将发表重要政策演讲，明确指出人工智能是过去十年最大的安全挑战。她将呼吁国际社会紧急制定 AI 安全防护措施。
+
+## 关键细节
+
+Cooper 的警告涵盖了 AI 在虚假信息传播、网络安全攻击和军事应用方面的风险。英国政府此前主导了布莱切利园 AI 安全峰会，一直在推动国际层面的 AI 治理合作。此次表态将 AI 安全提升到了外交政策优先级别。
+
+## 行业反应
+
+英国作为 AI 安全领域的积极推动者，其立场可能影响欧盟 AI 法案的执行节奏和 G7 国家的 AI 治理议程。然而过度监管也可能引发产业界的担忧，OpenAI 和 Google DeepMind 等公司此前已就监管成本和创新影响表达过关切。
+
+## 对 AI 行业的影响
+
+对 OpenAI、Anthropic 和 Google DeepMind 等前沿 AI 公司而言，英国提升 AI 安全警告级别可能加速全球监管框架的收紧，增加模型部署的合规成本。同时这也为 AI 安全公司创造了市场机会，红队测试和模型审计服务的需求将持续增长。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-05/ai-poses-biggest-security-challenge-of-decade-uk-s-cooper-warns) · 2026-07-05
+
+> The world must urgently develop guardrails to contain the threat posed by artificial intelligence, Britain’s foreign secretary is set to warn.

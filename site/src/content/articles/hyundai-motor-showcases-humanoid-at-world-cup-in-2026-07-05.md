@@ -1,0 +1,33 @@
+---
+title: "现代汽车在世界杯展示人形机器人，加速量产布局"
+titleOriginal: "Hyundai Motor Showcases Humanoid at World Cup in Robotics Push"
+description: "现代汽车在二零二六年 FIFA 世界杯上展示了 Atlas 人形机器人，标志着这家韩国车企正将机器人技术从实验室推向公众舞台，并加速迈向量产和工厂部署阶段。"
+pubDate: 2026-07-05
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-05/hyundai-motor-showcases-humanoid-at-world-cup-in-robotics-push"
+sourceLang: en
+tags: ["industry-trend", "enterprise-app"]
+---
+## 报道核心
+
+彭博科技报道，现代汽车在二零二六年 FIFA 世界杯上展示了其 Atlas 人形机器人，在全球最大的足球舞台上展示了技术进展。这标志着现代从汽车制造商向机器人公司的转型正在加速。
+
+## 关键细节
+
+Atlas 人形机器人由现代旗下的波士顿动力团队开发，此次在世界杯的展示是其在大型公共活动中的重要亮相。现代正准备将人形机器人推进量产阶段，并计划在自有工厂中率先部署用于装配和物流任务。
+
+## 行业反应
+
+人形机器人赛道在二零二六年持续升温，Tesla 的 Optimus、Figure AI 和 Agility Robotics 都在加速商业化进程。现代通过世界杯舞台展示技术实力，既是品牌营销也是向投资者和合作伙伴传递信号。
+
+## 对 AI 行业的影响
+
+对 Figure AI、Tesla Optimus 和 Agility Robotics 等人形机器人公司而言，现代和波士顿动力的公开亮相加剧了行业竞争压力。人形机器人在工厂场景的率先落地可能创造一个价值数十亿美元的 B2B 市场，而 AI 模型的进步正在缩短从实验室到量产的时间窗口。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-05/hyundai-motor-showcases-humanoid-at-world-cup-in-robotics-push) · 2026-07-05
+
+> Hyundai Motor Co. showcased its Atlas humanoid robot at the 2026 FIFA World Cup, highlighting its technical progress on football’s biggest stage as the South Korean automaker gears up for mass production and factory deployment.

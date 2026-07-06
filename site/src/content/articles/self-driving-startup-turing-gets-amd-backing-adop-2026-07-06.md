@@ -1,0 +1,33 @@
+---
+title: "自动驾驶初创公司 Turing 获 AMD 投资，改用 AMD GPU"
+titleOriginal: "Self-Driving Startup Turing Gets AMD Backing, Adopts AMD GPUs"
+description: "自动驾驶技术公司 Turing 获得 AMD 风险投资部门注资，并开始在系统中采用 AMD 的 AI 加速器替代 Nvidia 产品，反映出 AI 芯片供应链多元化趋势正在加速。"
+pubDate: 2026-07-06
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-06/self-driving-startup-turing-gets-amd-backing-adopts-amd-gpus"
+sourceLang: en
+tags: ["chips-infra", "funding-ipo"]
+---
+## 报道核心
+
+彭博科技报道，自动驾驶技术开发商 Turing 公司新增 AMD 风险投资部门为投资方，并已开始在自有系统中采用 AMD 的 AI 加速器进行训练和推理。
+
+## 关键细节
+
+Turing 专注于自动驾驶系统开发，此前主要依赖 Nvidia GPU。此次引入 AMD 既是对供应链多元化的战略选择，也反映出 AMD Instinct 系列加速器在 AI 训练场景中的竞争力正在提升。AMD 正通过投资和合作积极拓展 AI 芯片市场份额。
+
+## 行业反应
+
+这笔交易是 AMD 挑战 Nvidia AI 芯片主导地位的又一步。越来越多 AI 公司开始评估双供应商策略以降低对 Nvidia 的依赖和成本压力，Turing 的选择可能成为自动驾驶行业的风向标。
+
+## 对 AI 行业的影响
+
+对 AMD 而言，Turing 的采用案例增强了其在自动驾驶 AI 训练领域的信誉，有助于在 Nvidia 占主导地位的汽车芯片市场打开缺口。对 Nvidia 来说，客户开始实质性转向竞品 GPU 说明其定价权和等待周期正在催生替代需求，MI300 系列对 H100 的竞争压力将持续加大。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-06/self-driving-startup-turing-gets-amd-backing-adopts-amd-gpus) · 2026-07-06
+
+> Self-driving tech developer Turing Inc. has added AMD Ventures to its list of backers and begun adopting Advanced Micro Devices Inc.’s AI accelerators in its systems.
