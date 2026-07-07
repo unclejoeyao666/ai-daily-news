@@ -1,0 +1,33 @@
+---
+title: "iOS 27 测试版新增 Siri 语速与表现力自定义功能"
+titleOriginal: "You can now customize Siri’s pace and expressivity in the latest iOS 27 beta"
+description: "苹果在最新 iOS 27 测试版中允许用户自定义 Siri 的语速和表现力，这是 Siri 基于生成式 AI 重构后向更自然、更个性化方向迈出的重要一步。"
+pubDate: 2026-07-06
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-ios-27-beta/"
+sourceLang: en
+tags: ["consumer-app"]
+---
+## 报道核心
+
+苹果在 iOS 27 最新开发者测试版中为 Siri 新增了语速和表现力调节功能。用户可以让 Siri 说话更快或更慢，并调整语气的表现力强度，使语音助手的交互感受更接近真人对话。
+
+## 关键细节
+
+这一功能是苹果围绕生成式 AI 全面重构 Siri 的一部分。新版 Siri 采用了苹果自研的大语言模型，支持更复杂的多轮对话和上下文理解。语速和表现力控制通过扩散式语音合成模型实现，能够生成比传统拼接式 TTS 更自然的韵律变化。
+
+## 行业反应
+
+语音交互领域的研究者认为，语速和表现力自定义是语音助手走向情感计算的关键一步。OpenAI 的 Advanced Voice Mode 和 Google 的 Gemini Live 也在推进类似能力，三家巨头的人机交互竞争已从文本扩展到语音情感维度。
+
+## 对 AI 行业的影响
+
+对苹果，Siri 体验的质变是其在 AI 消费者市场追赶 OpenAI 和 Google 的核心抓手，iOS 27 的 Siri 重构将直接影响下一代 iPhone 的销售叙事。对 OpenAI 和 Google，语音助手战场正成为继聊天机器人之后的第二竞争前线。对语音合成技术创业公司如 ElevenLabs，巨头自研 TTS 的加速意味着 B 二 C 差异化空间在收窄。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/06/you-can-now-customize-siris-pace-and-expressivity-in-the-latest-ios-27-beta/) · 2026-07-06
+
+> The update is part of Apple's broader effort to make Siri feel more natural and personal, as it rebuilds the assistant around generative AI.

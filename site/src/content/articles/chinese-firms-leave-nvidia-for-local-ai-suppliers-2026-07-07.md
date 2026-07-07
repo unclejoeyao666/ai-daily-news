@@ -1,0 +1,33 @@
+---
+title: "调查显示中国企业在加速弃用 Nvidia 转向国产芯片"
+titleOriginal: "Chinese Firms Leave Nvidia for Local AI Suppliers, Survey Shows"
+description: "彭博调查显示中国企业正加速用国产 AI 芯片替代 Nvidia 加速器，中美科技紧张关系正在重塑全球 AI 算力基建格局，推动北京的技术自主战略。"
+pubDate: 2026-07-07
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-07/chinese-firms-leave-nvidia-for-local-ai-suppliers-survey-shows"
+sourceLang: en
+tags: ["china-ai", "chips-infra"]
+---
+## 报道核心
+
+一项最新调查显示，中国公司正在以超出市场预期的速度弃用 Nvidia 的高端 AI 加速器，转向国产替代方案。这一趋势在中美芯片出口管制持续收紧的背景下加速演进。
+
+## 关键细节
+
+华为昇腾九百一十 B 和寒武纪思元系列正在获得更多中国互联网和 AI 公司的采用。百度、阿里巴巴和腾讯已将部分训练和推理任务迁移到国产芯片集群。虽然单卡性能仍逊于 Nvidia H100，但在集群层面，中国厂商通过大规模并行和软件栈优化弥补了硬件差距。调查还显示，迁移的最大驱动力不是性能而是供应链安全。
+
+## 行业反应
+
+多位行业观察人士指出，美国出口管制正在产生「反噬效应」，倒逼中国芯片产业加速成熟。短期内 Nvidia 仍在中国市场获得可观的推理芯片收入（H二十 等降规产品），但长期看，国产生态的闭环正在形成。
+
+## 对 AI 行业的影响
+
+对 Nvidia，中国市场收入占比已从此前的百分之二十以上降至个位数，且降规产品的利润率远低于旗舰产品。对华为昇腾和寒武纪，政策红利正转化为真实订单，但产能和良率仍是瓶颈。对整个 AI 行业，全球算力基建正在分裂为两套不兼容的生态，长期将推高全球 AI 开发成本。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-07/chinese-firms-leave-nvidia-for-local-ai-suppliers-survey-shows) · 2026-07-07
+
+> Chinese companies are ditching Nvidia Corp.’s advanced accelerators in favor of domestic silicon, underscoring how tensions with the US are reshaping the AI infrastructure buildout and propelling Beijing’s ambitions to substitute American technology.
