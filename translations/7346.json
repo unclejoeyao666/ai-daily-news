@@ -1,0 +1,11 @@
+{
+  "translated_title": "Claude Cowork 跨设备协作功能正式上线",
+  "translated_summary": "Claude Cowork 实现了桌面端启动任务、移动端跟踪进度、随时获取结果的完整跨设备工作流，即使用户关闭笔记本也能持续接收 AI 完成的产出。",
+  "translated_body": "## 报道核心\n\nAnthropic 对 Claude Cowork 进行了重要的跨设备升级。用户可以在桌面端发起一个复杂任务，在手机上查看实时状态更新，稍后再在任何设备上获取最终结果，整个流程不再受单一设备在线状态的限制。\n\n## 关键细节\n\n这一功能的核心是 Anthropic 新构建的异步任务执行架构：AI agent 在云端持续运行，用户设备仅需在交互时在线。这意味着即使笔记本合上，编码、数据处理或文档生成任务仍在后台完成。用户回到桌面后可以查看完整产出和中间步骤。\n\n## 行业反应\n\n这种异步 agent 模式正成为行业新标准。Cursor 和 Windsurf 等编码工具也在探索类似的方向。Anthropic 的优势在于 Claude 模型本身的长时推理能力和安全性设计，使其更适合执行高风险的企业级自动化任务。",
+  "impact_analysis": "异步 agent 工作流代表了中国和国际市场 AI 产品的下一个竞争焦点。对 Microsoft Copilot Studio 和 Google 的 Project Astra 来说，Claude Cowork 的跨设备体验设立了新的用户体验基准。中小企业用户可能会因为这种随时随地的 agent 调用能力而从传统自动化工具迁移。",
+  "industry_tags": [
+    "agent-tools",
+    "enterprise-app"
+  ],
+  "_translated_at": "2026-07-08 14:37:53.399373"
+}
