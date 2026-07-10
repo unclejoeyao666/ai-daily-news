@@ -17,8 +17,8 @@
     },
     "translate": {
       "status": "failed",
-      "finished_at": "2026-07-09T06:01:20.264222+00:00",
-      "error": "   - audio_script.md missing: /Users/unclejoe/Media_Workspace/ai-daily-news/daily/2026/2026-07/2026-07-09/audio_script.md"
+      "finished_at": "2026-07-10T06:01:22.348547+00:00",
+      "error": "- audio_script.md missing: /Users/unclejoe/Media_Workspace/ai-daily-news/daily/2026/2026-07/2026-07-09/audio_script.md"
     },
     "publish_article": {
       "status": "pending"

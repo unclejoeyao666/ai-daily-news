@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS news_articles (
     industry_tags            TEXT,                  -- JSON array of tag slugs
     slug                     TEXT,
     published_briefing_date  TEXT,
+    quarantine_reason        TEXT,
 
     raw_json                 TEXT,
     -- v1 残留字段（保留兼容）

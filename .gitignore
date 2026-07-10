@@ -28,6 +28,18 @@ data/news.db-wal
 # Tracking caused 4.9MB rewrites on every commit and timed out the
 # daily backup cron (180s limit) for 7 days straight.
 data/news.db
+/var/
+
+# V4 orchestration evidence is local runtime state, never site content.
+daily/**/.state.json
+daily/**/git-receipt.json
+daily/**/incident-*.json
+daily/**/.stage_*.lock
+daily/**/.discord-delivered
+daily/**/selection-progress.json
+daily/**/source-health.json
+daily/**/translations/
+daily/**/*.log
 
 # v3: daily/<date>/audio.mp3 is an intermediate working copy. The
 # canonical audio served by GitHub Pages is site/public/audio/<DATE>.mp3

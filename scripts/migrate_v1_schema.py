@@ -65,6 +65,7 @@ def main():
         ("industry_tags", "TEXT"),
         ("slug", "TEXT"),
         ("published_briefing_date", "TEXT"),
+        ("quarantine_reason", "TEXT"),
     ])
 
     # Step 2: sources new columns

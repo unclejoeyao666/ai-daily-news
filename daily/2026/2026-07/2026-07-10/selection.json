@@ -1,0 +1,151 @@
+{
+  "selected_at": "2026-07-10T04:00:14.211451+00:00",
+  "count": 8,
+  "articles": [
+    {
+      "id": 7536,
+      "title": "Fidji Simo steps down from OpenAI’s no. 2 role",
+      "summary": "OpenAI's No. 2 executive, Fidji Simo, is stepping down from her full-time role after her medical leave proved longer than expected — a leadership vacuum that comes at a tricky time as the company eyes a possible IPO and races to catch Anthropic in the enterprise market.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/09/fidji-simo-steps-down-from-openais-no-2-role/",
+      "published_at": "2026-07-09T23:38:00+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 81
+    },
+    {
+      "id": 7537,
+      "title": "OpenAI launches its new family of models with GPT-5.6",
+      "summary": "OpenAI's latest family of models promises improvements across a range of areas, including cybersecurity.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/09/openai-launches-its-new-family-of-models-with-gpt-5-6/",
+      "published_at": "2026-07-09T22:24:24+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 82
+    },
+    {
+      "id": 7535,
+      "title": "OpenAI says GPT 5.6 is the ‘preferred model’ for Microsoft Copilot 365 amid breakup chatter",
+      "summary": "OpenAI's new family of models will continue to power Microsoft's suite of workplace and productivity apps.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/09/openai-says-gpt-5-6-is-the-preferred-model-for-microsoft-copilot-amid-breakup-chatter/",
+      "published_at": "2026-07-10T00:16:54+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 79
+    },
+    {
+      "id": 7546,
+      "title": "How did the government decide OpenAI’s frontier model was safe to release?",
+      "summary": "\"Exactly what that dialog looked like between the government and Anthropic and OpenAI is unclear.\"",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/09/how-did-the-government-decide-openais-frontier-model-was-safe-to-release/",
+      "published_at": "2026-07-09T18:22:39+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 84
+    },
+    {
+      "id": 7539,
+      "title": "OpenAI is shutting down Atlas, but its AI browser ambitions are still growing",
+      "summary": "OpenAI is sunsetting its AI-powered browser after less than a year. But it's moving some agentic browsing features to its desktop app and a Chrome extension.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/",
+      "published_at": "2026-07-09T22:03:54+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 77
+    },
+    {
+      "id": 7540,
+      "title": "Elon Musk praises Mythos/Fable, promises not to ‘cut off’ Anthropic",
+      "summary": "Should Anthropic trust Elon Musk to host its models? With about $40 billion in revenue at stake, Musk insists that the company can.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/09/elon-musk-praises-mythos-fable-promises-not-to-cut-off-anthropic/",
+      "published_at": "2026-07-09T21:57:42+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 76
+    },
+    {
+      "id": 7543,
+      "title": "New York Times says OpenAI hid evidence in ChatGPT copyright trial",
+      "summary": "News publishers say OpenAI hid tools and datasets that could identify copyrighted journalism in ChatGPT outputs, escalating their lawsuit with a new motion for sanctions.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/09/new-york-times-says-openai-hid-evidence-in-chatgpt-copyright-trial/",
+      "published_at": "2026-07-09T19:05:58+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 79
+    },
+    {
+      "id": 7532,
+      "title": "Anthropic found a hidden space where Claude puzzles over concepts",
+      "summary": "The AI firm Anthropic has developed a technique that has given it the clearest glimpse yet at what’s really going on inside large language models as they answer questions or carry out tasks. What they found ranges from the mundane to the unnerving. Researchers at the company built a tool called the Jacobian lens (or&#8230;",
+      "source_id": "mit-tech-review",
+      "source_name": "MIT Technology Review",
+      "source_name_cn": "麻省理工科技评论",
+      "source_url": "https://www.technologyreview.com/2026/07/09/1140293/anthropic-found-a-hidden-space-where-claude-puzzles-over-concepts/",
+      "published_at": "2026-07-09T20:22:28+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "policy",
+        "safety"
+      ],
+      "importance": 74
+    }
+  ],
+  "run_date": "2026-07-10",
+  "artifact_schema": 1
+}

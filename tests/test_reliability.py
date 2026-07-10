@@ -135,8 +135,11 @@ def _patch_th(tmp_path, monkeypatch, ids_translated, ids_pending):
         rid = _ins(db, story_hash=f"p{i}")  # empty translation cols
         sel.append(rid)
     selj = tmp_path / "sel.json"
-    selj.write_text(json.dumps({"articles": [{"id": r, "title": "x"} for r in sel]}),
-                    encoding="utf-8")
+    selj.write_text(json.dumps({
+        "artifact_schema": 1,
+        "run_date": "2026-05-18",
+        "articles": [{"id": r, "title": "x"} for r in sel],
+    }), encoding="utf-8")
     monkeypatch.setattr(th, "DB_PATH", str(db))
     monkeypatch.setattr(th, "SELECTED_JSON", selj)
     monkeypatch.setattr(th, "ROOT", tmp_path)
@@ -210,13 +213,11 @@ def test_finalize_drop_refuses_below_min_briefing(tmp_path, monkeypatch):
     class A:
         date = "2026-05-18"
         drop_untranslated = True
-    with pytest.raises(SystemExit) as e:
-        th.cmd_finalize(A())
-    assert e.value.code == 1
+    assert th.cmd_finalize(A()) == 1
 
 
 def test_finalize_drop_ships_when_enough(tmp_path, monkeypatch):
-    sel = _patch_th(tmp_path, monkeypatch, [1, 2, 3, 4], [5, 6])
+    sel = _patch_th(tmp_path, monkeypatch, [1, 2, 3, 4, 5], [6])
     verifier = tmp_path / "verify.py"
     verifier.write_text("import sys; sys.exit(0)", encoding="utf-8")
     monkeypatch.setattr(th, "VERIFY_TRANSLATIONS", verifier)
@@ -233,15 +234,21 @@ def test_finalize_drop_ships_when_enough(tmp_path, monkeypatch):
     th.cmd_finalize(A())
 
     assert state_saved["translate"]["status"] == "ok"
-    # only the 4 translated ids survive in daily-selected.json
-    kept = {a["id"] for a in json.loads(th.SELECTED_JSON.read_text())["articles"]}
-    assert kept == set(sel[:4])
-    # ...and exactly those were marked played in the (temp) DB
+    # Selection is immutable; fallback writes a separate publication set.
+    selected = {
+        a["id"] for a in json.loads(th.SELECTED_JSON.read_text())["articles"]
+    }
+    assert selected == set(sel)
+    publication = json.loads(
+        th.publication_path("2026-05-18").read_text(encoding="utf-8")
+    )
+    assert set(publication["article_ids"]) == set(sel[:5])
+    # Exactly the publication set is marked played in the temporary DB.
     con = sqlite3.connect(tmp_path / "n.db")
     played = {r[0] for r in con.execute(
         "SELECT id FROM news_articles WHERE broadcast_status='played'")}
     con.close()
-    assert played == set(sel[:4])
+    assert played == set(sel[:5])
 
 
 # ── module 4: watchdog deadline ─────────────────────────────────────

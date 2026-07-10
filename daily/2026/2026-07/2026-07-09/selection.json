@@ -1,0 +1,186 @@
+{
+  "selected_at": "2026-07-09T04:00:14.146004+00:00",
+  "count": 10,
+  "articles": [
+    {
+      "id": 7441,
+      "title": "Why this CEO thinks video games make better training data than the internet",
+      "summary": "When it comes to achieving artificial general intelligence (AGI), large language models just&#160;don’t&#160;have what it takes. Models like ChatGPT and Claude&#160;are great at text, but&#160;they&#8217;re&#160;less skilled at understanding how things&#160;actually move&#160;through space and time&#160;—&#160;an essential skill for producing intelligence that generalizes. That gap, it turns out, might be filled&#160;by&#160;gaming data.&#160;That&#8217;s&#160;the bet behind General Intuition, a [&#8230;]",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/video/why-this-ceo-thinks-video-games-make-better-training-data-than-the-internet/",
+      "published_at": "2026-07-08T17:47:55+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 78
+    },
+    {
+      "id": 7444,
+      "title": "Prime Intellect raises $130M Series A to help enterprises build their own AI agents",
+      "summary": "Founded in 2024, Prime Intellect’s goal is to give organizations capabilities to train their own agentic systems without relying on frontier AI labs.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/08/prime-intellect-raises-130m-series-a-to-help-enterprises-build-their-own-ai-agents/",
+      "published_at": "2026-07-08T16:22:38+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 77
+    },
+    {
+      "id": 7443,
+      "title": "OpenAI releases new voice models for more natural live conversations",
+      "summary": "OpenAI says its new voice mode can speak and listen at the same time, a key ability for live translation.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/08/openai-releases-new-voice-models-for-more-natural-live-conversations/",
+      "published_at": "2026-07-08T17:00:00+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 76
+    },
+    {
+      "id": 7439,
+      "title": "This startup thinks robotics is about to have its ChatGPT moment",
+      "summary": "General Intuition is betting millions of hours of video game data can train the foundation models for physical AI, making it easier to build smarter robots with minimal real-world data.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/08/this-startup-thinks-robotics-is-about-to-have-its-chatgpt-moment/",
+      "published_at": "2026-07-08T19:19:15+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 71
+    },
+    {
+      "id": 7436,
+      "title": "Lovable reportedly in talks to double its valuation to $13.2B",
+      "summary": "The $300 million round is expected to be led by Menlo Ventures, Sifted reported.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/08/lovable-reportedly-in-talks-to-double-its-valuation-to-13-2b/",
+      "published_at": "2026-07-08T22:41:33+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 65
+    },
+    {
+      "id": 7446,
+      "title": "Your gaming data could be the secret to AGI, according to this Bezos-backed startup",
+      "summary": "When it comes to achieving artificial general intelligence (AGI), large language models just&#160;don’t&#160;have what it takes. Models like ChatGPT and Claude&#160;are great at text, but&#160;they&#8217;re&#160;less skilled at understanding how things&#160;actually move&#160;through space and time&#160;—&#160;an essential skill for producing intelligence that generalizes. That gap, it turns out, might be filled&#160;by&#160;gaming data.&#160;That&#8217;s&#160;the bet behind General Intuition, a [&#8230;]",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/podcast/your-gaming-data-could-be-the-secret-to-agi-according-to-this-bezos-backed-startup/",
+      "published_at": "2026-07-08T13:00:00+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 78
+    },
+    {
+      "id": 7438,
+      "title": "SpaceXAI releases Grok 4.5, which Elon describes as an ‘Opus-class model’",
+      "summary": "Elon Musk's tech company released the newest version of Grok on Wednesday, promising a cheaper, more efficient alternative to other powerful AI models.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/08/spacexai-releases-grok-4-5-which-elon-describes-as-an-opus-class-model/",
+      "published_at": "2026-07-08T19:30:16+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 68
+    },
+    {
+      "id": 7450,
+      "title": "ChatGPT’s upgraded voice mode is better at shutting up",
+      "summary": "OpenAI is overhauling ChatGPT's voice mode with a new model that it says is more like \"talking to another person.\" The new GPT-Live-1 is designed to interrupt you less and will also wait for you to continue speaking if you pause mid-conversation. During a press briefing, OpenAI research lead Kundan Kumar called GPT-Live-1 the company's [&#8230;]",
+      "source_id": "verge-ai",
+      "source_name": "The Verge AI",
+      "source_name_cn": "The Verge AI 频道",
+      "source_url": "https://www.theverge.com/ai-artificial-intelligence/962856/chatgpt-upgraded-voice-mode-gpt-live",
+      "published_at": "2026-07-08T17:00:00+00:00",
+      "lang": "en",
+      "source_categories": [
+        "consumer",
+        "policy",
+        "agent"
+      ],
+      "importance": 70
+    },
+    {
+      "id": 7437,
+      "title": "Google’s deepfake detector system used to debunk McConnell hoax pic",
+      "summary": "Earlier this week, a picture seemed to show Kentucky Senator Mitch McConnell covered in tubes in a hospital bed in a state of extreme distress. It turned out to be an AI-generated fake.",
+      "source_id": "techcrunch-ai",
+      "source_name": "TechCrunch AI",
+      "source_name_cn": "TechCrunch AI 频道",
+      "source_url": "https://techcrunch.com/2026/07/08/googles-deepfake-detector-system-used-to-debunk-mcconnell-hoax-pic/",
+      "published_at": "2026-07-08T20:37:03+00:00",
+      "lang": "en",
+      "source_categories": [
+        "ai-research",
+        "funding",
+        "agent",
+        "consumer"
+      ],
+      "importance": 65
+    },
+    {
+      "id": 7404,
+      "title": "China Chipmaker CXMT to Launch $4.3 Billion IPO Next Week",
+      "summary": "Memory giant CXMT Corp. will open investor subscriptions for its public offering next week, kicking off the final stage of China’s most highly anticipated listing of the year.",
+      "source_id": "bloomberg-tech",
+      "source_name": "Bloomberg Technology",
+      "source_name_cn": "彭博科技",
+      "source_url": "https://www.bloomberg.com/news/articles/2026-07-09/memory-chipmaker-cxmt-to-launch-4-3-billion-china-ipo-next-week",
+      "published_at": "2026-07-09T01:49:15+00:00",
+      "lang": "en",
+      "source_categories": [
+        "funding",
+        "enterprise",
+        "chips"
+      ],
+      "importance": 58
+    }
+  ],
+  "run_date": "2026-07-09",
+  "artifact_schema": 1
+}

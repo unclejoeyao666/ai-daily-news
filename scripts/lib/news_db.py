@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 _ENGINE = Path(os.environ.get(
-    "NEWS_ENGINE_ROOT", "/Users/unclejoe/Media_Workspace/daily-news-engine"))
+    "NEWS_ENGINE_ROOT", "/Users/unclejoe/.openclaw/runtime/daily-news-engine/current"))
 os.environ.setdefault(
     "NEWS_PROJECT_ROOT", str(Path(__file__).resolve().parent.parent.parent))
 if str(_ENGINE) not in sys.path:

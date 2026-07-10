@@ -1,0 +1,12 @@
+{
+  "artifact_schema": 1,
+  "run_date": "2026-07-09",
+  "selected_at": "2026-07-09T04:00:00+00:00",
+  "count": 1,
+  "articles": [
+    {
+      "id": 9001,
+      "title": "Current root selection must not leak into historical recovery"
+    }
+  ]
+}

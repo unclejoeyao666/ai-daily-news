@@ -5,20 +5,102 @@
   "timezone": "Europe/Berlin",
   "db_path": "data/news.db",
   "tags_file": "data/tags.json",
-  "harvest": {"default_lang": "en", "use_url_seen": false, "scorer": "keyword_boosts", "import_sources_on_run": true},
+  "harvest": {
+    "default_lang": "en",
+    "use_url_seen": false,
+    "scorer": "keyword_boosts",
+    "import_sources_on_run": true,
+    "network": {
+      "connect_timeout_seconds": 4,
+      "read_timeout_seconds": 8,
+      "max_retries": 2,
+      "retry_backoff_seconds": 0.25,
+      "max_workers": 8,
+      "total_deadline_seconds": 75,
+      "max_response_bytes": 2000000,
+      "max_entries_per_source": 500,
+      "cache_dir": "var/harvest-http-cache"
+    },
+    "health": {
+      "min_success_sources": 6,
+      "min_success_ratio": 0.3,
+      "min_tier_success_ratio": {"1": 0.2}
+    }
+  },
   "selection": {
     "strategy": "freshness",
-    "args": ["--count", "10", "--min-importance", "3", "--max-age-days", "7"]
+    "args": ["--count", "8", "--min-importance", "3", "--max-age-days", "7"]
   },
   "translate": {"summary_max_chars": 300, "semantic_tag_check": false},
-  "resilience": {"min_briefing": 3, "min_audio_bytes": 100000, "min_audio_script_chars": 800, "drop_deadline_local": "08:25"},
+  "resilience": {"min_briefing": 5, "min_audio_bytes": 100000, "min_audio_script_chars": 800, "drop_deadline_local": "08:25"},
   "discord": {"channel": "1490344209847287830", "account": "fanli", "mode": "split"},
   "stage_b": {
     "model": "zai/glm-5.2",
     "agent": "fanli",
     "agent_timeout": 1050,
-    "prompt": "执行 daily-news skill 的 Stage B（认知翻译）。项目根: {root}\n\n只翻译尚未翻译的文章，不重复劳动：\n1. cd {root}\n2. 查待翻 ID: python3 scripts/translate_helper.py pending --date today\n   - 若 0 条 pending 且已 finalize → 无需操作。\n3. 阅读 references/translation-workflow.md 的全部规则。\n4. 对每个 pending ID：翻译 5 个字段（translated_title / translated_summary / translated_body / impact_analysis / 1-3 个来自 data/tags.json 的合法 industry_tags），写入 /tmp/article-<ID>.json，调用:\n   python3 scripts/translate_helper.py write --id <ID> --json-file /tmp/article-<ID>.json\n5. 写 daily/<Y>/<Y-M>/<DATE>/audio_script.md（1500-2500 中文字符，TTS 安全）。\n6. 关闭本阶段: python3 scripts/translate_helper.py finalize --date today\n\n硬规则：绝不直接改 news_articles 的翻译字段（只用 translate_helper write）；绝不手写 state.translate=ok；绝不编造 tag slug；中途失败已写入的翻译会保留，后续只处理剩余 pending。\n最后仅回复字面量 NO_REPLY。"
+    "prompt": "执行 {root} 在 {date} 的 Stage B。只做待处理文章的中文翻译与影响分析。先运行 `python3 scripts/translate_helper.py pending --date {date} --json`；若 pending=0，只运行 finalize，不生成内容。完整阅读 references/translation-workflow.md。每篇仅生成 translated_title、translated_summary、translated_body、impact_analysis、industry_tags，使用 `python3 scripts/translate_helper.py write --date {date} --id <ID> --json-file <FILE>` 写入。全部完成后运行 `python3 scripts/translate_helper.py finalize --date {date}`；音频稿由脚本确定性生成。禁止直接写 DB、state、站点文件或自造标签。最后仅回复 NO_REPLY。"
   },
   "git": {"remote": "origin"},
-  "drift_check": "scripts/check_skill_drift.sh"
+  "drift_check": "scripts/check_skill_drift.sh",
+  "v4": {
+    "schema_version": 4,
+    "project_id": "ai-daily-news",
+    "timezone": "Europe/Berlin",
+    "runtime": {
+      "db_path": "var/runtime-v4.sqlite3",
+      "lease_ttl_seconds": 1500,
+      "busy_timeout_ms": 5000
+    },
+    "artifacts": {
+      "root": "daily",
+      "min_audio_duration_seconds": 30,
+      "min_audio_bytes": 100000
+    },
+    "selection": {
+      "target_count": 8,
+      "minimum_publish_count": 5,
+      "snapshot_path": "daily/{year}/{year_month}/{date}/selection.json",
+      "alternates": {
+        "count": 0,
+        "pool": "freshness"
+      }
+    },
+    "token_budget": {
+      "max_billable_attempts": 2,
+      "max_total_tokens": 80000,
+      "default_attempt_token_reservation": 40000,
+      "attempt3": {
+        "enabled": true,
+        "requires_explicit_authorization": true,
+        "requires_retryable": true,
+        "requires_progress": true
+      }
+    },
+    "fallback": {
+      "minimum_publish_count": 5,
+      "allow_source_digest": true
+    },
+    "domain": {
+      "adapter": "ai-technology",
+      "translation_workflow": "references/translation-workflow.md",
+      "tag_vocabulary": "data/tags.json",
+      "semantic_tag_check": false,
+      "selection_strategy": "freshness",
+      "legacy_selection": "daily-selected.json",
+      "degraded_default_tag": "industry-trend",
+      "historical_legacy_fallback": false,
+      "discord": {
+        "mode": "split",
+        "delivery_keys": ["discord_text", "discord_audio"],
+        "channel": "1490344209847287830",
+        "account": "fanli"
+      }
+    },
+    "sla": {
+      "timezone": "Europe/Berlin",
+      "publish_by": "08:20",
+      "deliver_by": "08:40",
+      "final_check_by": "08:55"
+    }
+  }
 }
