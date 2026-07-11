@@ -4,10 +4,12 @@ This is the pipeline's only cognitive work. Process only IDs returned for the
 explicit run date:
 
 ```bash
-python3 scripts/translate_helper.py pending --date DATE --json
+python3 scripts/translate_helper.py work-items --date DATE --json
 ```
 
-If `pending` is empty, generate nothing and run only `finalize`.
+This single compact bundle contains only pending items and the valid tag slugs;
+do not call `show` once per article. If `pending_count` is zero, generate
+nothing and run only `finalize`.
 
 ## Per pending article
 
@@ -69,4 +71,3 @@ python3 scripts/translate_helper.py finalize --date DATE
 Finalize verifies content/tags and deterministically assembles
 `audio_script.md`. After interruption, resume only returned pending IDs;
 valid checkpoints are idempotent.
-

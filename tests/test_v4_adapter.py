@@ -88,14 +88,14 @@ def test_v4_config_is_additive_and_token_bounded():
     assert cfg["name"] == "ai-daily-news"
     assert cfg["skill_name"] == "daily-news"
     assert cfg["selection"]["args"][:2] == ["--count", "8"]
-    assert cfg["resilience"]["min_briefing"] == 5
+    assert cfg["resilience"]["min_briefing"] == 8
     assert cfg["discord"]["mode"] == "split"
 
     assert v4["schema_version"] == 4
     assert v4["project_id"] == "ai-daily-news"
     assert v4["timezone"] == "Europe/Berlin"
     assert v4["selection"]["target_count"] == 8
-    assert v4["selection"]["minimum_publish_count"] == 5
+    assert v4["selection"]["minimum_publish_count"] == 8
     assert v4["token_budget"] == {
         "max_billable_attempts": 2,
         "max_total_tokens": 80000,
@@ -147,11 +147,15 @@ def test_v4_artifacts_are_date_scoped():
 def test_shared_v4_loader_accepts_project_contract():
     from daily_news_engine.v4.config import load_config
 
+    document = json.loads(PROJECT_JSON.read_text(encoding="utf-8"))
     cfg = load_config(ROOT)
     assert cfg.project_id == "ai-daily-news"
     assert cfg.selection.target_count == 8
-    assert cfg.selection.minimum_publish_count == 5
-    assert cfg.fallback.minimum_publish_count == 5
+    assert cfg.selection.minimum_publish_count == 8
+    assert cfg.fallback.minimum_publish_count == 8
+    assert cfg.fallback.allow_source_digest is False
+    assert "allow_source_digest" not in document["v4"]["fallback"]
+    assert "degraded_default_tag" not in document["v4"]["domain"]
     assert cfg.token_budget.max_billable_attempts == 2
     assert cfg.token_budget.max_total_tokens == 80000
     assert cfg.domain["discord"]["mode"] == "split"
@@ -193,7 +197,9 @@ def test_v4_snapshot_rejects_current_root_and_skip_never_bills(tmp_path):
     assert counts["pending"] == 1
     assert counts["skipped"] == 1
 
-    runtime.set_item_decision(snapshot.run_id, 8001, "TRANSLATED")
+    runtime.set_item_decision(
+        snapshot.run_id, 8001, "TRANSLATED",
+        translation_hash="1" * 64)
     gate = runtime.gate_model(snapshot.run_id, owner="pytest")
     assert gate.code == "NO_PENDING"
     assert gate.data["pending"] == 0
@@ -278,6 +284,9 @@ def test_skip_is_processed_and_verifier_set_excludes_it(tmp_path, monkeypatch):
         {"id": 8003, "title": "done three"},
         {"id": 8005, "title": "done four"},
         {"id": 8006, "title": "done five"},
+        {"id": 8007, "title": "done six"},
+        {"id": 8008, "title": "done seven"},
+        {"id": 8009, "title": "done eight"},
         {"id": 8004, "title": "off topic"},
     ]
     selection = {
@@ -287,7 +296,8 @@ def test_skip_is_processed_and_verifier_set_excludes_it(tmp_path, monkeypatch):
         "articles": articles,
     }
     th.save_selected(selection, date_str)
-    for aid in (8001, 8002, 8003, 8005, 8006):
+    translated_ids = [8001, 8002, 8003, 8005, 8006, 8007, 8008, 8009]
+    for aid in translated_ids:
         _insert_article(db, aid, translated=True)
     _insert_article(db, 8004, translated=False)
 
@@ -301,7 +311,7 @@ def test_skip_is_processed_and_verifier_set_excludes_it(tmp_path, monkeypatch):
     assert rc == 0
 
     pending = th.compute_pending(date_str)
-    assert pending["done"] == [8001, 8002, 8003, 8005, 8006]
+    assert pending["done"] == translated_ids
     assert pending["skipped"] == [8004]
     assert pending["pending"] == []
 
@@ -334,12 +344,38 @@ def test_skip_is_processed_and_verifier_set_excludes_it(tmp_path, monkeypatch):
         )
     )
     assert finalize_rc == 0
-    assert verifier_ids == [8001, 8002, 8003, 8005, 8006]
-    publication = json.loads(
-        th.publication_path(date_str).read_text(encoding="utf-8")
-    )
-    assert publication["article_ids"] == [8001, 8002, 8003, 8005, 8006]
-    assert 8004 not in publication["article_ids"]
+    assert verifier_ids == translated_ids
+    assert not th.publication_path(date_str).exists()
+    meta = json.loads(
+        (th.day_dir_for(date_str) / "meta.json").read_text(encoding="utf-8"))
+    assert meta["article_ids"] == translated_ids
+    assert 8004 not in meta["article_ids"]
+
+
+def test_work_items_is_pending_only_and_source_capped(
+        tmp_path, monkeypatch, capsys):
+    db = _patch_translation_project(tmp_path, monkeypatch)
+    date_str = "2026-07-08"
+    th.save_selected({
+        "run_date": date_str,
+        "articles": [{"id": 8101}, {"id": 8102}],
+    }, date_str)
+    _insert_article(db, 8101, translated=True)
+    _insert_article(db, 8102, translated=False)
+    conn = sqlite3.connect(db)
+    conn.execute(
+        "UPDATE news_articles SET content=? WHERE id=8102", ("x" * 5000,))
+    conn.commit()
+    conn.close()
+
+    assert th.cmd_work_items(SimpleNamespace(
+        date=date_str, json=True, pretty=False)) == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["pending_count"] == 1
+    assert [item["id"] for item in payload["items"]] == [8102]
+    assert payload["done_ids"] == [8101]
+    assert payload["items"][0]["truncated"] is True
+    assert len(payload["items"][0]["source_text"]) <= 2801
 
 
 def test_pending_zero_finalizes_without_model(monkeypatch):

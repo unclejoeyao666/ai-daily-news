@@ -32,13 +32,14 @@
     "args": ["--count", "8", "--min-importance", "3", "--max-age-days", "7"]
   },
   "translate": {"summary_max_chars": 300, "semantic_tag_check": false},
-  "resilience": {"min_briefing": 5, "min_audio_bytes": 100000, "min_audio_script_chars": 800, "drop_deadline_local": "08:25"},
+  "resilience": {"min_briefing": 8, "min_audio_bytes": 100000, "min_audio_script_chars": 800, "drop_deadline_local": "08:25"},
   "discord": {"channel": "1490344209847287830", "account": "fanli", "mode": "split"},
   "stage_b": {
     "model": "zai/glm-5.2",
     "agent": "fanli",
     "agent_timeout": 1050,
-    "prompt": "执行 {root} 在 {date} 的 Stage B。只做待处理文章的中文翻译与影响分析。先运行 `python3 scripts/translate_helper.py pending --date {date} --json`；若 pending=0，只运行 finalize，不生成内容。完整阅读 references/translation-workflow.md。每篇仅生成 translated_title、translated_summary、translated_body、impact_analysis、industry_tags，使用 `python3 scripts/translate_helper.py write --date {date} --id <ID> --json-file <FILE>` 写入。全部完成后运行 `python3 scripts/translate_helper.py finalize --date {date}`；音频稿由脚本确定性生成。禁止直接写 DB、state、站点文件或自造标签。最后仅回复 NO_REPLY。"
+    "source_chars_per_item": 2800,
+    "prompt": "执行 {root} 在 {date} 的 Stage B。只做待处理文章的中文翻译与影响分析。首先只调用一次 `python3 scripts/translate_helper.py work-items --date {date} --json` 获取紧凑的 pending-only 输入；pending_count=0 时只运行 finalize，不生成内容，不逐篇调用 show。阅读 references/translation-workflow.md。每篇仅生成 translated_title、translated_summary、translated_body、impact_analysis、industry_tags，使用 `python3 scripts/translate_helper.py write --date {date} --id <ID> --json-file <FILE>` 写入。全部完成后运行 `python3 scripts/translate_helper.py finalize --date {date}`；音频稿由脚本确定性生成。禁止直接写 DB、state、站点文件或自造标签。最后仅回复 NO_REPLY。"
   },
   "git": {"remote": "origin"},
   "drift_check": "scripts/check_skill_drift.sh",
@@ -58,7 +59,7 @@
     },
     "selection": {
       "target_count": 8,
-      "minimum_publish_count": 5,
+      "minimum_publish_count": 8,
       "snapshot_path": "daily/{year}/{year_month}/{date}/selection.json",
       "alternates": {
         "count": 0,
@@ -77,8 +78,7 @@
       }
     },
     "fallback": {
-      "minimum_publish_count": 5,
-      "allow_source_digest": true
+      "minimum_publish_count": 8
     },
     "domain": {
       "adapter": "ai-technology",
@@ -87,7 +87,6 @@
       "semantic_tag_check": false,
       "selection_strategy": "freshness",
       "legacy_selection": "daily-selected.json",
-      "degraded_default_tag": "industry-trend",
       "historical_legacy_fallback": false,
       "discord": {
         "mode": "split",

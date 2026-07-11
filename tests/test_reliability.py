@@ -204,7 +204,7 @@ def test_synthesize_audio_script_meets_floor(tmp_path, monkeypatch):
 
 
 def test_finalize_drop_refuses_below_min_briefing(tmp_path, monkeypatch):
-    # only 2 translated, MIN_BRIEFING is 3 → must exit 1, NOT mark ok
+    # Only 2 translated, strict minimum is 8: must exit 1 and not mark ok.
     _patch_th(tmp_path, monkeypatch, [1, 2], [3, 4, 5])
     verifier = tmp_path / "verify.py"
     verifier.write_text("import sys; sys.exit(0)", encoding="utf-8")
@@ -217,7 +217,7 @@ def test_finalize_drop_refuses_below_min_briefing(tmp_path, monkeypatch):
 
 
 def test_finalize_drop_ships_when_enough(tmp_path, monkeypatch):
-    sel = _patch_th(tmp_path, monkeypatch, [1, 2, 3, 4, 5], [6])
+    sel = _patch_th(tmp_path, monkeypatch, list(range(1, 9)), [9])
     verifier = tmp_path / "verify.py"
     verifier.write_text("import sys; sys.exit(0)", encoding="utf-8")
     monkeypatch.setattr(th, "VERIFY_TRANSLATIONS", verifier)
@@ -234,21 +234,23 @@ def test_finalize_drop_ships_when_enough(tmp_path, monkeypatch):
     th.cmd_finalize(A())
 
     assert state_saved["translate"]["status"] == "ok"
-    # Selection is immutable; fallback writes a separate publication set.
+    # Selection is immutable; only the V4 fallback service may write the
+    # publication set. Finalize emits deterministic meta/state projections.
     selected = {
         a["id"] for a in json.loads(th.SELECTED_JSON.read_text())["articles"]
     }
     assert selected == set(sel)
-    publication = json.loads(
-        th.publication_path("2026-05-18").read_text(encoding="utf-8")
-    )
-    assert set(publication["article_ids"]) == set(sel[:5])
+    assert not th.publication_path("2026-05-18").exists()
+    meta = json.loads(
+        (th.day_dir_for("2026-05-18") / "meta.json").read_text(
+            encoding="utf-8"))
+    assert set(meta["article_ids"]) == set(sel[:8])
     # Exactly the publication set is marked played in the temporary DB.
     con = sqlite3.connect(tmp_path / "n.db")
     played = {r[0] for r in con.execute(
         "SELECT id FROM news_articles WHERE broadcast_status='played'")}
     con.close()
-    assert played == set(sel[:5])
+    assert played == set(sel[:8])
 
 
 # ── module 4: watchdog deadline ─────────────────────────────────────

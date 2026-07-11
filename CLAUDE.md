@@ -15,7 +15,7 @@ Canonical runbook:
 Stage B is the only cognitive stage. Use:
 
 ```bash
-python3 scripts/translate_helper.py pending --date today
+python3 scripts/translate_helper.py work-items --date today --json
 python3 scripts/translate_helper.py write --id <ID> --json-file /tmp/article-<ID>.json
 python3 scripts/translate_helper.py finalize --date today
 ```
@@ -28,18 +28,16 @@ Each translation JSON must contain:
 - impact_analysis: why this matters and to whom.
 - industry_tags: 1-3 valid slugs from data/tags.json.
 
-Write daily/<Y>/<Y-M>/<DATE>/audio_script.md for TTS.
+Do not write the audio script; finalize creates it deterministically.
 
-Stage D is not manual prose delivery. Use:
+Stage D is not manual prose delivery. Normal operation uses:
 
 ```bash
-python3 scripts/stage_d_delivery.py prepare --date today --json-out /tmp/ai-news-stage-d.json
-python3 scripts/stage_d_delivery.py record --date <DATE> --key discord_text --message-id <ID> --chars <CHARS>
-python3 scripts/stage_d_delivery.py record --date <DATE> --key discord_audio --message-id <ID> --mp3-size <BYTES>
+python3 scripts/stage_d_delivery.py send --date today
 ```
 
-Only record after OpenClaw message(action="send") returns a real Discord message
-id.
+`record`/`clear` are audited operator recovery commands for an ambiguous
+outbox; never use them as the routine send flow.
 
 ## Coding conventions
 
