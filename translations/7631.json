@@ -1,0 +1,11 @@
+{
+  "translated_title": "MIT Technology Review：Claude 内部机制与 OpenAI 的“超级应用”设想",
+  "translated_summary": "《The Download》本期聚焦 Anthropic 对 Claude 内部思考空间的观察，以及 OpenAI 的超级应用叙事。",
+  "translated_body": "MIT Technology Review 的《The Download》日刊介绍了当天的技术新闻，其中提到 Anthropic 找到了一个隐藏空间，可以观察 Claude 如何处理概念；同时也讨论了 OpenAI 的“超级应用”设想。原文只是日刊摘要，并未展开全部分析。",
+  "impact_analysis": "这条内容反映出两个方向：一是模型可解释性和内部工作机制正在成为研究重点，二是头部公司正在从单一模型竞赛转向平台级入口争夺。受影响的对象包括基础模型公司、研究团队和试图构建统一 AI 入口的产品团队。若“超级应用”路径继续推进，竞争焦点会从模型分数转向用户留存与场景聚合。",
+  "industry_tags": [
+    "research-paper",
+    "industry-trend"
+  ],
+  "_translated_at": "2026-07-12 12:26:23.235802"
+}

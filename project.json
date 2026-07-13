@@ -35,7 +35,7 @@
   "resilience": {"min_briefing": 8, "min_audio_bytes": 100000, "min_audio_script_chars": 800, "drop_deadline_local": "08:25"},
   "discord": {"channel": "1490344209847287830", "account": "fanli", "mode": "split"},
   "stage_b": {
-    "model": "zai/glm-5.2",
+    "model": "openai/gpt-5.4-mini",
     "agent": "fanli",
     "agent_timeout": 1050,
     "source_chars_per_item": 2800,
