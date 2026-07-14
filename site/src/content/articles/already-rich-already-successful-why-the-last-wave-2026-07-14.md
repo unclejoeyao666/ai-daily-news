@@ -1,0 +1,23 @@
+---
+title: "已经成功的人为什么又重新开始拼命做 AI"
+titleOriginal: "Already rich, already successful, why the last wave of tech winners is grinding again"
+description: "一些上一波科技赢家正在重新投入工作，动机来自错过 AI 时代关键窗口的担忧，以及继续放大财富的吸引力。"
+pubDate: 2026-07-14
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/13/already-rich-already-successful-why-the-last-wave-of-tech-winners-is-grinding-again/"
+sourceLang: en
+tags: ["industry-trend"]
+---
+这篇文章讨论的是，上一轮科技周期中已经赚到钱、也已经取得成功的人，为什么又开始重新投入高强度工作。报道给出的核心解释是，他们担心错过 AI 时代的决定性机会，同时也被进一步放大财富的可能性所驱动。
+
+## 对 AI 行业的影响
+
+这反映出 AI 正在改变人才和资本的再分配逻辑：不是只有新创公司在冲刺，老牌赢家也会回到赛道争夺窗口期。对行业而言，这会推高优质人才、算力和叙事资源的竞争强度，也会让“AI 仍处早期”的市场预期继续自我强化。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/13/already-rich-already-successful-why-the-last-wave-of-tech-winners-is-grinding-again/) · 2026-07-14
+
+> They're rolling up their sleeves again, seemingly out of fear of missing AI's defining moment and, presumably, the irresistible allure of making even more money -- potentially a lot more.
