@@ -1,0 +1,23 @@
+---
+title: "现在可以在命令行里用 DoorDash 点餐了"
+titleOriginal: "Yes, you can now order DoorDash from the command line"
+description: "DoorDash 发布了限量测试版 dd-cli，允许开发者和 AI 代理在终端里搜索商店、构建购物车并下单。这显示软件正越来越多地围绕 AI 代理而不是只面向人类设计。"
+pubDate: 2026-07-16
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/16/yes-you-can-now-order-doordash-from-the-command-line/"
+sourceLang: en
+tags: ["agent-tools", "consumer-app"]
+---
+DoorDash 正在开放 dd-cli 的限量测试版。这是一款命令行工具，允许开发者和 AI 代理在终端中搜索商店、构建购物车并提交订单。TechCrunch 认为，这标志着软件设计开始明显向 AI 代理使用场景倾斜，而不仅仅是面向传统用户界面。
+
+## 对 AI 行业的影响
+
+把下单流程暴露给命令行和代理接口，意味着消费互联网服务正在向可编排、可自动化的形态演进。对行业的影响是，更多 SaaS 和本地生活平台会开始为 AI 代理提供原生操作入口，从而改变产品交互和分发路径。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/16/yes-you-can-now-order-doordash-from-the-command-line/) · 2026-07-16
+
+> DoorDash is opening a limited beta of dd-cli, a command-line tool that lets developers and AI agents search stores, build carts, and place orders from the terminal, marking another step toward software designed for AI agents instead of just humans.
