@@ -1,0 +1,23 @@
+---
+title: "Databricks 估值升至 1880 亿美元，继续扮演 AI 时代的第二增长曲线"
+titleOriginal: "Databricks hits $188B valuation, extending its run as AI’s favorite second act"
+description: "Databricks 再次完成估值跃升，外界看到的是它从数据平台转向 AI 公司后的新身份，而它也在发布关于开源权重模型编码成本节省的研究。"
+pubDate: 2026-07-17
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/17/databricks-hits-188b-valuation-extending-its-run-as-ais-favorite-second-act/"
+sourceLang: en
+tags: ["funding-ipo", "industry-trend"]
+---
+Databricks 的最新估值已经升至 1880 亿美元。公司过去一段时间持续重塑自身形象，从数据基础设施平台转向 AI 公司，并发布了关于开源权重 AI 模型在编码场景中可以节省成本的研究。这个估值变化不仅反映资本市场对 AI 基础设施的偏好，也说明企业软件公司正在借 AI 重新定义增长曲线。
+
+## 对 AI 行业的影响
+
+对行业的影响在于，数据平台、模型基础设施与应用层之间的边界继续模糊。Databricks 这样的公司如果能把“AI 成本节省”变成可量化叙事，会加强企业客户对开源权重模型的接受度，也会迫使同类厂商把 ROI 讲得更具体，而不是只讲能力。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/17/databricks-hits-188b-valuation-extending-its-run-as-ais-favorite-second-act/) · 2026-07-17
+
+> Databricks has remade its image into an AI company and has published research on the cost savings of open weight AI models for coding.
