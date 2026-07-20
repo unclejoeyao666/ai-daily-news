@@ -1,0 +1,23 @@
+---
+title: "茅台第二次上调飞天茅台价格"
+titleOriginal: "Moutai Hikes Price of Flagship Liquor for Second Time in Months"
+description: "贵州茅台在数月内第二次上调旗舰飞天茅台价格，试图改善受需求疲软拖累的利润率。此举说明龙头消费品牌正在用提价对冲下行压力。"
+pubDate: 2026-07-20
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-20/moutai-hikes-price-of-flagship-liquor-for-second-time-in-months"
+sourceLang: en
+tags: ["industry-trend"]
+---
+Bloomberg Technology 报道称，贵州茅台股份有限公司再次上调其旗舰飞天茅台白酒的价格，这是数月内的第二次提价。公司此举的背景是，中国最大白酒生产商正试图提升利润率，而需求走弱正在拖累盈利表现。原文没有给出具体涨幅。
+
+## 对 AI 行业的影响
+
+虽然这不是纯 AI 产业新闻，但它提供了一个重要的宏观信号：在需求承压环境下，头部公司更依赖定价而不是销量扩张来维持利润。对 AI 行业的间接影响在于，资本和消费信心偏弱时，相关企业也会更谨慎地看待提价、订阅升级和商业化节奏。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-20/moutai-hikes-price-of-flagship-liquor-for-second-time-in-months) · 2026-07-20
+
+> Kweichow Moutai Co. raised prices of its flagship Feitian Moutai spirit for the second time in several months, as China’s biggest liquor maker works to boost margins hit by sagging demand.
