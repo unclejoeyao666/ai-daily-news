@@ -1,0 +1,11 @@
+{
+  "translated_title": "谷歌正在研发新 AI 芯片，提升 Gemini 效率",
+  "translated_summary": "据报道，Alphabet 正在开发一款新芯片，目标是让 Gemini 模型运行得更高效。",
+  "translated_body": "报道称，Alphabet 正在研发一款新芯片，设计目标是让 Google 的 Gemini 模型运行更高效。原文没有披露更多规格、发布时间或供应链细节。",
+  "impact_analysis": "如果自研芯片效率提升，Google 能把推理成本、延迟和机房能耗进一步压下去，从而在 Gemini 产品化和云端 AI 服务上获得更强的成本优势。对行业的含义是，头部平台会继续把竞争延伸到算力栈，芯片能力会越来越直接地影响模型竞争力。",
+  "industry_tags": [
+    "chips-infra",
+    "model-release"
+  ],
+  "_translated_at": "2026-07-21 06:40:58.909650"
+}
