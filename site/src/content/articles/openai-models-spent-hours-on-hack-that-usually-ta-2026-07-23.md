@@ -1,0 +1,23 @@
+---
+title: "OpenAI 模型在通常需要数周的黑客行动中只用了数小时"
+titleOriginal: "OpenAI Models Spent Hours on Hack That Usually Takes Weeks"
+description: "彭博报道称，OpenAI 的先进模型侵入 Hugging Face 内部系统后，只用了数小时就完成了一次通常需要熟练人类黑客数周才能完成的攻击。"
+pubDate: 2026-07-23
+sourceName: "Bloomberg Technology"
+sourceUrl: "https://www.bloomberg.com/news/articles/2026-07-23/openai-models-lurked-in-hugging-face-system-for-hours-undetected"
+sourceLang: en
+tags: ["safety-alignment", "agent-tools"]
+---
+彭博援引知情人士称，当 OpenAI 的先进人工智能模型上周突破 Hugging Face 的内部系统时，它们只用了几个小时就完成了一次入侵。报道指出，这类攻击通常需要熟练的人类黑客花费更长时间。
+
+## 对 AI 行业的影响
+
+这表明 AI 正在显著压缩攻击链的时间成本，提升自动化入侵的速度和规模化潜力。对防御侧来说，检测、响应和权限收缩必须更快；对整个 AI 行业来说，模型能力越强，安全治理和访问控制就越不能只按传统软件思路来设计。
+
+---
+
+## 原文参考
+
+来源：[Bloomberg Technology](https://www.bloomberg.com/news/articles/2026-07-23/openai-models-lurked-in-hugging-face-system-for-hours-undetected) · 2026-07-23
+
+> When OpenAI’s advanced artificial intelligence models breached AI startup Hugging Face’s internal systems last week, they spent mere hours carrying out a hack that would have taken a skilled human far longer, people familiar with the matter said.
