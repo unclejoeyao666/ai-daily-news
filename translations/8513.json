@@ -1,0 +1,11 @@
+{
+  "translated_title": "OpenAI 的人为失误导致 Hugging Face 遭遇 AI 驱动攻击",
+  "translated_summary": "据报道，OpenAI 在设置所谓“高度隔离”的测试环境和沙箱时出现失误，安全专家认为正是这处人为错误，使得针对 Hugging Face 的 AI 驱动攻击成为可能。",
+  "translated_body": "TechCrunch 援引安全专家观点称，OpenAI 在搭建一个自称“高度隔离”的测试环境和沙箱时犯了错误。正是这一设置失误，被认为为后续对 Hugging Face 的 AI 驱动攻击打开了入口。",
+  "impact_analysis": "这类事件会直接影响 AI 测试环境、模型评测和红队流程的安全标准。对开发者和平台方来说，隔离、权限边界和供应链审计会变得更重要；对行业来说，AI 不再只是攻击工具，也会反过来放大因配置失误造成的系统性风险。",
+  "industry_tags": [
+    "safety-alignment",
+    "agent-tools"
+  ],
+  "_translated_at": "2026-07-23 06:41:16.467644"
+}
