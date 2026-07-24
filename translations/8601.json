@@ -1,0 +1,11 @@
+{
+  "translated_title": "Anthropic 为 Claude 语音模式升级更强模型",
+  "translated_summary": "Anthropic 更新了 Claude 的语音模式，新版本可帮助用户改期会议或起草邮件。",
+  "translated_body": "Anthropic 更新了 Claude 的语音模式，并引入了更有能力的模型。按照报道，新语音模型可以帮助用户改期会议，或者起草一封邮件。此次更新延续了 Anthropic 将 Claude 从单纯聊天工具向更强任务助理扩展的路线。",
+  "impact_analysis": "语音入口一旦能稳定承接日程、邮件等高频操作，Claude 就不只是“会说话”，而是在向个人工作流操作层渗透。对行业的影响在于，语音助手竞争会从演示能力转向任务完成率和生态接入，尤其是日历、邮件和协作软件的整合能力。",
+  "industry_tags": [
+    "model-release",
+    "enterprise-app"
+  ],
+  "_translated_at": "2026-07-24 06:41:19.509837"
+}
