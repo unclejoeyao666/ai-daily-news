@@ -1,0 +1,23 @@
+---
+title: "Claude 共享聊天和 Artifacts 可能被 Google 收录"
+titleOriginal: "PSA: Your Claude shared chats and Artifacts may have ended up on Google"
+description: "TechCrunch 指出，Claude 的“分享聊天”功能可能让用户分享的对话或项目链接出现在 Google 搜索结果中。"
+pubDate: 2026-07-27
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/"
+sourceLang: en
+tags: ["safety-alignment", "consumer-app", "policy-regulation"]
+---
+TechCrunch AI 报道，问题似乎源自 Claude 的“share chat”功能。该功能允许用户生成一个链接，让任何拿到该 URL 的人查看一段对话或项目；在某些情况下，这些共享内容可能被搜索引擎收录。报道重点在于分享机制本身的可见性风险。
+
+## 对 AI 行业的影响
+
+这会直接影响 AI 产品的隐私设计与默认共享策略。对 Anthropic 这类产品方来说，公开分享链接如果可被索引，就意味着用户无意中暴露工作内容、提示词和内部项目的风险上升；行业层面也会推动“分享即公开”的提示、默认关闭索引和访问控制更严格。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/) · 2026-07-27
+
+> The issue appears to have originated from Claude’s “share chat” feature, which allows users to create links that enable anyone with the assigned URL view a conversation or project.
