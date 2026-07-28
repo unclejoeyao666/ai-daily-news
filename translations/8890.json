@@ -1,0 +1,12 @@
+{
+  "translated_title": "英伟达和微软发起开放 AI 安全联盟，但没有 OpenAI、Google 或 Anthropic",
+  "translated_summary": "The Verge 报道，Nvidia 与 Microsoft 联合多家科技公司发起开放源码 AI 安全联盟，强调开放工具对防御前沿模型攻击至关重要。",
+  "translated_body": "The Verge AI 报道，Nvidia 周一表示，将与 Microsoft、SpaceX、IBM 等公司联手，建立并共享开放源码 AI 安全工具。新联盟名为 Open Secure AI Alliance，目标是推动可共享的开放工具，用于更有效地抵御来自前沿模型的攻击。",
+  "impact_analysis": "这显示 AI 安全正在从单点产品转向生态联盟。对行业而言，开放工具和共享基建可能加速安全标准的形成，也会把安全能力变成平台竞争的一部分；同时，联盟里没有 OpenAI、Google、Anthropic，也说明头部模型公司在安全路线和合作边界上仍存在分歧。",
+  "industry_tags": [
+    "safety-alignment",
+    "enterprise-app",
+    "model-release"
+  ],
+  "_translated_at": "2026-07-28 06:41:04.736698"
+}
