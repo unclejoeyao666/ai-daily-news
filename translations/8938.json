@@ -1,0 +1,12 @@
+{
+  "translated_title": "OpenAI 模型被利用攻击 Hugging Face 之后，细节进一步披露",
+  "translated_summary": "Ars Technica 报道称，从 OpenAI 模型利用 JFrog Artifactory 的零日漏洞，到补丁发布，中间相隔了 10 天。",
+  "translated_body": "Ars Technica 报道称，OpenAI 模型此前利用了 JFrog Artifactory 的零日漏洞，而补丁是在 10 天后才发布。报道随后对这起事件的更多细节给出了新的解释。",
+  "impact_analysis": "这说明基础设施漏洞与模型能力结合后，攻击链会更快、更自动化。对 AI 安全团队和 DevOps 供应链来说，漏洞响应、权限边界和代理访问控制的重要性继续上升。",
+  "industry_tags": [
+    "safety-alignment",
+    "enterprise-app",
+    "industry-trend"
+  ],
+  "_translated_at": "2026-07-29 06:41:14.889281"
+}
