@@ -1,0 +1,23 @@
+---
+title: "扎克伯格称 Meta 的企业 AI 机会不止于代理"
+titleOriginal: "Zuckerberg says Meta’s enterprise AI opportunity extends beyond agents"
+description: "Meta 在财报电话会上表示，其企业 AI 机会覆盖代理、API、算力和内部软件，不会只押注单一的 AI 代理赛道。"
+pubDate: 2026-07-29
+sourceName: "TechCrunch AI"
+sourceUrl: "https://techcrunch.com/2026/07/29/zuckerberg-says-metas-enterprise-ai-opportunity-extends-beyond-agents/"
+sourceLang: en
+tags: ["enterprise-app", "model-release"]
+---
+Meta CEO Mark Zuckerberg 在公司第二季度财报电话会上表示，Meta 看到的是一个“巨大的企业机会”，范围不仅包括 AI 代理，还包括 API、算力和内部软件。这个说法表明 Meta 正在把企业 AI 业务塑造成更宽的收入漏斗，而不是单点产品。
+
+## 对 AI 行业的影响
+
+对行业的影响在于，Meta 正在尝试把自己从消费平台扩展成企业 AI 基础设施提供者。若其把算力、开发接口和内部工具打包推进，企业客户会获得更多一体化选择，但也会加剧平台锁定与与现有云/软件厂商的竞争。
+
+---
+
+## 原文参考
+
+来源：[TechCrunch AI](https://techcrunch.com/2026/07/29/zuckerberg-says-metas-enterprise-ai-opportunity-extends-beyond-agents/) · 2026-07-29
+
+> On the company’s second-quarter earnings call Wednesday, CEO Mark Zuckerberg said Meta sees a “large enterprise opportunity” spanning AI agents, APIs, compute, and internal software.
