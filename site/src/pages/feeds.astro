@@ -1,0 +1,240 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  buildFeedArticles,
+  buildFeedBriefings,
+  SITE_BASE,
+  FEED_LIMIT,
+  BRIEFING_FEED_LIMIT,
+} from "../lib/feeds";
+
+const briefings = await buildFeedBriefings(5);
+const latestBriefing = briefings[0];
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const endpoints = [
+  {
+    path: "/rss.xml",
+    label: "RSS 2.0",
+    type: "application/rss+xml",
+    desc: "主订阅源。每条含完整正文、封面图、来源与音频附件，兼容所有主流 RSS 阅读器与播客客户端。",
+  },
+  {
+    path: "/feed.json",
+    label: "JSON Feed 1.1",
+    type: "application/feed+json",
+    desc: "与 RSS 同源同内容，字段为 JSON，适合前端直接 fetch 或脚本消费。",
+  },
+  {
+    path: "/api/news.json",
+    label: "JSON API",
+    type: "application/json",
+    desc: "扁平化数据结构：文章数组 + 简报数组 + 站点索引，含 content_html 与 content_text。",
+  },
+];
+
+const fields = [
+  ["title", "中文标题"],
+  ["description", "中文摘要（≤300 字）"],
+  ["content:encoded", "完整正文 HTML（含影响分析）"],
+  ["media:content", "1200×630 封面图 PNG"],
+  ["enclosure", "音频 MP3（简报条目，含字节长度）"],
+  ["dc:creator", "原始来源名称"],
+  ["category", "中文主题标签"],
+  ["ainews:originalTitle", "英文原文标题"],
+  ["ainews:sourceUrl", "原文链接"],
+  ["ainews:briefingUrl", "所属每日简报"],
+];
+
+const sample = `curl -s ${SITE_BASE}/api/news.json | jq '.articles[0] | {title, url, tags, source: .source.name}'`;
+---
+<BaseLayout
+  title="RSS 与数据接口"
+  description="通过 RSS、JSON Feed 与 JSON API 免费对接 AI 科技每日早报：完整正文、封面图、音频与来源数据。"
+>
+  <article class="feeds">
+    <header class="feeds-head">
+      <p class="eyebrow">开放数据</p>
+      <h1>订阅与对接</h1>
+      <p class="lede">
+        本站全部内容以开放格式发布：完整文章正文、中文摘要、主题标签、封面图与每日音频简报，
+        都可以通过标准 RSS 或 JSON 接口直接接入你的阅读器、机器人或产品。
+        无需 API Key，无调用配额。
+      </p>
+    </header>
+
+    <section class="endpoints">
+      {endpoints.map((e) => (
+        <article class="endpoint">
+          <div class="ep-head">
+            <h2>{e.label}</h2>
+            <code class="ep-type">{e.type}</code>
+          </div>
+          <a class="ep-url" href={`${base}${e.path}`}>{SITE_BASE}{e.path}</a>
+          <p class="ep-desc">{e.desc}</p>
+        </article>
+      ))}
+    </section>
+
+    <section>
+      <h2>快速开始</h2>
+      <p>把下面任意地址粘贴进你的 RSS 阅读器（Feedly、Inoreader、NetNewsWire、FreshRSS 等）：</p>
+      <pre class="code"><code>{SITE_BASE}/rss.xml</code></pre>
+
+      <p>脚本或服务端消费：</p>
+      <pre class="code"><code>{sample}</code></pre>
+
+      <p>
+        播客客户端可直接订阅简报音频：
+        <a href={`${base}/rss.xml`}>{SITE_BASE}/rss.xml</a>
+        （简报条目带 <code>enclosure</code>，音频为 MP3）。
+      </p>
+    </section>
+
+    <section>
+      <h2>每条内容包含什么</h2>
+      <table class="fields">
+        <thead>
+          <tr><th>字段</th><th>内容</th></tr>
+        </thead>
+        <tbody>
+          {fields.map(([k, v]) => (
+            <tr><td><code>{k}</code></td><td>{v}</td></tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="note">
+        RSS 的 <code>ainews:</code> 是本站自定义命名空间（<code>{SITE_BASE}/ns/ainews/1.0/</code>），
+        用于携带来源与分组等附加信息；标准阅读器会忽略它，不影响订阅。
+      </p>
+    </section>
+
+    <section>
+      <h2>当前收录</h2>
+      <p>
+        最新一期简报：{latestBriefing ? <a href={`${base}/briefings/${latestBriefing.id}`}>{latestBriefing.title}</a> : "暂无"}。
+        订阅源当前包含最近 <strong>{FEED_LIMIT}</strong> 篇文章与最近 <strong>{BRIEFING_FEED_LIMIT}</strong> 期简报，
+        历史全文可在 <a href={`${base}/archive`}>归档</a> 与 <a href={`${base}/briefings`}>简报库</a> 查阅。
+      </p>
+    </section>
+
+    <section>
+      <h2>使用条款</h2>
+      <p>
+        内容为公开的新闻摘要与中文翻译，供个人阅读与信息聚合使用。
+        转载或二次发布请保留原文来源链接（<code>source</code> 字段）与本站链接。
+        原文版权归各原始媒体所有。
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .feeds { max-width: var(--content-width); margin: 0 auto; }
+  .feeds-head {
+    padding-bottom: 24px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid var(--text);
+  }
+  .feeds-head h1 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin: 4px 0 12px;
+  }
+  .lede {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin: 0;
+  }
+  .endpoints {
+    display: grid;
+    gap: 14px;
+    margin: 28px 0 8px;
+  }
+  .endpoint {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+  }
+  .ep-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .ep-head h2 {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    margin: 0;
+    border: 0;
+    padding: 0;
+  }
+  .ep-type {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    background: var(--surface-tint);
+    padding: 2px 7px;
+    border-radius: var(--radius);
+  }
+  .ep-url {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent);
+    word-break: break-all;
+    margin: 6px 0 4px;
+    border-bottom: 0;
+  }
+  .ep-desc {
+    margin: 4px 0 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+  .code {
+    background: var(--surface-tint);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    overflow-x: auto;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+  .code code { background: none; padding: 0; }
+  .fields {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    margin: 12px 0 16px;
+  }
+  .fields th,
+  .fields td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .fields th {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    font-weight: 600;
+  }
+  .fields code {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    border-left: 2px solid var(--accent-soft);
+    padding-left: 12px;
+  }
+</style>

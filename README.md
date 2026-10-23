@@ -6,6 +6,8 @@ Discord delivery.
 
 Site: https://unclejoeyao666.github.io/ai-daily-news/
 
+Subscribe: https://unclejoeyao666.github.io/ai-daily-news/rss.xml
+
 ## Current workflow
 
 The canonical runbook is:
@@ -64,6 +66,35 @@ python3 -m scripts.lib.news_db data/news.db --stats
 
 Providers are bounded Edge TTS, MiniMax TTS, then local system TTS.
 The active renderer is `scripts/render_audio.py`.
+
+## Feeds & open data
+
+The published site exposes its content in open, machine-readable formats so
+anyone can subscribe or build on it — no API key, no quota.
+
+| Endpoint | Format | Contents |
+|---|---|---|
+| `/rss.xml` | RSS 2.0 | Full article body (`content:encoded`), 1200×630 cover (`media:content`), source attribution, tags, and MP3 enclosures for each daily briefing |
+| `/feed.json` | JSON Feed 1.1 | Same items as RSS, as JSON |
+| `/api/news.json` | JSON | Flat structure: `articles[]` + `briefings[]` + site index |
+| `/feeds` | HTML | Human-facing docs: endpoints, field reference, examples |
+
+Each article item carries: Chinese title, Chinese summary, full body HTML
+(translation + impact analysis), cover image, original-language title, source
+name and URL, Chinese tag labels, and a link to the daily briefing that
+included it. Briefing items add the audio enclosure (`length` = real byte
+size) so podcast clients can subscribe directly.
+
+Custom metadata lives in the `ainews:` namespace
+(`https://unclejoeyao666.github.io/ai-daily-news/ns/ainews/1.0/`), which
+standard readers ignore harmlessly.
+
+Implementation lives in `site/src/lib/feeds.ts` (shared data layer),
+`site/src/lib/xml.ts` (XML serialisation), `site/src/lib/cover.ts` (cover
+cards), and the endpoints under `site/src/pages/`. Feeds are generated at
+build time from the content collections, so they always match the published
+site. `FEED_LIMIT` / `BRIEFING_FEED_LIMIT` in `feeds.ts` control how many
+items each feed publishes.
 
 ## Maintenance
 
