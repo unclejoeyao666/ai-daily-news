@@ -37,9 +37,16 @@ const baseHref = import.meta.env.BASE_URL.replace(/\/$/, "");
     <link
       rel="alternate"
       type="application/rss+xml"
-      title={SITE_TITLE}
+      title={`${SITE_TITLE} · 全文 RSS`}
       href={`${baseHref}/rss.xml`}
     />
+    <link
+      rel="alternate"
+      type="application/feed+json"
+      title={`${SITE_TITLE} · JSON Feed`}
+      href={`${baseHref}/feed.json`}
+    />
+    <link rel="alternate" type="application/json" title="JSON API" href={`${baseHref}/api/news.json`} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content={ogType} />

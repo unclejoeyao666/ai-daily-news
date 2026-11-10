@@ -33,6 +33,14 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
 
+      # Cover cards for the RSS/JSON feeds are rendered from SVG with sharp,
+      # which needs CJK fonts on the runner or Chinese text becomes tofu.
+      - name: Install CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          fc-cache -f
+
       - name: Install
         run: npm ci
 

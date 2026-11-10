@@ -1,6 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { TAG_LABELS, TAG_COLORS } from "../consts";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout title="关于" description="项目说明、数据来源与工作机制">
@@ -60,6 +62,19 @@ import { TAG_LABELS, TAG_COLORS } from "../consts";
       <li><strong>音频：</strong>Microsoft Edge TTS / MiniMax speech-2.8-hd</li>
       <li><strong>部署：</strong>GitHub Actions → GitHub Pages</li>
     </ul>
+
+    <h2>订阅与数据接口</h2>
+    <p>
+      全部内容以开放格式发布，可自由接入阅读器、机器人与自有产品，无需 API Key：
+    </p>
+    <ul>
+      <li><strong>RSS 2.0：</strong><a href={`${base}/rss.xml`}>/rss.xml</a> — 完整正文、封面图、来源、音频附件</li>
+      <li><strong>JSON Feed 1.1：</strong><a href={`${base}/feed.json`}>/feed.json</a> — 同内容，JSON 字段</li>
+      <li><strong>JSON API：</strong><a href={`${base}/api/news.json`}>/api/news.json</a> — 扁平结构化数据</li>
+    </ul>
+    <p>
+      字段说明与示例见 <a href={`${base}/feeds`}>订阅与对接</a>。
+    </p>
 
     <h2>反馈与源码</h2>
     <p>
